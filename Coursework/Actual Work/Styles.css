@@ -27,9 +27,6 @@ body {
 
 
 
-
-
-
 .brand-overlay {
     position: absolute;
     top: 50%;
@@ -270,15 +267,18 @@ body {
     transform: translate(-50%, -50%);
     text-align: center;
     z-index: 2;
+    transition: top 0.5s ease;
     color: white;
 }
 
 .video-text h1 {
-    font-size: 2rem;
+    font-family: 'Bodoni Moda', serif;
+
+    font-size: 1.6rem;
     font-weight: 600;
     letter-spacing: 0.05em;
     margin-bottom: 0.05rem;
-    text-transform: uppercase;
+    
 }
 
 .video-text .text-row {
@@ -313,7 +313,10 @@ body {
 }
 
 
-
+.video-text.scroll-effect {
+    top: 50%;
+    /* Move text up when scrolling */
+}
 
 
 

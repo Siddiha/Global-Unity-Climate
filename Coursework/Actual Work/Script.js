@@ -81,3 +81,33 @@ document.addEventListener('DOMContentLoaded', () => {
         // Example: window.location.href = '/for-him'; // Navigate to a new page
     });
 });
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const videoText = document.querySelector('.video-text');
+    const forHer = document.getElementById('for-her');
+    const forHim = document.getElementById('for-him');
+
+    // Scroll Handler for Text Animation
+    window.addEventListener('scroll', () => {
+        const scrollY = window.scrollY;
+
+        // Add/remove scroll effect class based on scroll position
+        if (scrollY > 50) {
+            videoText.classList.add('scroll-effect');
+        } else {
+            videoText.classList.remove('scroll-effect');
+        }
+    });
+
+    // Click Handlers for FOR HER and FOR HIM
+    forHer.addEventListener('click', () => {
+        alert('FOR HER clicked!'); // Replace with your desired action
+        // Example: window.location.href = '/for-her'; // Navigate to a new page
+    });
+
+    forHim.addEventListener('click', () => {
+        alert('FOR HIM clicked!'); // Replace with your desired action
+        // Example: window.location.href = '/for-him'; // Navigate to a new page
+    });
+});
