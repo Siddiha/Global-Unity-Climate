@@ -5,7 +5,8 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Bodoni Moda',
+        serif;
     line-height: 1.5;
     overflow-x: hidden;
 }
@@ -23,6 +24,65 @@ body {
     background-color: white;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
+
+
+
+
+
+
+.brand-overlay {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    transform: translateY(-50%);
+    z-index: 10;
+    color: white;
+    font-size: 12vw;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-align: center;
+    font-family: 'Bodoni Moda', serif;
+    text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    pointer-events: none;
+}
+
+.sticky-brand {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1001;
+    font-family: 'Bodoni Moda', serif;
+    font-size: 2rem;
+    font-weight: 600;
+    color: white;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    letter-spacing: 0.05em;
+    pointer-events: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .brand-overlay {
+        font-size: 16vw;
+    }
+
+    .sticky-brand {
+        font-size: 1.5rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    .brand-overlay {
+        font-size: 10vw;
+    }
+}
+
+
+
+
 
 .nav-container {
     max-width: 1400px;
@@ -182,21 +242,93 @@ body {
 }
 
 .hero {
+    position: relative;
     height: 100vh;
     background-color: #000;
     color: white;
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
 }
+
+.hero video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+/* Text Overlay */
+.video-text {
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 2;
+    color: white;
+}
+
+.video-text h1 {
+    font-size: 2rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.05rem;
+    text-transform: uppercase;
+}
+
+.video-text .text-row {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    font-size: 1rem;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+/* FOR HER and FOR HIM Styling */
+.video-text .text-row span {
+    background-color: white;
+    color: black;
+    padding: 0.3rem 0.8rem;
+    border-radius: 1.5px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* Add a subtle shadow */
+}
+
+.video-text .text-row span:hover {
+    transform: scale(0.95);
+    /* Shrink on hover */
+    background-color: #f0f0f0;
+    /* Lighten background on hover */
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    /* Reduce shadow on hover */
+}
+
+
+
+
+
 
 .products {
     padding: 4rem 2rem;
 }
 
+/* Responsive Adjustments */
 @media (max-width: 768px) {
-    .menu-grid {
-        grid-template-columns: 1fr;
-        gap: 2rem;
+    .video-text h1 {
+        font-size: 2.0rem;
+    }
+
+    .video-text .text-row {
+        font-size: 1.2rem;
+        gap: 0.5rem;
     }
 }
