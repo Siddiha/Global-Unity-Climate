@@ -44,11 +44,14 @@ body {
 }
 
 .logo-text {
-    font-size: 20px;
+    font-family: 'Bodoni Moda', serif;
+    font-size: 24px;
+    font-weight: 600;
     letter-spacing: 2px;
     color: white;
     transition: opacity 0.3s ease, color 0.3s ease;
     opacity: 0;
+    text-transform: uppercase;
 }
 
 .scrolled .logo-text {
