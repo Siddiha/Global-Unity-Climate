@@ -358,29 +358,36 @@ body {
     text-align: center;
     background-color: #fff;
     margin-top: -1px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     /* Fixes potential gap */
 }
 
 .curated-heading {
     font-family: 'Inter', sans-serif;
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     font-weight: 500;
-    letter-spacing: 0.1em;
-    color: #000;
+    letter-spacing: 0.05em;
+    color: #333;
     text-transform: uppercase;
     position: relative;
     display: inline-block;
     padding-bottom: 40px;
+    margin-left:-150px ;
+   
 }
 
 .curated-heading::after {
+    display: none;
     content: '';
     position: absolute;
-    bottom: 20px;
+    bottom: -10px;
     left: 50%;
     transform: translateX(-50%);
     width: 40px;
-    height: 1px;
+    height: 2px;
     background-color: #000;
 }
 
@@ -394,3 +401,5 @@ body {
         font-size: 1.8rem;
     }
 }
+
+
