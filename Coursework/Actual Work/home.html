@@ -108,44 +108,68 @@
             </section>
 
 
-            <div class="product-grid">
-                <div class="product-item" onclick="navigateToProduct('womens-handbags')">
-                    <div class="image-container">
-                        <img src="/api/placeholder/800/800" alt="Women's Handbags">
-                    </div>
-                    <div class="product-title">Women's Handbags</div>
-                </div>
-            
-                <div class="product-item" onclick="navigateToProduct('womens-shoes')">
-                    <div class="image-container">
-                        <img src="/api/placeholder/800/800" alt="Women's Shoes">
-                    </div>
-                    <div class="product-title">Women's Shoes</div>
-                </div>
-            
-                <div class="product-item" onclick="navigateToProduct('mens-bags')">
-                    <div class="image-container">
-                        <img src="/api/placeholder/800/800" alt="Men's Bags">
-                    </div>
-                    <div class="product-title">Men's Bags</div>
-                </div>
-            
-                <div class="product-item" onclick="navigateToProduct('mens-shoes')">
-                    <div class="image-container">
-                        <img src="/api/placeholder/800/800" alt="Men's Shoes">
-                    </div>
-                    <div class="product-title">Men's Shoes</div>
-                </div>
+    <div class="product-grid">
+        <div class="product-item" onclick="navigateToProduct('womens-handbags')">
+            <div class="image-container">
+                <img src="/api/placeholder/800/800" alt="Women's Handbags">
             </div>
+            <div class="product-title">
+                <a href="#">Women's Handbags</a>
+                <p class="product-description">Elegant and timeless designer bags.</p>
+            </div>
+        </div>
+    
+        <div class="product-item" onclick="navigateToProduct('womens-shoes')">
+            <div class="image-container">
+                <img src="/api/placeholder/800/800" alt="Women's Shoes">
+            </div>
+            <div class="product-title">
+                <a href="#">Women's Shoes</a>
+                <p class="product-description">Stylish footwear for every occasion.</p>
+            </div>
+        </div>
+    
+        <div class="product-item" onclick="navigateToProduct('mens-bags')">
+            <div class="image-container">
+                <img src="/api/placeholder/800/800" alt="Men's Bags">
+            </div>
+            <div class="product-title">
+                <a href="#">Men's Bags</a>
+                <p class="product-description">Premium bags for modern professionals.</p>
+            </div>
+        </div>
+    
+        <div class="product-item" onclick="navigateToProduct('mens-shoes')">
+            <div class="image-container">
+                <img src="/api/placeholder/800/800" alt="Men's Shoes">
+            </div>
+            <div class="product-title">
+                <a href="#">Men's Shoes</a>
+                <p class="product-description">Classic and contemporary footwear.</p>
+            </div>
+        </div>
+    </div>
 
 
-            
 
+ <!-- image slider  -->
+<div class="container">
+    <h2><a href="empty.html">EXPLORE MEN'S SNEAKERS</a></h2>
+    <div class="underline"></div> <!-- Added underline below heading -->
 
+    <div class="slider">
+        <button class="arrow left" onclick="prevSlide()">&#8592;</button>
+        <div class="slides">
+            <img src="sneaker1.jpg" class="slide" alt="Sneaker 1" onclick="openFile()">
+            <img src="sneaker2.jpg" class="slide" alt="Sneaker 2" onclick="openFile()">
+            <img src="sneaker3.jpg" class="slide" alt="Sneaker 3" onclick="openFile()">
+        </div>
+        <button class="arrow right" onclick="nextSlide()">&#8594;</button>
+    </div>
 
-
-
-
+    <p class="sneaker-name">MEN'S GUCCI CUB3D SNEAKER</p>
+    <div class="underline"></div> <!-- Added underline below sneaker name -->
+</div>
 
 
 

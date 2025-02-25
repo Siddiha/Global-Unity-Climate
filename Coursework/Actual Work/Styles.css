@@ -313,22 +313,39 @@ body {
     letter-spacing: 0.05em;
     text-transform: uppercase;
 }
-
 /* FOR HER and FOR HIM Styling */
 .video-text .text-row span {
-    background-color: white;
-    color: black;
-    padding: 0.3rem 0.8rem;
-    border-radius: 1.5px;
+    background-color: transparent;
+    /* Transparent background */
+    color: white;
+    /* White text */
+    padding: 0.5rem 1rem;
+    /* Adjust padding as needed */
+    border: 1px solid white;
+    /* White border */
+    border-radius: 0;
+    /* No border radius for a sharp look */
     cursor: pointer;
     transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    /* Font style similar to Gucci */
+    font-size: 14px;
+    /* Adjust font size as needed */
+    letter-spacing: 1px;
+    /* Adjust letter spacing for a premium look */
+    text-transform: uppercase;
+    /* Uppercase text */
+    
+    
 }
 
 .video-text .text-row span:hover {
     transform: scale(0.95);
-    background-color: #f0f0f0;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    /* Slightly shrink on hover */
+    background-color: rgba(255, 255, 255, 0.1);
+    /* Slight white background on hover */
+    opacity: 1;
+    filter: blur(0);
 }
 
 .video-text.scroll-effect {
@@ -354,10 +371,24 @@ body {
 
 /* Curated Section - New Addition */
 .curated-section {
-    padding: 100px 20px;
+    padding: 70px 20px;
     text-align: center;
     background-color: #fff;
     margin-top: -1px;
+    margin-bottom: 1px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* Fixes potential gap */
+}
+/* Curated Section - New Addition */
+.curated-section {
+    padding: 70px 20px;
+    text-align: center;
+    background-color: #fff;
+    margin-top: -1px;
+    margin-bottom: 1px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -375,8 +406,8 @@ body {
     position: relative;
     display: inline-block;
     padding-bottom: 40px;
-    margin-left:-150px ;
-   
+    margin-left: -150px;
+
 }
 
 .curated-heading::after {
@@ -402,31 +433,32 @@ body {
     }
 }
 
-
-/* curated by the houses designs  */
+/* Improved styling */
 .product-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
     max-width: 1400px;
     margin: 0 auto;
-    
+    padding: 0 20px;
 }
 
 .product-item {
     position: relative;
     cursor: pointer;
-    transition: transform 0.4s ease;
+    overflow: hidden;
 }
 
 .product-item:hover {
     transform: scale(0.95);
+    /* scale down shluhgt on hovwe*/
+
 }
 
 .image-container {
     position: relative;
     overflow: hidden;
-    aspect-ratio: 1/1;
+    aspect-ratio: 3/4;
     background-color: #f8f8f8;
 }
 
@@ -434,13 +466,25 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.4s ease;
+    /* Much slower transition - 1.2 seconds instead of 0.5 */
+    transition: transform 1s cubic-bezier(0.25,
+        1,
+        0.5,
+        1);
+    will-change: transform, filter;
+    transform-origin: 50% 50%;
+    /* Slower and smoother */
 }
 
 .product-item:hover .image-container img {
-    transform: scale(1.05);
+    transition: transform 0.2s ease-out, filter 0.2s ease-out;
+        /* Faster response */
+        transform: scale(0.95);
+        filter: brightness(1.1);
+    /* Subtle lighting effect */
 }
 
+/* Styling for the product title with smoother hover effect */
 .product-title {
     text-align: center;
     padding: 15px 0;
@@ -450,6 +494,35 @@ body {
     text-transform: none;
 }
 
+.product-title a {
+    text-decoration: none;
+    color: #000;
+    font-weight: 500;
+    position: relative;
+}
+
+.product-title a::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 1px;
+    /* Thinner underline */
+    background: black;
+    transition: width 0.4s ease-in-out;
+}
+
+.product-title a:hover::after {
+    width: 100%;
+}
+
+/* Description text */
+.product-description {
+    font-size: 14px;
+    color: #666;
+    text-align: center;
+    margin-top: 5px;
+}
+
 @media (max-width: 1200px) {
     .product-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -457,13 +530,9 @@ body {
 }
 
 @media (max-width: 768px) {
-    body {
-        padding: 20px;
-    }
-
     .product-grid {
         gap: 15px;
-        margin-top:15px;
+        margin-top: 15px;
     }
 
     .product-title {
@@ -479,3 +548,82 @@ body {
 }
 
 
+
+
+/* image slider */
+body {
+    background-color: #0a1e17;
+    color: white;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+h2 a {
+    font-size: 24px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: white;
+}
+
+h2 a:hover {
+    text-decoration: underline;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    padding-top: 50px;
+}
+
+.underline {
+    width: 200px;
+    height: 2px;
+    background-color: white;
+    margin: 10px auto;
+}
+
+.slider {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+    overflow: hidden;
+    width: 320px;
+    margin: auto;
+}
+
+.slides {
+    display: flex;
+    width: 960px;
+    /* 3 images * 320px each */
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    width: 320px;
+    height: 320px;
+    object-fit: cover;
+}
+
+.arrow {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    position: absolute;
+}
+
+.left {
+    left: -50px;
+}
+
+.right {
+    right: -50px;
+}
+
+.sneaker-name {
+    font-size: 18px;
+    margin-top: 15px;
+}

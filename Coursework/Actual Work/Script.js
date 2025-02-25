@@ -244,3 +244,27 @@ document.addEventListener('DOMContentLoaded', () => {
         }, index * 100);
     });
 });
+
+
+
+// image slider
+let index = 0;
+
+function showSlide() {
+    const slides = document.querySelector('.slides');
+    slides.style.transform = `translateX(${-index * 320}px)`;
+}
+
+function prevSlide() {
+    index = index > 0 ? index - 1 : 2;
+    showSlide();
+}
+
+function nextSlide() {
+    index = index < 2 ? index + 1 : 0;
+    showSlide();
+}
+
+function openFile() {
+    window.open("empty.html", "_blank");
+}
