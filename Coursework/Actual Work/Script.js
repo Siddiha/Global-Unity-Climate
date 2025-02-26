@@ -248,23 +248,52 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 // image slider
-let index = 0;
-
-function showSlide() {
-    const slides = document.querySelector('.slides');
-    slides.style.transform = `translateX(${-index * 320}px)`;
-}
-
-function prevSlide() {
-    index = index > 0 ? index - 1 : 2;
-    showSlide();
-}
-
-function nextSlide() {
-    index = index < 2 ? index + 1 : 0;
-    showSlide();
-}
-
-function openFile() {
-    window.open("empty.html", "_blank");
-}
+   // Images array - replace with your actual image paths
+        const images = [
+            "sneaker1.jpg",
+            "sneaker2.jpg", 
+            "sneaker3.jpg"
+        ];
+        
+        let currentIndex = 1; // Start with middle image active
+        
+        // Show current slide and update slide positions
+        function updateSlider() {
+            // Get previous and next indices with circular handling
+            let prevIndex = currentIndex - 1;
+            if (prevIndex < 0) prevIndex = images.length - 1;
+            
+            let nextIndex = currentIndex + 1;
+            if (nextIndex >= images.length) nextIndex = 0;
+            
+            // Update images
+            document.querySelector('.left-slide img').src = images[prevIndex];
+            document.querySelector('.main-slide img').src = images[currentIndex];
+            document.querySelector('.right-slide img').src = images[nextIndex];
+            
+            // Update dots
+            const dots = document.querySelectorAll('.dot');
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentIndex);
+            });
+        }
+        
+        // Navigation functions
+        function prevSlide() {
+            currentIndex = (currentIndex > 0) ? currentIndex - 1 : images.length - 1;
+            updateSlider();
+        }
+        
+        function nextSlide() {
+            currentIndex = (currentIndex < images.length - 1) ? currentIndex + 1 : 0;
+            updateSlider();
+        }
+        
+        function goToSlide(index) {
+            currentIndex = index;
+            updateSlider();
+        }
+        
+        function openFile() {
+            window.open("empty.html", "_blank");
+        }
