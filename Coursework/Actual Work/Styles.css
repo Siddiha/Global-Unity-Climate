@@ -721,66 +721,412 @@ body {
 
 /* three vidoes */
 .gucci-services {
-    padding: 20px;
+    padding: 40px 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.gucci-services h1 {
+    font-size: 24px;
+    letter-spacing: 2px;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 400;
+    margin-bottom: 50px;
+    color: #000;
 }
 
 .services-container {
     display: flex;
-    justify-content: center;
-    gap: 20px;
-}
-
-.video-wrapper {
-    position: relative;
-    width: 100%;
-    height: 250px;
-    /* Set a fixed height */
-    border-radius: 10px;
-    overflow: hidden;
+    justify-content: space-between;
+    gap: 30px;
 }
 
 .service {
-    width: 40%;
-
+    flex: 1;
     text-align: center;
+    padding: 0 10px;
+}
+
+/* Luxurious video styling */
+.video-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 75%;
+    /* Maintain aspect ratio */
+    margin-bottom: 20px;
+    overflow: hidden;
 }
 
 .service-video {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    border-radius: 10px;
+    height: 100%;
     object-fit: cover;
-        /* Ensures video fills the container */
+    background-color: #f5f5f5;
 }
 
-h1 {
-    font-size: 20px;
-        letter-spacing: 2px;
-        text-transform: uppercase;
-        font-weight: normal;
-        position: relative;
-        display: inline-block;
-        padding-bottom: 5px;
-        margin-bottom: 30px;
-        
+/* Play/Pause button styling */
+.video-control {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.7);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    transition: all 0.3s ease;
 }
 
-
-
-
-
-h2 {
-    font-size: 18px;
-    margin: 10px 0;
+.video-control:hover {
+    background-color: rgba(255, 255, 255, 0.9);
 }
 
-p {
+.pause-icon,
+.play-icon {
     font-size: 14px;
-    color: #666;
+    color: #000;
 }
 
-a {
-    display: block;
+/* Text styling */
+.service h2 {
+    font-size: 16px;
+    font-weight: 650;
+    letter-spacing: 1px;
+    margin: 20px 0 15px;
+    text-transform: uppercase;
+}
+
+
+.service p {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #444;
+    margin-bottom: 20px;
+    padding: 0 10px;
+}
+
+.discover-link {
+    display: inline-block;
+    font-weight: 544;
+    color: #000;
+    text-decoration: underline ;
+    font-size: 15px;
+    letter-spacing: 0.5px;
     margin-top: 10px;
-    color: black;
+    padding-bottom: 2px;
+    transition: all 0.2s ease;
+}
+
+.discover-link:hover {
+    opacity: 0.7;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .services-container {
+        flex-direction: column;
+    }
+
+    .service {
+        width: 100%;
+        max-width: 600px;
+        margin: 0 auto 40px;
+    }
+
+    .video-container {
+        padding-bottom: 56.25%;
+        /* 16:9 aspect ratio */
+    }
+}
+
+
+
+
+/* footer section */
+/* Gucci-Style Footer CSS */
+.gucci-footer {
+    background-color: #000;
+    color: #fff;
+    padding: 60px 0 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Newsletter Section */
+.footer-newsletter {
+    text-align: center;
+    padding: 0 20px 80px;
+    max-width: 900px;
+    margin: 0 auto;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-newsletter h2 {
+    font-size: 14px;
+    letter-spacing: 1px;
+    font-weight: normal;
+    margin-bottom: 20px;
+}
+
+.newsletter-text {
+    font-size: 28px;
+    line-height: 1.4;
+    max-width: 800px;
+    margin: 0 auto 30px;
+    font-weight: 300;
+}
+
+.subscribe-btn {
+    background: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 15px;
+    transition: opacity 0.3s;
+}
+
+.subscribe-btn:hover {
+    opacity: 0.7;
+}
+
+.plus-icon {
+    margin-right: 8px;
+    font-size: 16px;
+}
+
+/* Links Section */
+.footer-links-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 50px 60px;
+    max-width: 1400px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+.footer-column {
+    flex: 1;
+    min-width: 200px;
+    margin-bottom: 40px;
+}
+
+.wide-column {
+    flex: 2;
+}
+
+.footer-column h3 {
+    font-size: 12px;
+    letter-spacing: 1px;
+    margin-bottom: 25px;
+    font-weight: normal;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li {
+    margin-bottom: 15px;
+}
+
+.footer-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 13px;
+    position: relative;
+    display: inline-block;
+    opacity: 0.7;
+    transition: opacity 0.3s;
+}
+
+.footer-links a:hover {
+    opacity: 1;
+}
+
+.footer-links a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    bottom: -2px;
+    left: 0;
+    background-color: #fff;
+    transform: scaleX(0);
+    transform-origin: bottom left;
+    transition: transform 0.3s;
+}
+
+.footer-links a:hover::after {
+    transform: scaleX(1);
+}
+
+/* Input Styles */
+.input-wrapper {
+    position: relative;
+    margin-bottom: 40px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.footer-input {
+    background-color: transparent;
+    border: none;
+    color: white;
+    padding: 10px 0;
+    width: 100%;
+    font-size: 14px;
+    outline: none;
+}
+
+.footer-input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.arrow-icon {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Second Newsletter */
+.footer-signup {
+    margin-top: 50px;
+}
+
+.signup-text {
+    font-size: 13px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    opacity: 0.7;
+}
+
+.text-link {
+    color: #fff;
     text-decoration: underline;
+}
+
+/* Country Selector */
+.country-selector {
+    margin-top: 40px;
+}
+
+.country-selector h4 {
+    font-size: 12px;
+    font-weight: normal;
+    margin-bottom: 15px;
+    opacity: 0.7;
+}
+
+.country-link {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    position: relative;
+    display: inline-block;
+}
+
+.country-link::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    bottom: -2px;
+    left: 0;
+    background-color: #fff;
+}
+
+/* Brand Logos */
+.brand-logos {
+    padding: 30px 60px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.logo-container {
+    display: flex;
+    justify-content: flex-start;
+    gap: 30px;
+    margin-bottom: 20px;
+}
+
+.brand-logo {
+    height: 30px;
+    opacity: 0.7;
+    transition: opacity 0.3s;
+}
+
+.brand-logo:hover {
+    opacity: 1;
+}
+
+.copyright {
+    font-size: 11px;
+    opacity: 0.5;
+}
+
+/* Big Logo */
+.big-logo {
+    padding: 80px 0;
+    text-align: center;
+}
+
+.big-logo h1 {
+    font-size: 140px;
+    font-weight: 300;
+    letter-spacing: 10px;
+    margin: 0;
+    line-height: 1;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .footer-links-container {
+        flex-direction: column;
+        padding: 40px 30px;
+    }
+
+    .footer-column {
+        width: 100%;
+        margin-bottom: 50px;
+    }
+
+    .newsletter-text {
+        font-size: 22px;
+    }
+
+    .big-logo h1 {
+        font-size: 80px;
+        letter-spacing: 5px;
+    }
+}
+
+@media (max-width: 576px) {
+    .newsletter-text {
+        font-size: 18px;
+    }
+
+    .big-logo h1 {
+        font-size: 50px;
+        letter-spacing: 3px;
+    }
+
+  
+
+    .logo-container {
+        flex-wrap: wrap;
+    }
 }

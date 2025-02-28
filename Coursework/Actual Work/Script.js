@@ -306,18 +306,186 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-
-
-
+// three vidoes
+document.addEventListener('DOMContentLoaded', function() {
+    const videoContainers = document.querySelectorAll('.video-container');
+    
+    videoContainers.forEach(container => {
+        const video = container.querySelector('.service-video');
+        const controlButton = container.querySelector('.video-control');
+        const pauseIcon = controlButton.querySelector('.pause-icon');
+        const playIcon = controlButton.querySelector('.play-icon');
         
- // three vidoes
- 
- document.querySelectorAll('.service-video').forEach(video => {
-    video.addEventListener('click', () => {
-        if (video.paused) {
-            video.play();
-        } else {
-            video.pause();
+        // Update button to reflect video state
+        function updateButton() {
+            if (video.paused) {
+                pauseIcon.style.display = 'none';
+                playIcon.style.display = 'block';
+                controlButton.setAttribute('aria-label', 'Play video');
+            } else {
+                pauseIcon.style.display = 'block';
+                playIcon.style.display = 'none';
+                controlButton.setAttribute('aria-label', 'Pause video');
+            }
         }
+        
+        // Toggle play/pause when clicking the video
+        video.addEventListener('click', () => {
+            if (video.paused) {
+                video.play();
+            } else {
+                video.pause();
+            }
+            updateButton();
+        });
+        
+        // Toggle play/pause when clicking the control button
+        controlButton.addEventListener('click', (e) => {
+            e.stopPropagation(); // Prevent triggering the video click event
+            if (video.paused) {
+                video.play();
+            } else {
+                video.pause();
+            }
+            updateButton();
+        });
+        
+        // Show controls on hover
+        container.addEventListener('mouseenter', () => {
+            controlButton.style.opacity = '1';
+        });
+        
+        // Hide controls when not hovering (only if video is playing)
+        container.addEventListener('mouseleave', () => {
+            if (!video.paused) {
+                controlButton.style.opacity = '0.7';
+            }
+        });
+        
+        // Update button state if video ends
+        video.addEventListener('ended', updateButton);
     });
+});
+
+
+
+// footer section part
+// JavaScript for Gucci-style footer interactions
+document.addEventListener('DOMContentLoaded', function() {
+    // Newsletter subscription toggle
+    const subscribeBtn = document.querySelector('.subscribe-btn');
+    const newsletterSection = document.querySelector('.footer-newsletter');
+    let isExpanded = false;
+    
+    if(subscribeBtn) {
+        subscribeBtn.addEventListener('click', function() {
+            if (!isExpanded) {
+                // Create and show subscription form
+                const form = document.createElement('div');
+                form.className = 'newsletter-form';
+                form.innerHTML = `
+                    <div class="input-wrapper newsletter-input">
+                        <input type="email" placeholder="Enter your email address" class="footer-input">
+                        <button class="submit-btn">SUBSCRIBE</button>
+                    </div>
+                    <p class="privacy-notice">By subscribing, you consent to receiving updates from Global Unity. Read our <a href="privacy-policy.html" class="text-link">Privacy Policy</a>.</p>
+                `;
+                
+                newsletterSection.appendChild(form);
+                
+                // Animate form in
+                setTimeout(() => {
+                    form.style.opacity = '1';
+                    subscribeBtn.innerHTML = '<span class="plus-icon">-</span> Close';
+                }, 10);
+                
+                isExpanded = true;
+            } else {
+                // Remove subscription form
+                const form = document.querySelector('.newsletter-form');
+                form.style.opacity = '0';
+                
+                setTimeout(() => {
+                    form.remove();
+                    subscribeBtn.innerHTML = '<span class="plus-icon">+</span> Subscribe';
+                }, 300);
+                
+                isExpanded = false;
+            }
+        });
+    }
+    
+    // Store locator input behavior
+    const inputFields = document.querySelectorAll('.footer-input');
+    const arrowIcons = document.querySelectorAll('.arrow-icon');
+    
+    inputFields.forEach((input, index) => {
+        if (arrowIcons[index]) {
+            arrowIcons[index].addEventListener('click', function() {
+                if (input.value.trim() !== '') {
+                    // Simulate form submission
+                    const form = input.closest('form') || input.parentElement;
+                    const targetUrl = form.getAttribute('action') || (input.placeholder.includes('Email') ? 'newsletter.html' : 'stores.html');
+                    
+                    // You can either submit the form or redirect
+                    // form.submit();
+                    // Or redirect:
+                    // window.location.href = targetUrl;
+                    
+                    // For demonstration, just log the action
+                    console.log(`Submitted: ${input.value} to ${targetUrl}`);
+                    
+                    // Optional: visual feedback
+                    const originalColor = arrowIcons[index].style.color;
+                    arrowIcons[index].style.color = '#4CAF50';
+                    setTimeout(() => {
+                        arrowIcons[index].style.color = originalColor;
+                    }, 1000);
+                } else {
+                    // Highlight the input field if empty
+                    input.style.borderColor = 'rgba(255, 0, 0, 0.5)';
+                    setTimeout(() => {
+                        input.style.borderColor = '';
+                    }, 1000);
+                }
+            });
+        }
+        
+        // Clear error styling on input
+        input.addEventListener('input', function() {
+            input.style.borderColor = '';
+        });
+    });
+    
+    // Optional: Smooth scroll to top when big logo is clicked
+    const bigLogo = document.querySelector('.big-logo');
+    if (bigLogo) {
+        bigLogo.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    }
+    
+    // Add animation class to big logo when visible in viewport
+    function isElementInViewport(el) {
+        const rect = el.getBoundingClientRect();
+        return (
+            rect.top >= 0 &&
+            rect.left >= 0 &&
+            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+            rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+        );
+    }
+    
+    function handleLogoAnimation() {
+        if (bigLogo && isElementInViewport(bigLogo)) {
+            bigLogo.classList.add('logo-animated');
+            window.removeEventListener('scroll', handleLogoAnimation);
+        }
+    }
+    
+    window.addEventListener('scroll', handleLogoAnimation);
+    handleLogoAnimation(); // Check on initial load
 });
