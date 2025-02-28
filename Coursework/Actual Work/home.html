@@ -158,25 +158,32 @@
     <h1 class="title" onclick="openFile()">EXPLORE MEN'S SNEAKERS</h1>
 </div>
 
-<div class="slider-container">
+<div class="slider-area">
+    <!-- Left arrow positioned exactly like Gucci -->
     <button class="arrow prev-arrow" onclick="prevSlide()">←</button>
 
-    <div class="side-slide left-slide">
-        <img src="Images/sneaker1.jpeg" alt="Sneaker 1" onclick="openFile()">
+    <!-- Left slide -->
+    <div class="side-slide-container">
+        <div class="left-slide" id="slide0">
+            <img src="Images/sneaker1.jpeg" alt="Sneaker 1" class="slide-img" onclick="openFile()">
+        </div>
+
+        <!-- Right slide -->
+        <div class="right-slide" id="slide2">
+            <img src="Images/sneaker3.jpeg" alt="Sneaker 3" class="slide-img" onclick="openFile()">
+        </div>
     </div>
 
-    <div class="main-slide">
-        <img src="Images/sneaker2.jpeg" alt="Sneaker 2" onclick="openFile()">
+    <!-- Main center slide -->
+    <div class="main-slide-container" id="slide1">
+        <img src="Images/sneaker2.jpeg" alt="Sneaker 2" class="slide-img" onclick="openFile()">
     </div>
 
-    <div class="side-slide right-slide">
-        <img src="Images/sneaker3.jpeg" alt="Sneaker 3" onclick="openFile()">
-    </div>
-
+    <!-- Right arrow positioned exactly like Gucci -->
     <button class="arrow next-arrow" onclick="nextSlide()">→</button>
 </div>
 
-<p class="product-name">MEN'S GUCCI CUB3D SNEAKER</p>
+<div class="product-name">MEN'S GUCCI CUB3D SNEAKER</div>
 
 <div class="pagination">
     <div class="dot" onclick="goToSlide(0)"></div>
@@ -185,7 +192,41 @@
 </div>
 
     </main>
-</body>
+
+
+
+
+
+
+
+
+
+
+
+<!-- three vicoes -->
+<section class="gucci-services">
+    <h1>Global Unity Services</h1>
+    <div class="services-container">
+        <div class="service">
+            <video src="Images/donate.mp4" class="service-video" autoplay muted preload="auto"></video>
+            <h2>BOOK AN APPOINTMENT</h2>
+            <p>Enjoy priority access to the boutique of your choice at the time and date that suits you...</p>
+            <a href="#">Book an In Store Appointment</a>
+        </div>
+        <div class="service">
+            <video src="video2.mp4" class="service-video" autoplay muted preload="auto"></video>
+            <h2>PERSONALIZATION</h2>
+            <p>Emboss select bags, luggage, belts, leather accessories, and more...</p>
+            <a href="#">Discover The Collection</a>
+        </div>
+        <div class="service">
+            <video src="Images/Store.mp4" class="service-video" autoplay muted preload="auto"></video>
+            <h2>COLLECT IN STORE</h2>
+            <p>Order online and collect your order from your preferred Gucci boutique.</p>
+            <a href="#">Discover How</a>
+        </div>
+    </div>
+</section>
 
 </html>
 

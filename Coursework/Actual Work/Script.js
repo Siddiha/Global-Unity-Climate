@@ -246,54 +246,78 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-
-// image slider
-   // Images array - replace with your actual image paths
+// IMAGE
+  // Images array for the slides
         const images = [
-            "sneaker1.jpg",
-            "sneaker2.jpg", 
-            "sneaker3.jpg"
+            "Images/sneaker1.jpeg",
+            "Images/sneaker2.jpeg", 
+            "Images/sneaker3.jpeg"
         ];
         
-        let currentIndex = 1; // Start with middle image active
+        // Current active slide index (0-based)
+        let currentIndex = 1; // Start with the middle index
         
-        // Show current slide and update slide positions
+        // Update the slider to show current slides
         function updateSlider() {
-            // Get previous and next indices with circular handling
-            let prevIndex = currentIndex - 1;
-            if (prevIndex < 0) prevIndex = images.length - 1;
-            
-            let nextIndex = currentIndex + 1;
-            if (nextIndex >= images.length) nextIndex = 0;
+            // Calculate indices with circular handling
+            let leftIndex = (currentIndex - 1 + images.length) % images.length;
+            let centerIndex = currentIndex;
+            let rightIndex = (currentIndex + 1) % images.length;
             
             // Update images
-            document.querySelector('.left-slide img').src = images[prevIndex];
-            document.querySelector('.main-slide img').src = images[currentIndex];
-            document.querySelector('.right-slide img').src = images[nextIndex];
+            document.querySelector('.left-slide img').src = images[leftIndex];
+            document.querySelector('.main-slide-container img').src = images[centerIndex];
+            document.querySelector('.right-slide img').src = images[rightIndex];
             
-            // Update dots
+            // Update pagination dots
             const dots = document.querySelectorAll('.dot');
             dots.forEach((dot, index) => {
                 dot.classList.toggle('active', index === currentIndex);
             });
         }
         
-        // Navigation functions
+        // Previous slide function
         function prevSlide() {
-            currentIndex = (currentIndex > 0) ? currentIndex - 1 : images.length - 1;
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
             updateSlider();
         }
         
+        // Next slide function
         function nextSlide() {
-            currentIndex = (currentIndex < images.length - 1) ? currentIndex + 1 : 0;
+            currentIndex = (currentIndex + 1) % images.length;
             updateSlider();
         }
         
+        // Go to specific slide
         function goToSlide(index) {
             currentIndex = index;
             updateSlider();
         }
         
+        // Open product page
         function openFile() {
             window.open("empty.html", "_blank");
         }
+
+
+
+
+
+
+
+
+
+
+
+        
+ // three vidoes
+ 
+ document.querySelectorAll('.service-video').forEach(video => {
+    video.addEventListener('click', () => {
+        if (video.paused) {
+            video.play();
+        } else {
+            video.pause();
+        }
+    });
+});

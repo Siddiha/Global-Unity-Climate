@@ -539,16 +539,13 @@ body {
 
 
 /* image slider */
-body {
-    background-color: white;
-    
-    font-family: Arial, sans-serif;
-    text-align: center;
-} body {
+ body {
      background-color: white;
      font-family: Arial, sans-serif;
      color: black;
      text-align: center;
+     margin: 0;
+     padding: 0;
  }
 
  /* Header styles */
@@ -578,100 +575,123 @@ body {
      background-color: black;
  }
 
- /* Slider container */
- .slider-container {
+ /* Container for the entire slider area */
+ .slider-area {
      position: relative;
-     max-width: 1200px;
+     max-width: 1100px;
      margin: 0 auto;
-     height: 450px;
-     display: flex;
-     align-items: center;
+     padding: 0;
  }
 
- /* Main slide display */
- .main-slide {
-     width: 500px;
-     height: 400px;
-     background-color: #f5f5f5;
-     margin: 0 auto;
-     display: flex;
-     justify-content: center;
-     align-items: center;
-     z-index: 10;
-     position: relative;
- }
+ /* Main slide container */
+/* Main slide container */
+.main-slide-container {
+    width: 500px;
+    height: 500px;
+    background-color: #f5f5f5;
+    margin: 0 auto;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
 
- .main-slide img {
-     max-width: 90%;
-     max-height: 90%;
-     cursor: pointer;
- }
+/* Side slides container */
+.side-slide-container {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    width: calc(100% + 400px);
+    /* Expanding width to accommodate side slides */
+    top: 50%;
+    left: -200px;
+    /* Move left slide half out of view */
+    transform: translateY(-50%);
+    pointer-events: none;
+    /* Allow clicking through */
+}
 
- /* Side slides */
- .side-slide {
-     width: 280px;
-     height: 280px;
-     background-color: #f5f5f5;
-     position: absolute;
-     display: flex;
-     justify-content: center;
-     align-items: center;
-     opacity: 0.5;
-     z-index: 5;
- }
+/* Left & Right slides (same size as main slide) */
+.left-slide,
+.right-slide {
+    width: 500px;
+    /* Same as main slide */
+    height: 500px;
+    /* Same as main slide */
+    background-color: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: auto;
+    /* Enable clicks */
+    position: relative;
+    opacity: 0.7;
+    /* Make them slightly faded */
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
 
- .side-slide img {
-     max-width: 90%;
-     max-height: 90%;
-     cursor: pointer;
- }
+/* Ensure left slide is positioned correctly */
+.left-slide {
+    transform: translateX(-50%);
+    /* Move it partially out of view */
+}
 
- .left-slide {
-     left: 100px;
- }
+/* Ensure right slide is positioned correctly */
+.right-slide {
+    transform: translateX(50%);
+    /* Move it partially out of view */
+}
 
- .right-slide {
-     right: 100px;
- }
+/* Hover effect to enhance visibility */
+.left-slide:hover,
+.right-slide:hover {
+    opacity: 1;
+}
 
- /* Navigation arrows */
- .arrow {
-     position: absolute;
-     top: 50%;
-     transform: translateY(-50%);
-     background: none;
-     border: none;
-     color: black;
-     font-size: 24px;
-     cursor: pointer;
-     z-index: 20;
- }
+/* Images inside slides */
+.slide-img {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+    cursor: pointer;
+}
 
- .prev-arrow {
-     left: 50px;
- }
+/* Navigation arrows */
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: black;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 10;
+}
 
- .next-arrow {
-     right: 50px;
- }
+.prev-arrow {
+    left: 150px;
+}
+
+.next-arrow {
+    right: 150px;
+}
 
  /* Product name */
  .product-name {
-     margin-top: 20px;
+     margin-top: 30px;
      font-size: 14px;
+     color: #666;
      text-transform: uppercase;
      letter-spacing: 1px;
-     padding-bottom: 10px;
-     border-bottom: 1px solid #e0e0e0;
-     display: inline-block;
-     margin-bottom: 30px;
  }
 
  /* Pagination dots */
  .pagination {
      display: flex;
      justify-content: center;
-     margin-top: 20px;
+     margin-top: 30px;
  }
 
  .dot {
@@ -685,3 +705,82 @@ body {
  .dot.active {
      background-color: black;
  }
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+/* three vidoes */
+.gucci-services {
+    padding: 20px;
+}
+
+.services-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.video-wrapper {
+    position: relative;
+    width: 100%;
+    height: 250px;
+    /* Set a fixed height */
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.service {
+    width: 40%;
+
+    text-align: center;
+}
+
+.service-video {
+    width: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+        /* Ensures video fills the container */
+}
+
+h1 {
+    font-size: 20px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        font-weight: normal;
+        position: relative;
+        display: inline-block;
+        padding-bottom: 5px;
+        margin-bottom: 30px;
+        
+}
+
+
+
+
+
+h2 {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+p {
+    font-size: 14px;
+    color: #666;
+}
+
+a {
+    display: block;
+    margin-top: 10px;
+    color: black;
+    text-decoration: underline;
+}
