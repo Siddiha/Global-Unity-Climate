@@ -224,6 +224,9 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+
+
+
 // for the content details of all four students 
 
 function navigateToProduct(category) {
@@ -244,6 +247,14 @@ document.addEventListener('DOMContentLoaded', () => {
         }, index * 100);
     });
 });
+
+
+
+
+
+
+
+
 
 
 // IMAGE
