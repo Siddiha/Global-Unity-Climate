@@ -30,9 +30,28 @@ body {
     
 }
 
+.sustainability{
+    text-align: justify;
+    margin-left: 50px;
+    margin-right:100px ;
+    margin-bottom: 50px;
 
+}
 
+.h2{
+    text-align: left;
+    margin-left: 50px;
+    margin-top: 25px;
+    margin-bottom: 10px;
+}
 
+.h3{
+    text-align: left;
+        margin-left: 50px;
+        margin-top: 25px;
+        margin-bottom: 10px;
+
+}
 
 
 
