@@ -500,3 +500,27 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('scroll', handleLogoAnimation);
     handleLogoAnimation(); // Check on initial load
 });
+
+
+
+
+// fixed navbar for all the pages 
+
+  document.addEventListener('DOMContentLoaded', function () {
+            // Menu toggle functionality
+            const menuButton = document.querySelector('.menu-button-fixed');
+            const closeMenuButton = document.querySelector('.close-menu');
+            const menuOverlay = document.querySelector('.menu-overlay');
+
+            if (menuButton && closeMenuButton && menuOverlay) {
+                menuButton.addEventListener('click', function () {
+                    menuOverlay.classList.add('active');
+                    document.body.style.overflow = 'hidden'; // Prevent scrolling when menu is open
+                });
+
+                closeMenuButton.addEventListener('click', function () {
+                    menuOverlay.classList.remove('active');
+                    document.body.style.overflow = ''; // Restore scrolling
+                });
+            }
+        });
