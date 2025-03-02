@@ -10,11 +10,32 @@ body {
     overflow-x: hidden;
     margin: 20px;
 }
+.climate{
+    color: white;
+}
 
 
-  p {
-      margin-bottom: 20px;
-  }
+.image-container-transport {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-left: 150px;
+    max-width: 100%;
+            /* Ensures responsiveness */
+    height: 350px;
+            /* Maintains aspect ratio */
+    width: 350px;
+            /* Adjust width as needed */
+    
+}
+
+
+
+
+
+
+
 
 /* Navigation */
 .nav-wrapper {
@@ -889,6 +910,7 @@ body {
     max-width: 800px;
     margin: 0 auto 30px;
     font-weight: 300;
+    color: white;
 }
 
 .subscribe-btn {
@@ -1139,3 +1161,4 @@ body {
 }
 
 
+/* table sections */
