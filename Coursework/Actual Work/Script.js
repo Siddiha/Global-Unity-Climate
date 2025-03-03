@@ -307,7 +307,7 @@ document.addEventListener('DOMContentLoaded', () => {
         
         // Open product page
         function openFile() {
-            window.open("empty.html", "_blank");
+            window.open("t-shirt.html", "_blank");
         }
 
 
@@ -524,3 +524,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 });
             }
         });
+
+
+
+
+
+        // scroll to top  
