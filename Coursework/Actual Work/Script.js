@@ -260,9 +260,9 @@ document.addEventListener('DOMContentLoaded', () => {
 // IMAGE
   // Images array for the slides
         const images = [
-            "Images/sneaker1.jpeg",
-            "Images/sneaker2.jpeg", 
-            "Images/sneaker3.jpeg"
+            "Images/shirt3.jpeg",
+            "Images/t-shirts1.png", 
+            "Images/TSHIRTS1.jpg"
         ];
         
         // Current active slide index (0-based)

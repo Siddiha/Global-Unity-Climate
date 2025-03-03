@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Unity</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Navigation */
+        .nav-wrapper-fixed {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            transition: all 0.3s ease;
+            padding: 15px 0;
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .brand-fixed {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            z-index: 1001;
+        }
+
+        .logo-text-fixed {
+            font-family: 'Bodoni Moda', serif;
+            font-size: 24px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            color: black;
+            text-transform: uppercase;
+            opacity: 1;
+        }
+
+        .nav-container-fixed {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+        }
+
+        .nav-right-fixed {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            margin-left: auto;
+        }
+
+        .icon-link-fixed {
+            color: black;
+            text-decoration: none;
+        }
+
+        .menu-button-fixed {
+            background: none;
+            border: none;
+            color: black;
+            cursor: pointer;
+            font-size: 14px;
+            letter-spacing: 1px;
+            padding: 5px;
+        }
+
+        .hamburger-icon span {
+            display: block;
+            width: 100%;
+            height: 2px;
+            background-color: black;
+        }
+
+        .content {
+            margin-top: 70px;
+            min-height: 200vh;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="nav-wrapper-fixed">
+        <div class="nav-container-fixed">
+            <div class="brand-fixed">
+                <a href="/" class="logo">
+                    <span class="logo-text-fixed">GLOBAL UNITY</span>
+                </a>
+            </div>
+            <div class="nav-right-fixed">
+                <a href="/cart" class="icon-link-fixed">
+                    <svg class="icon" viewBox="0 0 24 24">
+                        <path d="M4 7h16v14H4V7zm4-5h8v3H8V2z" fill="none" stroke="currentColor" stroke-width="2" />
+                    </svg>
+                </a>
+                <a href="/account" class="icon-link-fixed">
+                    <svg class="icon" viewBox="0 0 24 24">
+                        <circle cx="12" cy="8" r="4" fill="none" stroke="currentColor" stroke-width="2" />
+                        <path d="M4 20c0-4.4 3.6-8 8-8s8 3.6 8 8" fill="none" stroke="currentColor" stroke-width="2" />
+                    </svg>
+                </a>
+                <a href="/search" class="icon-link-fixed">
+                    <svg class="icon" viewBox="0 0 24 24">
+                        <circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2" />
+                        <path d="M16 16l4 4" stroke="currentColor" stroke-width="2" />
+                    </svg>
+                </a>
+                <button class="menu-button-fixed">
+                    <div class="hamburger-icon">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="menu-overlay">
+        <div class="menu-content">
+            <div class="menu-container">
+                <div class="menu-header">
+                    <div></div>
+                    <button class="close-menu">✕</button>
+                </div>
+                <div class="menu-grid">
+                    <div class="menu-section">
+                        <ul class="menu-list">
+                            <li><a href="splash.html">Splash Screen</a></li>
+                            <li><a href="/new">New In</a></li>
+                            <li><a href="/bags">Handbags</a></li>
+                            <li><a href="/travel">Travel</a></li>
+                            <li><a href="/beauty">Fragrances & Make-Up</a></li>
+                        </ul>
+                    </div>
+                    <div class="menu-section secondary">
+                        <ul class="menu-list">
+                            <li><a href="team.html">Team Page</a></li>
+                            <li><a href="profile.html">Profile</a></li>
+                            <li><a href="sitemap.html">Sitemap</a></li>
+                            <li class="spacer"></li>
+                            <li><a href="/signin" class="underline">Sign In</a></li>
+                            <li><a href="/orders" class="underline">My Orders</a></li>
+                            <li><a href="/contact" class="underline">Contact Us</a></li>
+                            <li><a href="tel:+18774822430" class="underline">+1 877 482 2430</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <main class="content">
+        <div class="main-wrapper">
+            <h1>Men's Bags Collection</h1>
+            <div class="bags-collection">
+                <!-- Backpack -->
+                <div class="bag-item">
+                    <img src="Images/shirt3.jpeg" alt="Backpack">
+                    <div class="item-info">
+                        <h3>Backpack</h3>
+                        <p>Beige and dark brown GG canvas with brown leather trim.</p>
+                        <p class="item-price">$1,500</p>
+                        <div class="specs">
+                            <h4>Specifications</h4>
+                            <ul>
+                                <li><strong>Style:</strong> 824624 FAEHZ 9795</li>
+                                <li><strong>Collection:</strong> Spring Summer 2025</li>
+                                <li><strong>Material:</strong> Beige and dark brown GG canvas, brown leather trim</li>
+                                <li><strong>Lining:</strong> Beige cotton linen</li>
+                                <li><strong>Features:</strong> Embossed Gucci logo, web loop detail, padded laptop
+                                    compartment, pen holder, front zip pocket</li>
+                                <li><strong>Dimensions:</strong> 14.2"W x 16.5"H x 8.3"D</li>
+                                <li><strong>Weight:</strong> 2.9lbs</li>
+                                <li><strong>Made in:</strong> Italy</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Duffle Bag -->
+                <div class="bag-item">
+                    <img src="Images/t-shirts1.png" alt="Duffle Bag">
+                    <div class="item-info">
+                        <h3>Duffle Bag</h3>
+                        <p>Softly-structured duffle bag in black leather.</p>
+                        <p class="item-price">$1,200</p>
+                        <div class="specs">
+                            <h4>Specifications</h4>
+                            <ul>
+                                <li><strong>Style:</strong> 824625 FAEHZ 9796</li>
+                                <li><strong>Collection:</strong> Spring Summer 2025</li>
+                                <li><strong>Material:</strong> Black leather</li>
+                                <li><strong>Lining:</strong> Black polyester</li>
+                                <li><strong>Features:</strong> Top zip closure, adjustable shoulder strap, interior zip
+                                    pocket</li>
+                                <li><strong>Dimensions:</strong> 18"W x 10"H x 10"D</li>
+                                <li><strong>Weight:</strong> 3.2lbs</li>
+                                <li><strong>Made in:</strong> Italy</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Briefcase -->
+                <div class="bag-item">
+                    <img src="Images/shirt3.jpeg" alt="Briefcase">
+                    <div class="item-info">
+                        <h3>Briefcase</h3>
+                        <p>Classic briefcase in brown leather with gold hardware.</p>
+                        <p class="item-price">$1,800</p>
+                        <div class="specs">
+                            <h4>Specifications</h4>
+                            <ul>
+                                <li><strong>Style:</strong> 824626 FAEHZ 9797</li>
+                                <li><strong>Collection:</strong> Spring Summer 2025</li>
+                                <li><strong>Material:</strong> Brown leather</li>
+                                <li><strong>Lining:</strong> Brown polyester</li>
+                                <li><strong>Features:</strong> Gold hardware, top handle, detachable shoulder strap,
+                                    multiple compartments</li>
+                                <li><strong>Dimensions:</strong> 15"W x 12"H x 5"D</li>
+                                <li><strong>Weight:</strong> 2.5lbs</li>
+                                <li><strong>Made in:</strong> Italy</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Messenger Bag -->
+                <div class="bag-item">
+                    <img src="Images/TSHIRTS1.jpg" alt="Messenger Bag">
+                    <div class="item-info">
+                        <h3>Messenger Bag</h3>
+                        <p>Stylish messenger bag in navy blue canvas.</p>
+                        <p class="item-price">$1,300</p>
+                        <div class="specs">
+                            <h4>Specifications</h4>
+                            <ul>
+                                <li><strong>Style:</strong> 824627 FAEHZ 9798</li>
+                                <li><strong>Collection:</strong> Spring Summer 2025</li>
+                                <li><strong>Material:</strong> Navy blue canvas</li>
+                                <li><strong>Lining:</strong> Navy blue polyester</li>
+                                <li><strong>Features:</strong> Adjustable shoulder strap, front flap with buckle
+                                    closure, interior zip pocket</li>
+                                <li><strong>Dimensions:</strong> 14"W x 11"H x 4"D</li>
+                                <li><strong>Weight:</strong> 2.3lbs</li>
+                                <li><strong>Made in:</strong> Italy</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- footer secion -->
+    
+    <footer class="gucci-footer">
+        <!-- Newsletter Subscription Section -->
+        <div class="footer-newsletter">
+            <h2 class="climate">SIGN UP FOR GLOBAL UNITY UPDATES</h2>
+            <p class="newsletter-text" class="climate">
+                Get exclusive updates on the collection's launch, personalized communication and the House's latest
+                news.
+            </p>
+    
+        </div>
+    
+        <!-- Footer Links Section -->
+        <div class="footer-links-container">
+            <!-- Help Column -->
+            <div class="footer-column">
+                <h3 class="climate">MAY WE HELP YOU?</h3>
+                <ul class="footer-links">
+                    <li><a href="home.html">Contact Us</a></li>
+                    <li><a href="orders.html">My Order</a></li>
+                    <li><a href="faqs.html">FAQs</a></li>
+                    <li><a href="unsubscribe.html">Email Unsubscribe</a></li>
+                    <li><a href="sitemap.html">Sitemap</a></li>
+                </ul>
+            </div>
+    
+            <!-- Company Column -->
+            <div class="footer-column">
+                <h3 class="climate">THE COMPANY</h3>
+                <ul class="footer-links">
+                    <li><a href="about.html">About Global Unity</a></li>
+                    <li><a href="equilibrium.html">Global Unity Equilibrium</a></li>
+                    <li><a href="ethics.html">Code of Ethics</a></li>
+                    <li><a href="careers.html">Careers</a></li>
+                    <li><a href="legal.html">Legal</a></li>
+                    <li><a href="privacy-policy.html">Privacy & Cookie Policy</a></li>
+                    <li><a href="cookie-settings.html">Cookie Settings</a></li>
+                    <li><a href="corporate.html">Corporate Information</a></li>
+                </ul>
+            </div>
+    
+            <!-- Store Locator and Newsletter Column -->
+            <div class="footer-column wide-column">
+                <h3 class="climate">STORE LOCATOR</h3>
+                <div class="input-wrapper">
+                    <input type="text" placeholder="Country/Region, City" class="footer-input">
+                    <span class="arrow-icon">›</span>
+                </div>
+    
+                <!-- Second Newsletter Section -->
+                <div class="footer-signup">
+                    <h3 class="climate">SIGN UP FOR GLOBAL UNITY UPDATES</h3>
+                    <p class="signup-text">
+                        By entering your email address below, you consent to receiving our newsletter with access to our
+                        latest collections, events and initiatives. More details on this are provided in our <a
+                            href="privacy-policy.html" class="text-link">Privacy Policy</a>
+                    </p>
+                    <div class="input-wrapper">
+                        <input type="email" placeholder="Email" class="footer-input">
+                        <span class="arrow-icon">›</span>
+                    </div>
+    
+                    <!-- Country Selector -->
+                    <div class="country-selector">
+                        <h4>COUNTRY/REGION</h4>
+                        <a href="country.html" class="country-link">SRI LANKA</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    
+        <p class="copyright">© 2022-2025 Global Unity Inc. - All rights reserved.</p>
+        </div>
+    
+        <!-- Big Brand Logo -->
+        <div class="big-logo">
+            <h1 class="climate">GLOBAL UNITY</h1>
+        </div>
+    </footer>
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>

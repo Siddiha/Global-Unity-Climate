@@ -65,7 +65,11 @@ margin: 0 auto;
 padding: 20px;
 }
 
-
+ p {
+     font-size: 1.1rem;
+     margin-bottom: 20px;
+     text-align: justify;
+ }
 
 
 
@@ -1323,3 +1327,83 @@ footer a {
 footer a:hover {
     text-decoration: underline;
 }
+
+
+
+
+
+/* t-shirt collections */
+ /* General Styles */
+
+ .main-wrapper {
+     max-width: 1200px;
+     margin: 0 auto;
+     padding: 20px;
+ }
+
+ /* Bags Collection Grid */
+ .bags-collection {
+     display: grid;
+     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+     gap: 20px;
+     margin-top: 40px;
+ }
+
+ .bag-item {
+     background-color: #fff;
+     border-radius: 8px;
+     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+     overflow: hidden;
+     transition: transform 0.3s ease;
+ }
+
+ .bag-item:hover {
+     transform: translateY(-5px);
+ }
+
+ .bag-item img {
+     width: 100%;
+     height: auto;
+     display: block;
+ }
+
+ .bag-item .item-info {
+     padding: 20px;
+ }
+
+ .bag-item h3 {
+     font-size: 1.2rem;
+     margin-bottom: 10px;
+ }
+
+ .bag-item p {
+     font-size: 0.9rem;
+     color: #666;
+ }
+
+ .bag-item .item-price {
+     font-size: 1.1rem;
+     font-weight: 600;
+     color: #16a085;
+     margin-top: 10px;
+ }
+
+ /* Bag Specifications */
+ .bag-specs {
+     margin-top: 40px;
+ }
+
+ .bag-specs h2 {
+     color: #2c3e50;
+ }
+
+ .bag-specs ul {
+     list-style-type: none;
+     padding: 0;
+ }
+
+ .bag-specs ul li {
+     margin-bottom: 10px;
+     font-size: 1rem;
+     color: #555;
+ }
