@@ -1335,75 +1335,182 @@ footer a:hover {
 /* t-shirt collections */
  /* General Styles */
 
- .main-wrapper {
-     max-width: 1200px;
-     margin: 0 auto;
-     padding: 20px;
- }
+/* Banner Section */
+.main-banner {
+    position: relative;
+    width: 100%;
+    height: 600px;
+    overflow: hidden;
+}
 
- /* Bags Collection Grid */
- .bags-collection {
-     display: grid;
-     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-     gap: 20px;
-     margin-top: 40px;
- }
 
- .bag-item {
-     background-color: #fff;
-     border-radius: 8px;
-     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-     overflow: hidden;
-     transition: transform 0.3s ease;
- }
 
- .bag-item:hover {
-     transform: translateY(-5px);
- }
+#collect{
+    color: white;
+    text-align: center;
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    text-align: justify;
+}
 
- .bag-item img {
-     width: 100%;
-     height: auto;
-     display: block;
- }
+.main-banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    margin-top: 60px;
+}
 
- .bag-item .item-info {
-     padding: 20px;
- }
+.banner-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    width: 100%;
+}
 
- .bag-item h3 {
-     font-size: 1.2rem;
-     margin-bottom: 10px;
- }
+.banner-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
 
- .bag-item p {
-     font-size: 0.9rem;
-     color: #666;
- }
+.banner-content p {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
 
- .bag-item .item-price {
-     font-size: 1.1rem;
-     font-weight: 600;
-     color: #16a085;
-     margin-top: 10px;
- }
+.banner-content p a {
+    color: white;
+    text-decoration: underline;
+}
 
- /* Bag Specifications */
- .bag-specs {
-     margin-top: 40px;
- }
+/* Collection Section */
+.collection-wrapper {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
 
- .bag-specs h2 {
-     color: #2c3e50;
- }
+.items-layout {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
 
- .bag-specs ul {
-     list-style-type: none;
-     padding: 0;
- }
+.item-box {
+    position: relative;
+    border: 1px solid #eee;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
 
- .bag-specs ul li {
-     margin-bottom: 10px;
-     font-size: 1rem;
-     color: #555;
- }
+.item-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.item-visual {
+    position: relative;
+    overflow: hidden;
+}
+
+.item-visual img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    display: block;
+}
+
+.favorite-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.item-details {
+    padding: 20px;
+    background-color: white;
+    transform: translateY(0);
+    transition: transform 0.3s ease;
+}
+
+.item-title {
+    font-size: 1rem;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.item-cost {
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.item-box:hover .item-cost {
+    opacity: 1;
+}
+
+.item-box:hover .item-details {
+    transform: translateY(0);
+}
+
+.purchase-btn {
+    display: block;
+    width: 120px;
+    margin: 10px auto 0;
+    padding: 8px 0;
+    background: none;
+    border: 1px solid #333;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    color: #333;
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.item-box:hover .purchase-btn {
+    opacity: 1;
+}
+
+.purchase-btn:hover {
+    background-color: #333;
+    color: white;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .items-layout {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 576px) {
+    .items-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .banner-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .banner-content p {
+        font-size: 1rem;
+        padding: 0 20px;
+    }
+}
+
+
