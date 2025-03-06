@@ -381,7 +381,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 // footer section part
-// JavaScript for Gucci-style footer interactions
+// JavaScript for bglobal unity  footer interactions
 document.addEventListener('DOMContentLoaded', function() {
     // Newsletter subscription toggle
     const subscribeBtn = document.querySelector('.subscribe-btn');
@@ -524,6 +524,35 @@ document.addEventListener('DOMContentLoaded', function() {
                 });
             }
         });
+
+
+
+
+
+//evenlisterners to all the purchase button
+document.addEventListener('DOMContentLoaded', () => {
+    // Add event listeners to all purchase buttons
+    const purchaseButtons = document.querySelectorAll('.purchase-btn');
+    purchaseButtons.forEach(button => {
+        button.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.location.href = button.getAttribute('href');
+        });
+    });
+
+    // Add event listeners to favorite icons
+    const favoriteIcons = document.querySelectorAll('.favorite-icon');
+    favoriteIcons.forEach(icon => {
+        icon.addEventListener('click', () => {
+            icon.classList.toggle('favorited');
+        });
+    });
+});
+
+
+
+
+
 
 
 
