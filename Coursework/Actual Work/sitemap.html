@@ -102,6 +102,45 @@
             min-height: 200vh;
             /* Enables scrolling */
         }
+
+/* site map css  */
+/* Site map CSS with muted gray, purple, and green color palette */
+/* Using a subtle, professional color scheme with consistent hover effects */
+
+/* Hover effects for Level 1 rectangles (light gray) */
+.rect1:hover, .rect2:hover, .rect3:hover, .rect4:hover {
+    fill: #7D7570; /* Darker taupe/gray for hover */
+    transition: fill 0.3s ease;
+}
+
+/* Hover effects for Level 2 rectangles (light purple) */
+.rect5:hover, .rect6:hover, .rect7:hover, .rect8:hover {
+    fill: #7C7687; /* Darker lavender/purple for hover */
+    transition: fill 0.3s ease;
+}
+
+/* Hover effects for Level 3 rectangles (light green) */
+.rect9:hover, .rect10:hover {
+    fill: #6A989E; /* Darker sage green/blue for hover */
+    transition: fill 0.3s ease;
+}
+
+/* Optional: Add text glow on hover for better visibility */
+text:hover {
+    text-shadow: 0 0 3px #eeeeee;
+}
+
+/* Optional: Add smooth transitions for all elements */
+rect {
+    transition: fill 0.3s ease;
+}
+
+/* Optional: Darken text for better readability on lighter backgrounds */
+text {
+    fill: white; /* Ensure all text is white for better contrast */
+}
+
+
     </style>
 </head>
 
@@ -179,7 +218,143 @@
             </div>
         </div>
     </div>
-    <main class="content"></main>
+    <main class="content">
+        <body>
+            <title>Site Map</title>
+            <h1 style="text-align: center">Site Map</h1>
+            <svg viewBox="0 0 1000 1000" width="100%">
+                <!-- Background to help visualize the entire canvas -->
+                <rect x="0" y="0" width="1000" height="1000" fill="White" />
+            
+                <!-- New color palette:
+                     - Main: #5D5C61 (charcoal gray) for the home page
+                     - Level 1: #B1A296 (light taupe/gray) with consistent hover
+                     - Level 2: #ADA8B6 (light lavender/purple) with consistent hover
+                     - Level 3: #93B7BE (light sage green/blue) with consistent hover
+                -->
+            
+                <!-- Home Page (Level 0) -->
+                <rect x="425" y="80" width="150" height="60" rx="10" fill="#5D5C61" />
+            
+                <!-- Level 1 Pages -->
+                <rect class="rect1" x="50" y="220" width="150" height="60" rx="10" fill="#B1A296" />
+                <rect class="rect2" x="250" y="220" width="150" height="60" rx="10" fill="#B1A296" />
+                <rect class="rect3" x="450" y="220" width="150" height="60" rx="10" fill="#B1A296" />
+                <rect class="rect4" x="650" y="220" width="170" height="60" rx="10" fill="#B1A296" />
+            
+                <!-- Connecting lines -->
+                <line x1="500" y1="140" x2="500" y2="180" stroke="#707070" stroke-width="3" />
+                <line x1="125" y1="180" x2="725" y2="180" stroke="#707070" stroke-width="3" />
+                <line x1="125" y1="180" x2="125" y2="220" stroke="#707070" stroke-width="3" />
+                <line x1="725" y1="180" x2="725" y2="220" stroke="#707070" stroke-width="3" />
+                <line x1="325" y1="180" x2="325" y2="220" stroke="#707070" stroke-width="3" />
+                <line x1="525" y1="180" x2="525" y2="220" stroke="#707070" stroke-width="3" />
+            
+                <!-- Volunteer page connections -->
+                <line x1="225" y1="180" x2="225" y2="350" stroke="#707070" stroke-width="3" />
+                <line x1="125" y1="350" x2="815" y2="350" stroke="#707070" stroke-width="3" />
+                <line x1="125" y1="350" x2="125" y2="390" stroke="#707070" stroke-width="3" />
+                <line x1="325" y1="350" x2="325" y2="390" stroke="#707070" stroke-width="3" />
+                <line x1="525" y1="350" x2="525" y2="390" stroke="#707070" stroke-width="3" />
+                <line x1="725" y1="350" x2="725" y2="390" stroke="#707070" stroke-width="3" />
+            
+                <!-- Level 2 Pages -->
+                <g class="Rectangles3">
+                    <rect class="rect5" x="50" y="390" width="150" height="60" rx="10" fill="#ADA8B6" />
+                    <rect class="rect6" x="250" y="390" width="150" height="60" rx="10" fill="#ADA8B6" />
+                    <rect class="rect7" x="450" y="390" width="150" height="60" rx="10" fill="#ADA8B6" />
+                    <rect class="rect8" x="650" y="390" width="150" height="60" rx="10" fill="#ADA8B6" />
+                </g>
+            
+                <!-- Level 2 labels -->
+                <text x="120" y="425" text-anchor="middle" fill="white" font-family="Arial" font-size="18" font-weight="bold"
+                    cursor="pointer">
+                    <a href="C:\Users\DELL\Desktop\java\web development\ceeeeewww.html"> Team Page</text>
+                <text x="320" y="425" text-anchor="middle" fill="white" font-family="Arial" font-size="18" font-weight="bold"
+                    cursor="pointer">
+                    <a href="C:\Users\DELL\Desktop\java\web development\ceeeeewww.html"> Profile</text>
+                <text x="520" y="425" text-anchor="middle" fill="white" font-family="Arial" font-size="18" font-weight="bold"
+                    cursor="pointer">
+                    <a href="C:\Users\DELL\Desktop\java\web development\ceeeeewww.html"> Sitemap</text>
+                <text x="720" y="425" text-anchor="middle" fill="white" font-family="Arial" font-size="18" font-weight="bold"
+                    cursor="pointer">
+                    <a href="C:\Users\DELL\Desktop\java\web development\ceeeeewww.html"> Sign In</text>
+            
+                <!-- Level 3 connections -->
+                <line x1="815" y1="350" x2="815" y2="520" stroke="#707070" stroke-width="3" />
+                <line x1="725" y1="520" x2="925" y2="520" stroke="#707070" stroke-width="3" />
+                <line x1="725" y1="520" x2="725" y2="560" stroke="#707070" stroke-width="3" />
+                <line x1="925" y1="520" x2="925" y2="560" stroke="#707070" stroke-width="3" />
+            
+                <!-- Level 3 Pages -->
+                <g class="Rectangles4">
+                    <rect class="rect9" x="650" y="560" width="150" height="60" rx="10" fill="#93B7BE" />
+                    <rect class="rect10" x="850" y="560" width="150" height="60" rx="10" fill="#93B7BE" />
+                </g>
+            
+                <!-- Level 3 labels -->
+                <text x="725" y="595" text-anchor="middle" fill="white" font-family="Arial" font-size="18" font-weight="bold"
+                    cursor="pointer">
+                    <a href="file:///C:/Users/DELL/Desktop/java/web%20development/cw33.html">My orders</text>
+                <text x="925" y="595" text-anchor="middle" fill="white" font-family="Arial" font-size="18" font-weight="bold"
+                    cursor="pointer">
+                    <a href="file:///C:/Users/DELL/Desktop/java/web%20development/cw33.html">Contact-Us</text>
+            
+                <!-- Level 0 label -->
+                <text x="500" y="115" text-anchor="middle" fill="white" font-family="Arial" font-size="18" font-weight="bold"
+                    cursor="pointer">
+                    <a href="home.html">Home Page</text>
+            
+                <!-- Level 1 labels -->
+                <text x="125" y="255" text-anchor="middle" fill="white" font-family="Arial" font-size="16" font-weight="bold"
+                    cursor="pointer">
+                    <a href="splash.html">Splash Screen</text>
+                <text x="325" y="255" text-anchor="middle" fill="white" font-family="Arial" font-size="16" font-weight="bold"
+                    cursor="pointer">
+                    <a href="C:\Users\DELL\Desktop\java\web development\ceeeeewww.html">Volunteer</a></text>
+                <text x="525" y="255" text-anchor="middle" fill="white" font-family="Arial" font-size="16" font-weight="bold"
+                    cursor="pointer">
+                    <a href="file:///C:/Users/DELL/Desktop/java/web%20development/cw33.html">Travel</text>
+                <text x="735" y="255" text-anchor="middle" fill="white" font-family="Arial" font-size="16" font-weight="bold"
+                    cursor="pointer">
+                    <a href="file:///C:/Users/DELL/Desktop/java/web%20development/cw33.html">Fragrance & Make-Up</text>
+            </svg>
+        </body>
+        
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </main>
 
     <!-- footer secion -->
 
