@@ -263,8 +263,8 @@
 
                 <!-- Temporary placeholder to show calendar position -->
                 <div style="border: 1px dashed #ccc; padding: 10px; text-align: center; margin-bottom: 10px;">
-                    Calendar will appear here
-                    <br>(Make sure to include moment.js and pikaday.js in your project)
+                    
+                    <br>
                 </div>
             </div>
 
@@ -311,7 +311,84 @@
             <textarea id="message" name="message" required></textarea><br><br>
 
             <button type="button" onclick="sendViaWhatsApp()">Send via WhatsApp</button>
+            <!-- Edit Section (Hidden by Default) -->
+            <div class="edit-mode" id="editSection" style="display: none; padding: 20px;">
+                <h2>Edit Profile</h2>
+                <input type="text" id="nameInput" placeholder="Enter your name"
+                    style="width: 100%; margin-bottom: 10px; padding: 5px;">
+                <textarea id="bioInput" placeholder="Enter bio"
+                    style="width: 100%; height: 100px; margin-bottom: 10px; padding: 5px;"></textarea>
+            
+                <!-- Image Upload Section -->
+                <div class="image-upload-section">
+                    <h2>Edit Profile Images</h2>
+            
+                    <div class="file-input-container">
+                        <label for="rectangleImageInput">Background Image:</label>
+                        <input type="file" id="rectangleImageInput" accept="image/*" onchange="previewRectangleImage(event)">
+                        <div id="rectangleImagePreview" style="margin-top: 10px; max-width: 200px;">
+                            <img id="rectanglePreview" src="/api/placeholder/200/150" alt="Rectangle Preview" style="width: 100%;">
+                        </div>
+                    </div>
+            
+                    <div class="file-input-container">
+                        <label for="circularImageInput">Profile Picture:</label>
+                        <input type="file" id="circularImageInput" accept="image/*" onchange="previewCircularImage(event)">
+                        <div id="circularImagePreview"
+                            style="margin-top: 10px; width: 100px; height: 100px; border-radius: 50%; overflow: hidden;">
+                            <img id="circularPreview" src="/api/placeholder/100/100" alt="Circular Preview"
+                                style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                    </div>
+                </div>
+            
+                <button onclick="saveChanges()" style="margin-top: 10px; margin-right: 5px;">Save Profile</button>
+                <button onclick="toggleEdit()" style="margin-top: 10px;">Cancel</button>
+            
+                <!-- Skill Edit Section -->
+                <div class="skill-edit-section">
+                    <h2>Edit Skills</h2>
+                    <div style="margin-bottom: 10px;">
+                        <label for="htmlInput">HTML:</label>
+                        <input type="number" id="htmlInput" min="0" max="100" placeholder="90">
+                    </div>
+                    <div style="margin-bottom: 10px;">
+                        <label for="cssInput">CSS:</label>
+                        <input type="number" id="cssInput" min="0" max="100" placeholder="80">
+                    </div>
+                    <div style="margin-bottom: 10px;">
+                        <label for="jsInput">JavaScript:</label>
+                        <input type="number" id="jsInput" min="0" max="100" placeholder="65">
+                    </div>
+                    <div style="margin-bottom: 10px;">
+                        <label for="phpInput">PHP:</label>
+                        <input type="number" id="phpInput" min="0" max="100" placeholder="60">
+                    </div>
+                    <button onclick="saveSkillChanges()">Save Skills</button>
+                </div>
+            
+                <!-- Goals and Experience Edit Section -->
+                <div class="skill-edit-section">
+                    <h2>Edit Goals</h2>
+                    <textarea id="editGoals" placeholder="Enter goals, one per line"
+                        style="width: 100%; height: 100px; margin-bottom: 10px; padding: 5px;"></textarea>
+                    <h2>Edit Experience</h2>
+                    <textarea id="editExperienceText" placeholder="Enter experience text"
+                        style="width: 100%; height: 100px; margin-bottom: 10px; padding: 5px;"></textarea>
+                    <textarea id="editExperienceList" placeholder="Enter experience items, one per line"
+                        style="width: 100%; height: 100px; margin-bottom: 10px; padding: 5px;"></textarea>
+                    <button onclick="saveGoalsAndExperience()">Save Goals and Experience</button>
+                </div>
+            </div>
+            
+            <!-- Scripts -->
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.8.0/pikaday.min.js"></script>
+
+       
         </form>
+
+
 
     </div>
 </div>

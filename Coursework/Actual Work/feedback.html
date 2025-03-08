@@ -102,6 +102,7 @@
             min-height: 200vh;
             /* Enables scrolling */
         }
+
     </style>
 </head>
 
@@ -183,7 +184,101 @@
             </div>
         </div>
     </div>
-    <main class="content"></main>
+    <main class="content">
+
+        
+        <body>
+            <div class="feedback-container">
+                <h2>🌍 Climate Action Feedback Form</h2>
+                <p>Help us take action against climate change by sharing your thoughts and concerns!</p>
+        
+                <form id="feedbackForm" onsubmit="return storeData()">
+                    <!-- Personal Details Section -->
+                    <fieldset class="feedback-container__fieldset">
+                        <legend class="feedback-container__legend">Personal Details</legend>
+        
+                        <label for="feedback-name" class="feedback-container__label">Full Name:</label>
+                        <input type="text" id="feedback-name" class="feedback-container__input" placeholder="Enter your name"
+                            required>
+        
+                        <label for="feedback-email" class="feedback-container__label">Email Address:</label>
+                        <input type="email" id="feedback-email" class="feedback-container__input" placeholder="Enter your email"
+                            required title="Please enter a valid email address">
+        
+                        <label for="feedback-telephone" class="feedback-container__label">Telephone Number:</label>
+                        <input type="tel" id="feedback-telephone" class="feedback-container__input"
+                            placeholder="Enter your phone number" pattern="[0-9]{10}"
+                            title="Please enter a valid 10-digit phone number" required>
+        
+                        <label for="feedback-address" class="feedback-container__label">Address:</label>
+                        <textarea id="feedback-address" class="feedback-container__textarea" rows="4"
+                            placeholder="Enter your address" maxlength="250" required></textarea>
+                    </fieldset>
+        
+                    <!-- Feedback Section -->
+                    <fieldset class="feedback-container__fieldset">
+                        <legend class="feedback-container__legend">Feedback Details</legend>
+        
+                        <label for="feedback-comment" class="feedback-container__label">Your Feedback:</label>
+                        <textarea id="feedback-comment" class="feedback-container__textarea" rows="4"
+                            placeholder="Share your thoughts..." maxlength="500" required></textarea>
+                        <span class="feedback-container__error" id="feedback-comment-error">This field is required.</span>
+        
+                        <label for="feedback-concern-level" class="feedback-container__label">How concerned are you about
+                            climate change?</label>
+                        <input type="range" min="1" max="5" step="1" id="feedback-concern-level"
+                            class="feedback-container__input" required>
+        
+                        <label class="feedback-container__label">What actions do you take to reduce your carbon
+                            footprint?</label>
+                        <div>
+                            <label><input type="checkbox" name="feedback-actions" value="Recycling"> Recycling</label>
+                            <label><input type="checkbox" name="feedback-actions" value="Reducing plastic use"> Reducing plastic
+                                use</label>
+                            <label><input type="checkbox" name="feedback-actions" value="Using public transport"> Using public
+                                transport</label>
+                            <label><input type="checkbox" name="feedback-actions" value="Conserving energy"> Conserving
+                                energy</label>
+                        </div>
+        
+                        <label for="feedback-country" class="feedback-container__label">Country/Region:</label>
+                        <select id="feedback-country" class="feedback-container__select" required>
+                            <option value="">Select your country</option>
+                            <option value="USA">USA</option>
+                            <option value="UK">UK</option>
+                            <option value="India">India</option>
+                            <option value="SriLanka">Sri Lanka</option>
+                            <option value="Other">Other</option>
+                        </select>
+        
+                        <label for="feedback-date" class="feedback-container__label">Preferred date for feedback
+                            submission:</label>
+                        <input type="date" id="feedback-date" class="feedback-container__input" required>
+        
+                        <label for="feedback-file" class="feedback-container__label">Upload Attachment (e.g., screenshot or
+                            document):</label>
+                        <input type="file" id="feedback-file" class="feedback-container__input" accept=".jpg,.png,.pdf,.docx">
+        
+                        <label class="feedback-container__label">Rate your experience:</label>
+                        <div class="feedback-container__rating">
+                            <span onclick="selectRating(1)">⭐</span>
+                            <span onclick="selectRating(2)">⭐</span>
+                            <span onclick="selectRating(3)">⭐</span>
+                            <span onclick="selectRating(4)">⭐</span>
+                            <span onclick="selectRating(5)">⭐</span>
+                        </div>
+                        <p id="feedback-rating-value">You rated: 0 stars</p>
+                    </fieldset>
+        
+                    <br><br>
+                    <button type="submit" class="feedback-container__button">Submit Feedback</button>
+                    <button type="reset" class="feedback-container__button feedback-container__button--reset">Reset
+                        Form</button>
+                </form>
+            </div>
+        </body>
+
+    </main>
 
     <!-- footer secion -->
     <footer class="gucci-footer">
