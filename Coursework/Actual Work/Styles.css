@@ -147,6 +147,17 @@ padding: 20px;
     }
 }
 
+.nav-left {
+    position: absolute;
+    left: 5px;
+    /* Adjust the spacing from the left */
+}
+
+.nav-logo {
+    width: 45px;
+    height: 45px;
+}
+
 .nav-container {
     max-width: 1400px;
     margin: 0 auto;
@@ -189,6 +200,21 @@ padding: 20px;
     align-items: center;
     gap: 1.5rem;
 }
+
+
+
+.nav-left {
+    display: flex;
+    align-items: center;
+}
+
+.nav-logo {
+    width: 40px;
+    height: 40px;
+    margin-left: 100px;
+}
+
+
 
 .icon-link {
     color: white;
@@ -926,7 +952,7 @@ padding: 20px;
 
 
 /* footer section */
-/* Gucci-Style Footer CSS */
+
 .gucci-footer {
     background-color: #000;
     color: #fff;
@@ -959,26 +985,6 @@ padding: 20px;
     color: white;
 }
 
-.subscribe-btn {
-    background: transparent;
-    border: none;
-    color: white;
-    cursor: pointer;
-    font-size: 14px;
-    display: inline-flex;
-    align-items: center;
-    padding: 10px 15px;
-    transition: opacity 0.3s;
-}
-
-.subscribe-btn:hover {
-    opacity: 0.7;
-}
-
-.plus-icon {
-    margin-right: 8px;
-    font-size: 16px;
-}
 
 /* Links Section */
 .footer-links-container {
@@ -1077,6 +1083,9 @@ padding: 20px;
     font-size: 24px;
     cursor: pointer;
 }
+.copyright{
+    text-align: center;
+}
 
 /* Second Newsletter */
 .footer-signup {
@@ -1093,36 +1102,6 @@ padding: 20px;
 .text-link {
     color: #fff;
     text-decoration: underline;
-}
-
-/* Country Selector */
-.country-selector {
-    margin-top: 40px;
-}
-
-.country-selector h4 {
-    font-size: 12px;
-    font-weight: normal;
-    margin-bottom: 15px;
-    opacity: 0.7;
-}
-
-.country-link {
-    color: white;
-    text-decoration: none;
-    font-size: 14px;
-    position: relative;
-    display: inline-block;
-}
-
-.country-link::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 1px;
-    bottom: -2px;
-    left: 0;
-    background-color: #fff;
 }
 
 /* Brand Logos */
