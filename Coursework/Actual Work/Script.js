@@ -498,17 +498,28 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
+
+
+        
 // user profile section part 
- // Initialize Pikaday Calendar
-const picker = new Pikaday({
-  field: document.getElementById('calendar'), // Render the calendar inside this element
-  bound: false, // Do not bind to an input field
-  container: document.getElementById('calendar'), // Render the calendar inside this container
-  onSelect: function(date) {
-    const formattedDate = moment(date).format('YYYY-MM-DD');
-    selectedDates.push({ date: formattedDate, time: '' });
-    updateSelectedDatesList();
+// Initialize Pikaday Calendar
+document.addEventListener('DOMContentLoaded', function() {
+  // Initialize the calendar if the element exists
+  if (document.getElementById('calendar')) {
+    const picker = new Pikaday({
+      field: document.getElementById('calendar'), // Render the calendar inside this element
+      bound: false, // Do not bind to an input field
+      container: document.getElementById('calendar'), // Render the calendar inside this container
+      onSelect: function(date) {
+        const formattedDate = moment(date).format('YYYY-MM-DD');
+        selectedDates.push({ date: formattedDate, time: '' });
+        updateSelectedDatesList();
+      }
+    });
   }
+
+  // Initialize UN Goals
+  createImageGrid();
 });
 
 // Array to store selected dates and times
@@ -682,10 +693,30 @@ function saveGoalsAndExperience() {
 }
 
 // Goals Selection Functionality
+// Define UN Goals with their image paths
 const imagePaths = [
-  
-//  "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABdwAAAXcCAIAAAC3V9szAAAACXBIWXMAABcRAAAXEQHKJvM/AAAgAElEQVR4nOzdT2yUZ57oe6fK/2KqHG7S6baPWdoSzgpngRcjol7AAqTuhTPNLDLSEHpzWgrO7uZ0yDJMLmcXiKbPZoCWOotLEi/SkjkSLKL4bIx0AqsYCZaU7DOZ9A22Mcam3FfENKF5/afqeavqeavq89FI0/0a229V2S3V18/
-  
+  "Images/the-global-goals-grid-color.png", // Goal 1 - No Poverty
+
+];
+
+const goalNames = [
+  "No Poverty",
+  "Zero Hunger",
+  "Good Health and Well-being",
+  "Quality Education",
+  "Gender Equality",
+  "Clean Water and Sanitation",
+  "Affordable and Clean Energy",
+  "Decent Work and Economic Growth",
+  "Industry, Innovation and Infrastructure",
+  "Reduced Inequalities",
+  "Sustainable Cities and Communities",
+  "Responsible Consumption and Production",
+  "Climate Action",
+  "Life Below Water",
+  "Life on Land",
+  "Peace, Justice and Strong Institutions",
+  "Partnerships for the Goals"
 ];
 
 let selectedGoals = []; // Array to store selected goals
@@ -693,25 +724,40 @@ let selectedGoals = []; // Array to store selected goals
 // Function to create the image grid
 function createImageGrid() {
   const goalsContainer = document.getElementById('goalsContainer');
+  if (!goalsContainer) return;
+  
   goalsContainer.innerHTML = ''; // Clear previous content
-  imagePaths.forEach((path, index) => {
+  
+  // Use placeholder images for UN Goals
+  for (let i = 0; i < 17; i++) {
     const img = document.createElement('img');
-    img.src = path; // Use placeholder image
-    img.alt = `Goal ${index + 1}`;
+    img.src = `/api/placeholder/100/100`; // Use placeholder since we can't load external images
+    img.alt = `Goal ${i + 1}: ${goalNames[i]}`;
+    img.title = goalNames[i];
     img.classList.add('goal-image');
+    img.dataset.goalId = i + 1;
+    img.dataset.goalName = goalNames[i];
     img.addEventListener('click', () => toggleSelection(img));
     goalsContainer.appendChild(img);
-  });
+  }
 }
 
 // Function to toggle image selection
 function toggleSelection(img) {
   img.classList.toggle('selected');
-  const goal = { src: img.src, alt: img.alt };
+  const goalId = img.dataset.goalId;
+  const goalName = img.dataset.goalName;
+  
+  const goal = { 
+    id: goalId, 
+    name: goalName,
+    src: img.src
+  };
+  
   if (img.classList.contains('selected')) {
     selectedGoals.push(goal); // Add to selected goals
   } else {
-    selectedGoals = selectedGoals.filter(g => g.src !== img.src); // Remove from selected goals
+    selectedGoals = selectedGoals.filter(g => g.id !== goalId); // Remove from selected goals
   }
 }
 
@@ -721,6 +767,8 @@ function saveGoals() {
   const saveButton = document.getElementById('saveButton');
   const selectedGoalsSection = document.getElementById('selectedGoals');
   const editMode = document.getElementById('editMode');
+
+  if (!goalsContainer || !saveButton || !selectedGoalsSection || !editMode) return;
 
   // Hide the grid and save button
   goalsContainer.style.display = 'none';
@@ -737,11 +785,15 @@ function saveGoals() {
 // Function to update the selected goals section
 function updateSelectedGoals() {
   const selectedImagesContainer = document.getElementById('selectedImages');
+  if (!selectedImagesContainer) return;
+  
   selectedImagesContainer.innerHTML = ''; // Clear previous selections
+  
   selectedGoals.forEach(goal => {
     const img = document.createElement('img');
     img.src = goal.src;
-    img.alt = goal.alt;
+    img.alt = `Goal ${goal.id}: ${goal.name}`;
+    img.title = goal.name;
     img.addEventListener('click', () => removeGoal(goal));
     selectedImagesContainer.appendChild(img);
   });
@@ -749,7 +801,7 @@ function updateSelectedGoals() {
 
 // Function to remove a goal
 function removeGoal(goal) {
-  selectedGoals = selectedGoals.filter(g => g.src !== goal.src); // Remove from selected goals
+  selectedGoals = selectedGoals.filter(g => g.id !== goal.id); // Remove from selected goals
   updateSelectedGoals(); // Update the display
 }
 
@@ -760,6 +812,8 @@ function addMoreGoals() {
   const selectedGoalsSection = document.getElementById('selectedGoals');
   const editMode = document.getElementById('editMode');
 
+  if (!goalsContainer || !saveButton || !selectedGoalsSection || !editMode) return;
+
   // Show the grid and save button
   goalsContainer.style.display = 'grid';
   saveButton.style.display = 'block';
@@ -767,14 +821,7 @@ function addMoreGoals() {
   // Hide the selected goals and edit mode
   selectedGoalsSection.style.display = 'none';
   editMode.style.display = 'none';
-
-  // Reset selected goals
-  selectedGoals = [];
-  updateSelectedGoals();
 }
-
-// Initialize the image grid
-createImageGrid();
 
 // Function to send form data via WhatsApp
 function sendViaWhatsApp() {
@@ -794,6 +841,3 @@ function sendViaWhatsApp() {
   // Open WhatsApp in a new tab
   window.open(whatsappLink, "_blank");
 }
- 
- 
- 

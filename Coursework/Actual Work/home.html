@@ -11,31 +11,14 @@
 </head>
 
 <body>
-    <!-- scrolling section -->
-     
-
-
-
-
-
-
-
-
-
-
-
-
-
+    <!-- Navigation -->
     <nav class="nav-wrapper">
         <div class="nav-container">
             <div class="brand">
-              
                 <a href="/" class="logo">
-                   
                     <span class="logo-text">GLOBAL UNITY</span>
                 </a>
             </div>
-
             <div class="nav-right">
                 <a href="home.html" class="icon-link">
                     <svg class="icon" viewBox="0 0 24 24">
@@ -55,16 +38,17 @@
                     </svg>
                 </a>
                 <button class="menu-button">
-                    <div class="hamburger-icon">
+                    <span class="hamburger-icon">
                         <span></span>
                         <span></span>
                         <span></span>
-                    </div>
+                    </span>
                 </button>
             </div>
         </div>
     </nav>
 
+    <!-- Menu Overlay -->
     <div class="menu-overlay">
         <div class="menu-content">
             <div class="menu-container">
@@ -72,7 +56,6 @@
                     <div></div>
                     <button class="close-menu">✕</button>
                 </div>
-
                 <div class="menu-grid">
                     <div class="menu-section">
                         <ul class="menu-list">
@@ -83,7 +66,6 @@
                             <li><a href="/beauty">Fragrances & Make-Up</a></li>
                         </ul>
                     </div>
-
                     <div class="menu-section secondary">
                         <ul class="menu-list">
                             <li><a href="team.html">Team Page</a></li>
@@ -95,17 +77,14 @@
                             <li><a href="/contact" class="underline">Contact Us</a></li>
                         </ul>
                     </div>
-                    
                 </div>
             </div>
         </div>
     </div>
 
-
-
-    
-
+    <!-- Main Content -->
     <main class="content">
+        <!-- Hero Section -->
         <section class="hero">
             <div class="brand-overaly">GLOBAL UNITY</div>
             <video autoplay muted preload="auto">
@@ -113,252 +92,244 @@
                 <source src="Images/cover.webm" type="video/webm">
                 Your browser does not support the video tag.
             </video>
-
             <div class="video-text">
-                <h1 class="climate">Combating Climate Change for a Resilient and Thriving Future</h1>
+                <h2 class="climate">Combating Climate Change for a Resilient and Thriving Future</h2>
                 <div class="text-row">
                     <span id="for-her">FOR Civilians</span>
                     <span id="for-him">FOR Humanity</span>
                 </div>
             </div>
+        </section>
 
-            </section>
+        <!-- Curated Section -->
+        <section class="curated-section">
+            <h2>Pillars of Sustainability</h2>
+        </section>
 
-            <section class="curated-section">
-                <h2 class="curated-heading">Pillars of Sustainability</h2>
-            </section>
-
-
-
-            <!--content pages of 4 students-->
-    <div class="product-grid">
-        <div class="product-item" onclick="navigateToProduct('Ecosystem')">
-            <div class="image-container">
-                <a href="ST1.html"><img src="Images/biodiversity.jpg" alt="Ecosystem"></a>
+        <!-- Product Grid -->
+        <div class="product-grid">
+            <div class="product-item" onclick="navigateToProduct('Ecosystem')">
+                <div class="image-container">
+                    <a href="ST1.html"><img src="Images/biodiversity.jpg" alt="Ecosystem"></a>
+                </div>
+                <div class="product-title">
+                    <a href="#">Ecosystem</a>
+                    <p class="product-description">Focuses on protecting and restoring natural habitats to maintain
+                        biodiversity.</p>
+                </div>
             </div>
-            <div class="product-title">
-                <a href="#">Ecosystem</a>
-                <p class="product-description">Focuses on protecting and restoring natural habitats to maintain biodiversity.
-</p>
+            <div class="product-item" onclick="navigateToProduct('urban sustainable')">
+                <div class="image-container">
+                    <a href="ST2.html"><img src="Images/Sustainable.jpeg" alt="Urban Sustainability"></a>
+                </div>
+                <div class="product-title">
+                    <a href="#">Urban Sustainability</a>
+                    <p class="product-description">Livable through green spaces, waste reduction, and efficient
+                        transport.</p>
+                </div>
             </div>
-        </div>
-    
-        <div class="product-item" onclick="navigateToProduct('urban sustainable')">
-            <div class="image-container">
-                <a href="ST2.html"><img src="Images/Sustainable.jpeg" alt="Urban Sustainability"></a>
+            <div class="product-item" onclick="navigateToProduct('Renewable Energy Solutions')">
+                <div class="image-container">
+                    <a href="ST4.html"><img src="Images/emissions.jpeg" alt="Renewable Energy"></a>
+                </div>
+                <div class="product-title">
+                    <a href="#">Renewable Energy</a>
+                    <p class="product-description">Innovative technologies and policies aimed at promoting sustainable
+                        sources.</p>
+                </div>
             </div>
-            <div class="product-title">
-                <a href="#">Urban Sustainability</a>
-                <p class="product-description">livable through green spaces ,  waste reduction and efficient transport. </p>
-            </div>
-        </div>
-    
-        <div class="product-item" onclick="navigateToProduct('Renewable Energy Solutions')">
-            <div class="image-container">
-                <a href="ST4.html"><img src="Images/emissions.jpeg" alt=" Renewable Energy 
-"></a>
-            </div>
-            <div class="product-title">
-                <a href="#">Renewable Energy </a>
-                <p class="product-description">Innovative technologies and policies
-                    aimed at promoting sustainable sources.</p>
-            </div>
-        </div>
-    
-        <div class="product-item" onclick="navigateToProduct('Education & Advocacy')">
-            <div class="image-container">
-                <a href="ST3.html"><img src="Images/Justice.jpeg" alt="Education & Advocacy"></a>
-            </div>
-            <div class="product-title">
-                <a href="#">Education & Advocacy</a>
-                <p class="product-description">Raising awareness and promoting policies through education and activism,
-</p>
+            <div class="product-item" onclick="navigateToProduct('Education & Advocacy')">
+                <div class="image-container">
+                    <a href="ST3.html"><img src="Images/Justice.jpeg" alt="Education & Advocacy"></a>
+                </div>
+                <div class="product-title">
+                    <a href="#">Education & Advocacy</a>
+                    <p class="product-description">Raising awareness and promoting policies through education and
+                        activism.</p>
+                </div>
             </div>
         </div>
-    </div>
 
-
-
- <!-- image slider  -->
-
-<div class="header">
-    <h1 class="title" onclick="openFile()">EXPLORE T-SHIRTS</h1>
-</div>
-
-<div class="slider-area">
-    <!-- Left arrow positioned exactly like Gucci -->
-    <button class="arrow prev-arrow" onclick="prevSlide()">←</button>
-
-    <!-- Left slide -->
-    <div class="side-slide-container">
-        <div class="left-slide" id="slide0">
-            <img src="Images/shirt3.jpeg" alt="T-shirts" class="slide-img" onclick="openFile()">
+        <!-- Image Slider -->
+        <div class="header">
+            <h2 onclick="openFile()">EXPLORE T-SHIRTS</h2>
         </div>
-
-        <!-- Right slide -->
-        <div class="right-slide" id="slide2">
-            <img src="Images/t-shirts1.png" alt="T-shirts" class="slide-img" onclick="openFile()">
+        <div class="slider-area">
+            <button class="arrow prev-arrow" onclick="prevSlide()">←</button>
+            <div class="side-slide-container">
+                <div class="left-slide" id="slide0">
+                    <img src="Images/shirt3.jpeg" alt="T-shirts" class="slide-img" onclick="openFile()">
+                </div>
+                <div class="right-slide" id="slide2">
+                    <img src="Images/t-shirts1.png" alt="T-shirts" class="slide-img" onclick="openFile()">
+                </div>
+            </div>
+            <div class="main-slide-container" id="slide1">
+                <img src="Images/TSHIRTS1.jpg" alt="T-shirts" class="slide-img" onclick="openFile()">
+            </div>
+            <button class="arrow next-arrow" onclick="nextSlide()">→</button>
         </div>
-    </div>
-
-    <!-- Main center slide -->
-    <div class="main-slide-container" id="slide1">
-        <img src="Images/TSHIRTS1.jpg" alt="T-shirts" class="slide-img" onclick="openFile()">
-    </div>
-
-    <button class="arrow next-arrow" onclick="nextSlide()">→</button>
-</div>
-
-<div class="product-name">MEN'S AND WOMEN'S T-SHIRTS</div>
-
-<div class="pagination">
-    <div class="dot" onclick="goToSlide(0)"></div>
-    <div class="dot active" onclick="goToSlide(1)"></div>
-    <div class="dot" onclick="goToSlide(2)"></div>
-</div>
-
+        <div class="product-name">MEN'S AND WOMEN'S T-SHIRTS</div>
+        <div class="pagination">
+            <div class="dot" onclick="goToSlide(0)"></div>
+            <div class="dot active" onclick="goToSlide(1)"></div>
+            <div class="dot" onclick="goToSlide(2)"></div>
+        </div>
     </main>
 
 
-
-
-
-
-
-
-
-
-
-<!-- three vicoes -->
-<section class="gucci-services">
-    <h1>GLOBAL UNITY SERVICES</h1>
-    <div class="services-container">
-        <div class="service">
-            <div class="video-container">
-                <video src="Images/donate.mp4" class="service-video" autoplay muted loop preload="auto"></video>
-                <button class="video-control" aria-label="Pause video">
-                    <span class="pause-icon">II</span>
-                    <span class="play-icon" style="display: none;">▶</span>
-                </button>
+    <!-- three vicoes -->
+    <section class="gucci-services">
+        <h1>GLOBAL UNITY SERVICES</h1>
+        <div class="services-container">
+            <div class="service">
+                <div class="video-container">
+                    <video src="Images/donate.mp4" class="service-video" autoplay muted loop preload="auto"></video>
+                    <button class="video-control" aria-label="Pause video">
+                        <span class="pause-icon">II</span>
+                        <span class="play-icon" style="display: none;">▶</span>
+                    </button>
+                </div>
+                <h2>BOOK AN APPOINTMENT</h2>
+                <p>Enjoy priority access to the boutique of your choice at the time and date that suits you.
+                <p>
+                    <a href="feedback.html" class="discover-link">Book an In Store Appointment</a>
             </div>
-            <h2>BOOK AN APPOINTMENT</h2>
-            <p>Enjoy priority access to the boutique of your choice at the time and date that suits you. <p>
-            <a href="feedback.html" class="discover-link">Book an In Store Appointment</a>
-        </div>
-
-        <div class="service">
-            <div class="video-container">
-                <video src="Images/green-shirt.mp4" class="service-video" autoplay muted loop preload="auto"></video>
-                <button class="video-control" aria-label="Pause video">
-                    <span class="pause-icon">II</span>
-                    <span class="play-icon" style="display: none;">▶</span>
-                </button>
+    
+            <div class="service">
+                <div class="video-container">
+                    <video src="Images/green-shirt.mp4" class="service-video" autoplay muted loop preload="auto"></video>
+                    <button class="video-control" aria-label="Pause video">
+                        <span class="pause-icon">II</span>
+                        <span class="play-icon" style="display: none;">▶</span>
+                    </button>
+                </div>
+                <h2>PERSONALIZATION</h2>
+                <p>Emboss select bags, luggage, belts, leather accessories, and items from the pet's collection with
+                    initials to create a truly unique piece.</p>
+                <a href="t-shirt.html" class="discover-link">Discover The Collection</a>
             </div>
-            <h2>PERSONALIZATION</h2>
-            <p>Emboss select bags, luggage, belts, leather accessories, and items from the pet's collection with
-                initials to create a truly unique piece.</p>
-            <a href="t-shirt.html" class="discover-link">Discover The Collection</a>
-        </div>
-
-        <div class="service">
-            <div class="video-container">
-                <video src="Images/Store.mp4" class="service-video" autoplay muted loop preload="auto"></video>
-                <button class="video-control" aria-label="Pause video">
-                    <span class="pause-icon">II</span>
-                    <span class="play-icon" style="display: none;">▶</span>
-                </button>
+    
+            <div class="service">
+                <div class="video-container">
+                    <video src="Images/Store.mp4" class="service-video" autoplay muted loop preload="auto"></video>
+                    <button class="video-control" aria-label="Pause video">
+                        <span class="pause-icon">II</span>
+                        <span class="play-icon" style="display: none;">▶</span>
+                    </button>
+                </div>
+                <h2>COLLECT IN STORE</h2>
+                <p>Order online and collect your order from your preferred Gucci boutique.</p>
+                <a href="#" class="discover-link">Discover How</a>
             </div>
-            <h2>COLLECT IN STORE</h2>
-            <p>Order online and collect your order from your preferred Gucci boutique.</p>
-            <a href="#" class="discover-link">Discover How</a>
         </div>
-    </div>
-</section>
+    </section>
 
 
 
-<!-- footer secion -->
 
-<footer class="gucci-footer">
-    <!-- Newsletter Subscription Section -->
-    <div class="footer-newsletter">
-        <h2 class="climate">SIGN UP FOR GLOBAL UNITY UPDATES</h2>
-        <p class="newsletter-text" class="climate">
-            Get exclusive updates on the collection's launch, personalized communication and the House's latest news.
-        </p>
 
-    </div>
 
-    <!-- Footer Links Section -->
-    <div class="footer-links-container">
-        <!-- Help Column -->
-        <div class="footer-column">
-            <h3 class="climate">MAY WE HELP YOU?</h3>
-            <ul class="footer-links">
-                <li><a href="home.html">Contact Us</a></li>
-                <li><a href="orders.html">My Order</a></li>
-                <li><a href="faqs.html">FAQs</a></li>
-                <li><a href="unsubscribe.html">Email Unsubscribe</a></li>
-                <li><a href="sitemap.html">Sitemap</a></li>
-            </ul>
-        </div>
 
-        <!-- Company Column -->
-        <div class="footer-column">
-            <h3 class="climate">THE COMPANY</h3>
-            <ul class="footer-links">
-                <li><a href="about.html">About Global Unity</a></li>
-                <li><a href="equilibrium.html">Global Unity Equilibrium</a></li>
-                <li><a href="ethics.html">Code of Ethics</a></li>
-                <li><a href="careers.html">Careers</a></li>
-                <li><a href="legal.html">Legal</a></li>
-                <li><a href="privacy-policy.html">Privacy & Cookie Policy</a></li>
-                <li><a href="cookie-settings.html">Cookie Settings</a></li>
-                <li><a href="corporate.html">Corporate Information</a></li>
-            </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- footer secion -->
+    <footer class="gucci-footer">
+        <!-- Newsletter Subscription Section -->
+        <div class="footer-newsletter">
+            <h2 class="climate">SIGN UP FOR GLOBAL UNITY UPDATES</h2>
+            <p class="newsletter-text">
+                Get exclusive updates on the collection's launch, personalized communication and the House's latest
+                news.
+            </p>
         </div>
 
-        <!-- Store Locator and Newsletter Column -->
-        <div class="footer-column wide-column">
-            <h3 class="climate">STORE LOCATOR</h3>
-            <div class="input-wrapper">
-                <input type="text" placeholder="Country/Region, City" class="footer-input">
-                <span class="arrow-icon">›</span>
+        <!-- Footer Links Section -->
+        <div class="footer-links-container">
+            <!-- Help Column -->
+            <div class="footer-column">
+                <h3 class="climate">MAY WE HELP YOU?</h3>
+                <ul class="footer-links">
+                    <li><a href="home.html">Contact Us</a></li>
+                    <li><a href="orders.html">My Order</a></li>
+                    <li><a href="faqs.html">FAQs</a></li>
+                    <li><a href="unsubscribe.html">Email Unsubscribe</a></li>
+                    <li><a href="sitemap.html">Sitemap</a></li>
+                </ul>
             </div>
 
-            <!-- Second Newsletter Section -->
-            <div class="footer-signup">
-                <h3 class="climate">SIGN UP FOR GLOBAL UNITY UPDATES</h3>
-                <p class="signup-text">
-                    By entering your email address below, you consent to receiving our newsletter with access to our
-                    latest collections, events and initiatives. More details on this are provided in our <a
-                        href="privacy-policy.html" class="text-link">Privacy Policy</a>
-                </p>
+            <!-- Company Column -->
+            <div class="footer-column">
+                <h3 class="climate">THE COMPANY</h3>
+                <ul class="footer-links">
+                    <li><a href="about.html">About Global Unity</a></li>
+                    <li><a href="equilibrium.html">Global Unity Equilibrium</a></li>
+                    <li><a href="ethics.html">Code of Ethics</a></li>
+                    <li><a href="careers.html">Careers</a></li>
+                    <li><a href="legal.html">Legal</a></li>
+                    <li><a href="privacy-policy.html">Privacy & Cookie Policy</a></li>
+                    <li><a href="cookie-settings.html">Cookie Settings</a></li>
+                    <li><a href="corporate.html">Corporate Information</a></li>
+                </ul>
+            </div>
+
+            <!-- Store Locator and Newsletter Column -->
+            <div class="footer-column wide-column">
+                <h3 class="climate">STORE LOCATOR</h3>
                 <div class="input-wrapper">
-                    <input type="email" placeholder="Email" class="footer-input">
+                    <input type="text" placeholder="Country/Region, City" class="footer-input">
                     <span class="arrow-icon">›</span>
                 </div>
 
-                <!-- Country Selector -->
-                <div class="country-selector">
-                    <h4 >COUNTRY/REGION</h4>
-                    <a href="country.html" class="country-link">SRI LANKA</a>
+                <!-- Second Newsletter Section -->
+                <div class="footer-signup">
+                    <h3 class="climate">SIGN UP FOR GLOBAL UNITY UPDATES</h3>
+                    <p class="signup-text">
+                        By entering your email address below, you consent to receiving our newsletter with access to our
+                        latest collections, events and initiatives. More details on this are provided in our <a
+                            href="privacy-policy.html" class="text-link">Privacy Policy</a>
+                    </p>
+                    <div class="input-wrapper">
+                        <input type="email" placeholder="Email" class="footer-input">
+                        <span class="arrow-icon">›</span>
+                    </div>
+
+                    <!-- Country Selector -->
+                    <div class="country-selector">
+                        <h4>COUNTRY/REGION</h4>
+                        <a href="country.html" class="country-link">SRI LANKA</a>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    
         <p class="copyright">© 2022-2025 Global Unity Inc. - All rights reserved.</p>
-    </div>
 
-    <!-- Big Brand Logo -->
-    <div class="big-logo">
-        <h1 class="climate">GLOBAL UNITY</h1>
-    </div>
-</footer>
-
-</html>
+        <!-- Big Brand Logo -->
+        <div class="big-logo">
+            <h1 class="climate">GLOBAL UNITY</h1>
+        </div>
+    </footer>
 
     <script src="script.js"></script>
 </body>

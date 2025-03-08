@@ -1502,29 +1502,7 @@ tr:nth-child(even) {
 
 
 
-
-/* page editor*/
-header {
-    text-align: center;
-    background-color: #333;
-    color: white;
-    padding: 10px 0;
-}
-
-.name {
-    text-align: center;
-    line-height: 0;
-    background-color: darkgray;
-    color: white;
-    margin-top: 8px;
-}
-
-.border {
-    margin-bottom: 20px;
-    padding: 15px;
-    border: 1px solid #ddd;
-    background-color: #fafafa;
-}
+/* validation  */
 
 .container-pageEditor {
     display: flex;
@@ -1538,12 +1516,6 @@ main {
     flex: 3;
 }
 
-.top {
-    position: fixed;
-    bottom: 5%;
-    right: 5%;
-}
-
 aside {
     flex: 1;
     background-color: #f4f4f4;
@@ -1552,63 +1524,72 @@ aside {
     margin-right: 20px;
 }
 
+.border {
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    background-color: #fafafa;
+}
+
+
+.ref li {
+    list-style: none;
+    padding-bottom: 9px;
+}
+
+aside a {
+    text-decoration: none;
+}
+
 aside li {
     padding-bottom: 4px;
 }
 
-.changes {
-    display: block;
-    font-size: 1.17em;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-    font-weight: bold;
-    unicode-bidi: isolate;
+.stud {
+    text-align: center;
+    line-height: 0;
+    background-color: #cbccc2ef;
+    color: white;
+    margin-top: 8px;
 }
 
-ul ul {
-    list-style-type: circle;
-    margin-block-start: 0px;
-    margin-block-end: 0px;
+.top {
+    position: fixed;
+    bottom: 5%;
+    right: 5%;
 }
 
-
-aside h3 {
-    margin-top: 0;
-    font-size: 1.2em;
-    color: #333;
-}
-
-.top-level-ul {
-    list-style-type: none;
-    padding-left: 0;
-}
-
-.top-level-ul>li {
-    font-weight: bold;
-    margin-top: 10px;
-}
-
-.top-level-ul ul {
-    list-style-type: circle;
-    padding-left: 20px;
-    margin-top: 5px;
-    margin-bottom: 10px;
-}
-
-.top-level-ul ul li {
-    font-weight: normal;
-}
-
-.top-level-ul a {
+.top a {
+    padding: 10px 20px;
+    /* Adds padding for button-like feel */
+    background-color: #007bff;
+    /* Button color */
+    color: white;
+    /* Text color */
     text-decoration: none;
-    color: #007BFF;
+    /* Removes underline */
+    border-radius: 20px;
+    /* Rounds the corners */
+    font-size: 12px;
+    /* Adjust font size */
+    font-weight: bold;
+    /* Make the text stand out */
 }
 
-.top-level-ul a:hover {
-    text-decoration: underline;
+.top a:hover {
+    background-color: #0056b3;
+    /* Darker shade on hover */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    /* Adds a subtle shadow */
 }
+
+img {
+    width: 90%;
+}
+
+
+
+
 
 
 

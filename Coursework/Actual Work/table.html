@@ -19,9 +19,7 @@
             transition: all 0.3s ease;
             padding: 15px 0;
             background-color: white;
-            /* Always have a background */
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            /* Always have a shadow */
         }
 
         /* Center brand logo is always visible */
@@ -33,19 +31,15 @@
             z-index: 1001;
         }
 
-
         .logo-text-fixed {
             font-family: 'Bodoni Moda', serif;
             font-size: 24px;
             font-weight: 600;
             letter-spacing: 2px;
             color: black;
-            /* Always black for visibility */
             text-transform: uppercase;
             opacity: 1;
-            /* Always visible */
         }
-
 
         .nav-container-fixed {
             max-width: 1400px;
@@ -55,7 +49,6 @@
             justify-content: space-between;
             align-items: center;
             position: relative;
-            /* For absolute positioning of brand */
         }
 
         /* Navigation Icons */
@@ -64,45 +57,38 @@
             align-items: center;
             gap: 1.5rem;
             margin-left: auto;
-            /* Push to the right */
         }
 
         .icon-link-fixed {
             color: black;
-            /* Always black for visibility */
             text-decoration: none;
         }
-
 
         /* Menu Button */
         .menu-button-fixed {
             background: none;
             border: none;
             color: black;
-            /* Always black for visibility */
             cursor: pointer;
             font-size: 14px;
             letter-spacing: 1px;
             padding: 5px;
         }
 
-
         .hamburger-icon span {
             display: block;
             width: 100%;
             height: 2px;
             background-color: black;
-            /* Always black for visibility */
         }
 
-        /* Content  Welcome to global community*/
+        /* Content */
         .content {
             margin-top: 70px;
-            /* Add space for the fixed navbar */
             min-height: 200vh;
-            /* Enables scrolling */
+        }
 
-                   /* General Styles */
+        /* General Styles */
         body {
             font-family: 'Inter', sans-serif;
             line-height: 1.6;
@@ -113,7 +99,7 @@
         }
 
         h1 {
-            font-size: 2.0rem;
+            font-size: 2rem;
             margin-bottom: 20px;
             text-align: center;
         }
@@ -130,12 +116,7 @@
             font-size: 1.5rem;
             margin-top: 30px;
             margin-bottom: 15px;
-           
         }
-
-       
-
-    }
     </style>
 </head>
 
@@ -143,9 +124,7 @@
     <nav class="nav-wrapper-fixed">
         <div class="nav-container-fixed">
             <div class="brand-fixed">
-
                 <a href="/" class="logo">
-
                     <span class="logo-text-fixed">GLOBAL UNITY</span>
                 </a>
             </div>
@@ -169,11 +148,11 @@
                     </svg>
                 </a>
                 <button class="menu-button-fixed">
-                    <div class="hamburger-icon">
+                    <span class="hamburger-icon">
                         <span></span>
                         <span></span>
                         <span></span>
-                    </div>
+                    </span>
                 </button>
             </div>
         </div>
@@ -214,24 +193,31 @@
             </div>
         </div>
     </div>
-    <main class="content">
 
+    <main class="content">
         <div class="container-content">
             <h1>Global Urban Sustainability Performance Metrics</h1>
-        
+
             <div class="section">
                 <h2>Introduction</h2>
-                <p>Urban sustainability is a critical focus for cities worldwide as they strive to balance economic growth,
-                    environmental protection, and social equity. The table below provides a comprehensive overview of key
-                    sustainability metrics for leading global cities. These metrics highlight the progress and initiatives
-                    undertaken by cities to reduce their carbon footprint, enhance green spaces, improve public transit, and
+                <p>Urban sustainability is a critical focus for cities worldwide as they strive to balance economic
+                    growth,
+                    environmental protection, and social equity. The table below provides a comprehensive overview of
+                    key
+                    sustainability metrics for leading global cities. These metrics highlight the progress and
+                    initiatives
+                    undertaken by cities to reduce their carbon footprint, enhance green spaces, improve public transit,
+                    and
                     promote renewable energy.</p>
-                <p>As urban populations continue to grow, the need for sustainable development becomes increasingly urgent.
-                    Cities like Copenhagen, Singapore, and Curitiba are leading the way with innovative solutions that serve as
-                    models for others. This table not only showcases their achievements but also provides insights into the
+                <p>As urban populations continue to grow, the need for sustainable development becomes increasingly
+                    urgent.
+                    Cities like Copenhagen, Singapore, and Curitiba are leading the way with innovative solutions that
+                    serve as
+                    models for others. This table not only showcases their achievements but also provides insights into
+                    the
                     strategies that can be adopted by other urban centers.</p>
             </div>
-        
+
             <div class="section">
                 <h2>Comparative Metrics</h2>
                 <table>
@@ -248,7 +234,8 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td><span class="tooltip">Copenhagen<span class="tooltiptext">Capital of Denmark</span></span></td>
+                            <td><span class="tooltip">Copenhagen<span class="tooltiptext">Capital of
+                                        Denmark</span></span></td>
                             <td>1.9</td>
                             <td>25.0</td>
                             <td>62</td>
@@ -267,7 +254,8 @@
                             <td>Zero Waste Masterplan</td>
                         </tr>
                         <tr>
-                            <td><span class="tooltip">Curitiba<span class="tooltiptext">City in Brazil</span></span></td>
+                            <td><span class="tooltip">Curitiba<span class="tooltiptext">City in Brazil</span></span>
+                            </td>
                             <td>3.4</td>
                             <td>26.5</td>
                             <td>45</td>
@@ -276,7 +264,8 @@
                             <td>Bus Rapid Transit Network</td>
                         </tr>
                         <tr>
-                            <td><span class="tooltip">Freiburg<span class="tooltiptext">City in Germany</span></span></td>
+                            <td><span class="tooltip">Freiburg<span class="tooltiptext">City in Germany</span></span>
+                            </td>
                             <td>4.6</td>
                             <td>32.0</td>
                             <td>34</td>
@@ -285,7 +274,8 @@
                             <td>Vauban Car-Free District</td>
                         </tr>
                         <tr>
-                            <td><span class="tooltip">Vancouver<span class="tooltiptext">City in Canada</span></span></td>
+                            <td><span class="tooltip">Vancouver<span class="tooltiptext">City in Canada</span></span>
+                            </td>
                             <td>4.1</td>
                             <td>23.0</td>
                             <td>30</td>
@@ -305,35 +295,30 @@
                     </tbody>
                 </table>
             </div>
-        
+
             <div class="references">
                 <h3>References</h3>
                 <ul>
-                    <li><a href=" https://sdgindex.org/">Sustainable Development Report</a></li>
+                    <li><a href="https://sdgindex.org/">Sustainable Development Report</a></li>
                     <li><a href="https://international.kk.dk/climate">City of Copenhagen Climate Plan</a></li>
-                    <li><a href=" https://www.wri.org/insights/curitiba-brazil-model-sustainable-transport">Curitiba's Sustainable Transport Model (WRI)</a></li>
+                    <li><a href="https://www.wri.org/insights/curitiba-brazil-model-sustainable-transport">Curitiba's
+                            Sustainable Transport Model (WRI)</a></li>
                 </ul>
             </div>
         </div>
     </main>
 
-
-    <!-- footer secion -->
-    
+    <!-- Footer Section -->
     <footer class="gucci-footer">
-        <!-- Newsletter Subscription Section -->
         <div class="footer-newsletter">
             <h2 class="climate">SIGN UP FOR GLOBAL UNITY UPDATES</h2>
-            <p class="newsletter-text" class="climate">
+            <p class="newsletter-text">
                 Get exclusive updates on the collection's launch, personalized communication and the House's latest
                 news.
             </p>
-    
         </div>
-    
-        <!-- Footer Links Section -->
+
         <div class="footer-links-container">
-            <!-- Help Column -->
             <div class="footer-column">
                 <h3 class="climate">MAY WE HELP YOU?</h3>
                 <ul class="footer-links">
@@ -344,8 +329,7 @@
                     <li><a href="sitemap.html">Sitemap</a></li>
                 </ul>
             </div>
-    
-            <!-- Company Column -->
+
             <div class="footer-column">
                 <h3 class="climate">THE COMPANY</h3>
                 <ul class="footer-links">
@@ -359,16 +343,14 @@
                     <li><a href="corporate.html">Corporate Information</a></li>
                 </ul>
             </div>
-    
-            <!-- Store Locator and Newsletter Column -->
+
             <div class="footer-column wide-column">
                 <h3 class="climate">STORE LOCATOR</h3>
                 <div class="input-wrapper">
                     <input type="text" placeholder="Country/Region, City" class="footer-input">
                     <span class="arrow-icon">›</span>
                 </div>
-    
-                <!-- Second Newsletter Section -->
+
                 <div class="footer-signup">
                     <h3 class="climate">SIGN UP FOR GLOBAL UNITY UPDATES</h3>
                     <p class="signup-text">
@@ -380,8 +362,7 @@
                         <input type="email" placeholder="Email" class="footer-input">
                         <span class="arrow-icon">›</span>
                     </div>
-    
-                    <!-- Country Selector -->
+
                     <div class="country-selector">
                         <h4>COUNTRY/REGION</h4>
                         <a href="country.html" class="country-link">SRI LANKA</a>
@@ -389,20 +370,13 @@
                 </div>
             </div>
         </div>
-    
-    
+
         <p class="copyright">© 2022-2025 Global Unity Inc. - All rights reserved.</p>
-        </div>
-    
-        <!-- Big Brand Logo -->
+
         <div class="big-logo">
             <h1 class="climate">GLOBAL UNITY</h1>
         </div>
     </footer>
-
-
-
-
 
     <script src="script.js"></script>
 </body>
