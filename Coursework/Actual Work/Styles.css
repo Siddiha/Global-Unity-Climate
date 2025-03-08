@@ -1877,3 +1877,49 @@ img {
     margin-bottom: 5px;
     font-weight: bold;
 }
+
+/* site map */
+/* * Hover effects for Level 1 rectangles (light gray) */ 
+.rect1:hover, */
+.rect2:hover,
+.rect3:hover,
+.rect4:hover {
+    fill: #7D7570;
+    /* Darker taupe/gray for hover */
+    transition: fill 0.3s ease;
+}
+
+/* Hover effects for Level 2 rectangles (light purple) */
+.rect5:hover,
+.rect6:hover,
+.rect7:hover,
+.rect8:hover {
+    fill: #7C7687;
+    /* Darker lavender/purple for hover */
+    transition: fill 0.3s ease;
+}
+
+/* Hover effects for Level 3 rectangles (light green) */
+.rect9:hover,
+.rect10:hover {
+    fill: #6A989E;
+    /* Darker sage green/blue for hover */
+    transition: fill 0.3s ease;
+}
+
+/* Optional: Add text glow on hover for better visibility */
+text:hover {
+    text-shadow: 0 0 3px #eeeeee;
+}
+
+/* Optional: Add smooth transitions for all elements */
+rect {
+    transition: fill 0.3s ease;
+}
+
+/* Optional: Darken text for better readability on lighter backgrounds */
+text {
+    fill: white;
+    /* Ensure all text is white for better contrast */
+}
+
