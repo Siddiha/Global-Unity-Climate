@@ -804,6 +804,19 @@ function sendViaWhatsApp() {
  
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 // team memnber
 document.addEventListener("DOMContentLoaded", function () {
     const members = document.querySelectorAll(".team-member");
@@ -849,6 +862,7 @@ function selectRating(stars) {
     document.getElementById('feedback-rating-value').innerText = `You rated: ${ratingValue} stars`;
 }
 
+// Form submission handler
 function storeData() {
     // Get form values
     const name = document.getElementById('feedback-name').value;
@@ -859,8 +873,11 @@ function storeData() {
     const concernLevel = document.getElementById('feedback-concern-level').value;
     const country = document.getElementById('feedback-country').value;
     const date = document.getElementById('feedback-date').value;
-    const file = document.getElementById('feedback-file').value;
-
+    
+    // Get selected actions (checkboxes)
+    const actionCheckboxes = document.querySelectorAll('input[name="feedback-actions"]:checked');
+    const selectedActions = Array.from(actionCheckboxes).map(checkbox => checkbox.value);
+    
     // Store data in localStorage
     localStorage.setItem('feedbackName', name);
     localStorage.setItem('feedbackEmail', email);
@@ -870,29 +887,55 @@ function storeData() {
     localStorage.setItem('feedbackConcernLevel', concernLevel);
     localStorage.setItem('feedbackCountry', country);
     localStorage.setItem('feedbackDate', date);
-    localStorage.setItem('feedbackFile', file);
+    localStorage.setItem('feedbackActions', JSON.stringify(selectedActions));
     localStorage.setItem('feedbackRating', ratingValue);
 
-    // Redirect to the Thank You page
+    // Redirect to the Thank You page - ensure this path is correct
     window.location.href = "thankyou.html";
-    return false; // Prevent form submission
+    
+    // Prevent form from submitting normally
+    return false;
 }
 
+// Make sure the form has the onsubmit handler
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('feedbackForm');
+    if (form) {
+        form.onsubmit = function(e) {
+            e.preventDefault();
+            return storeData();
+        };
+    }
+});
+
 // thank you section
-  // Display stored name & email from localStorage
-        document.getElementById("userName").textContent = localStorage.getItem("userName") || "User";
-        document.getElementById("userEmail").textContent = localStorage.getItem("userEmail") || "your email";
+      // Display stored information from localStorage
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get the name and email from localStorage using the CORRECT keys
+            const userName = localStorage.getItem("feedbackName") || "User";
+            const userEmail = localStorage.getItem("feedbackEmail") || "your email";
+            
+            // Update the page with the retrieved values
+            document.getElementById("userName").textContent = userName;
+            document.getElementById("userEmail").textContent = userEmail;
+            
+            // Setup countdown for redirection
+            let countdown = 5;
+            const countdownInterval = setInterval(() => {
+                countdown--;
+                const countdownElement = document.getElementById("countdown");
+                if (countdownElement) {
+                    countdownElement.textContent = countdown;
+                }
+                
+                if (countdown <= 0) {
+                    clearInterval(countdownInterval);
+                    goHome();
+                }
+            }, 1000);
+        });
 
         function goHome() {
-            window.location.href = "home.html"; // Change to your home page
+            // Change this to your actual home page URL
+            window.location.href = "home.html"; // or whatever your home page is called
         }
-
-        // Auto-redirect after 5 seconds
-        let countdown = 5;
-        setInterval(() => {
-            countdown--;
-            document.getElementById("countdown").textContent = countdown;
-            if (countdown === 0) {
-                goHome();
-            }
-        }, 1000);

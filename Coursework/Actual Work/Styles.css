@@ -53,11 +53,11 @@ body {
         margin-bottom: 10px;
 
 }
-  h1,
+  /* h1,
   h2,
   h3 {
       color: #2c3e50;
-  }
+  } */
 
 .container-content {
 max-width: 1200px;
@@ -73,7 +73,6 @@ padding: 20px;
 
 
 
-/* cod to scroll up when the user goes down */
 
 
 
@@ -1085,6 +1084,7 @@ padding: 20px;
 }
 .copyright{
     text-align: center;
+    color: white;
 }
 
 /* Second Newsletter */
@@ -1097,6 +1097,7 @@ padding: 20px;
     line-height: 1.6;
     margin-bottom: 30px;
     opacity: 0.7;
+    color: white;
 }
 
 .text-link {
@@ -1877,6 +1878,28 @@ img {
     margin-bottom: 5px;
     font-weight: bold;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* site map */
 /* * Hover effects for Level 1 rectangles (light gray) */ 
