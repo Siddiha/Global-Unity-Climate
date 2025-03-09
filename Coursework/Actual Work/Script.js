@@ -819,31 +819,31 @@ function sendViaWhatsApp() {
 
 // team memnber
 document.addEventListener("DOMContentLoaded", function () {
-    const members = document.querySelectorAll(".team-member");
+    const members = document.querySelectorAll(".team-section__member");
 
     members.forEach(member => {
-        const details = member.querySelector(".details");
-        const socialIcons = member.querySelector(".social-icons");
+        const details = member.querySelector(".team-section__details");
+        const socialIcons = member.querySelector(".team-section__social-icons");
 
+        // Expand details and social icons on hover
         member.addEventListener("mouseenter", function () {
-            // Expand details and show social icons
             details.style.maxHeight = details.scrollHeight + "px";
             details.style.padding = "10px";
             details.style.opacity = "1";
-            socialIcons.style.display = "flex";
             socialIcons.style.opacity = "1";
         });
 
+        // Collapse details and social icons on mouse leave
         member.addEventListener("mouseleave", function () {
-            // Collapse details and hide social icons
             details.style.maxHeight = "0";
             details.style.padding = "0";
             details.style.opacity = "0";
-            socialIcons.style.display = "none";
             socialIcons.style.opacity = "0";
         });
     });
 });
+
+
 
 
 // feedbacks ection
@@ -854,59 +854,30 @@ function selectRating(stars) {
     const ratings = document.querySelectorAll('.feedback-container__rating span');
     ratings.forEach((rating, index) => {
         if (index < stars) {
-            rating.classList.add('feedback-container__rating--selected');
+            rating.classList.add('selected');
         } else {
-            rating.classList.remove('feedback-container__rating--selected');
+            rating.classList.remove('selected');
         }
     });
     document.getElementById('feedback-rating-value').innerText = `You rated: ${ratingValue} stars`;
 }
 
-// Form submission handler
 function storeData() {
-    // Get form values
+    // Get the name and email values from the form
     const name = document.getElementById('feedback-name').value;
     const email = document.getElementById('feedback-email').value;
-    const telephone = document.getElementById('feedback-telephone').value;
-    const address = document.getElementById('feedback-address').value;
-    const comment = document.getElementById('feedback-comment').value;
-    const concernLevel = document.getElementById('feedback-concern-level').value;
-    const country = document.getElementById('feedback-country').value;
-    const date = document.getElementById('feedback-date').value;
-    
-    // Get selected actions (checkboxes)
-    const actionCheckboxes = document.querySelectorAll('input[name="feedback-actions"]:checked');
-    const selectedActions = Array.from(actionCheckboxes).map(checkbox => checkbox.value);
-    
-    // Store data in localStorage
-    localStorage.setItem('feedbackName', name);
-    localStorage.setItem('feedbackEmail', email);
-    localStorage.setItem('feedbackTelephone', telephone);
-    localStorage.setItem('feedbackAddress', address);
-    localStorage.setItem('feedbackComment', comment);
-    localStorage.setItem('feedbackConcernLevel', concernLevel);
-    localStorage.setItem('feedbackCountry', country);
-    localStorage.setItem('feedbackDate', date);
-    localStorage.setItem('feedbackActions', JSON.stringify(selectedActions));
-    localStorage.setItem('feedbackRating', ratingValue);
 
-    // Redirect to the Thank You page - ensure this path is correct
-    window.location.href = "thankyou.html";
-    
-    // Prevent form from submitting normally
-    return false;
+    // Store name and email in localStorage
+    localStorage.setItem('userName', name);
+    localStorage.setItem('userEmail', email);
+
+    // Redirect to the Thank You page
+    window.location.href = "thankyou.html"; // Ensure this is the correct path to your Thank You page
+    return false; // Prevent form submission to ensure redirection
 }
 
-// Make sure the form has the onsubmit handler
-document.addEventListener('DOMContentLoaded', function() {
-    const form = document.getElementById('feedbackForm');
-    if (form) {
-        form.onsubmit = function(e) {
-            e.preventDefault();
-            return storeData();
-        };
-    }
-});
+
+
 
 // thank you section
       // Display stored information from localStorage

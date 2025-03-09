@@ -1952,181 +1952,309 @@ text {
 
 
 /* team page */
-  /* Team section */
-/* Team section */
-section.team {
+/* * Team Section - Overall Styling */  */
+.team-section {
     padding-top: 50px;
+    /* Space above the section */
 }
 
-.team-heading {
-    margin-bottom: 20px;
-}
-
-.team-heading h1 {
-    font-size: 36px;
-    color: #333;
-    margin: 0;
-}
-
-/* Team container */
-.team-container {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 15vh;
-    flex-wrap: wrap;
-}
-
-/* Individual team member card */
-.team-member {
+/* Team Heading - Adjusting Vertical Position */
+.team-section__heading {
     position: relative;
-    width: 200px;
-    padding: 10px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease;
-    cursor: pointer;
-    background: white;
-    text-align: center;
+    /* Allows precise positioning */
+    top: -30px;
+    /* Moves the heading 30px upwards */
+    margin-bottom: 20px;
+    /* Space below the heading */
 }
 
-.team-member:hover {
-    transform: scale(1.05);
-    /* Slight zoom effect on hover */
-}
-
-/* Team member image */
-.team-member img {
-    width: 100%;
-    border-radius: 10px;
-}
-
-/* Team member name */
-h3 {
-    margin: 10px 0 5px;
-    font-size: 18px;
-}
-
-/* Team member role */
-p {
-    font-size: 14px;
-    color: #555;
-}
-
-/* Social media icons */
-.social-icons {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin: 10px 0;
-}
-
-.social-icons a {
+/* Team Heading Text - Styling for the Team Page Title */
+.team-section__heading h1 {
+    font-size: 36px;
+    /* Large, clear font size for the heading */
     color: #333;
-    font-size: 20px;
-    transition: all 0.3s ease;
-}
-
-.social-icons a:hover {
-    transform: translateY(-5px);
-    /* Slight bounce effect */
-}
-
-/* Icon hover colors */
-.fa-linkedin:hover {
-    color: #0077b5;
-}
-
-.fa-github:hover {
-    color: #6e5494;
-}
-
-.fa-twitter:hover {
-    color: #1da1f2;
-}
-
-/* Hidden details section (collapsed by default) */
-.details {
-    max-height: 0;
-    overflow: hidden;
-    background: #f1f1f1;
+    /* Neutral dark color for readability */
+    margin: 0;
+    /* Removes default margins for better alignment */
     padding: 0;
-    margin-top: 10px;
-    border-radius: 5px;
-    transition: max-height 0.3s ease-in-out, padding 0.3s ease-in-out, opacity 0.3s ease-in-out;
-    opacity: 0;
+    /* Ensures no extra spacing */
 }
 
-/* Expanded details only for the hovered team member */
-.team-member:hover .details {
-    max-height: 300px;
-    /* Adjust this based on the content height */
-    padding: 10px;
-    opacity: 1;
+/* Team Container - Layout of Team Member Cards */
+.team-section__container {
+    display: flex;
+    /* Flex layout for horizontal alignment */
+    justify-content: center;
+    /* Centers the team member cards */
+    flex-wrap: wrap;
+    /* Allows wrapping for smaller screens */
+    gap: 20px;
+    /* Spacing between cards */
+    margin-top: 8vh;
+    /* Adds vertical spacing from the top of the page */
 }
+
+/* Individual Team Member Card */
+.team-section__member {
+    position: relative;
+    /* Enables positioning of child elements */
+    width: 220px;
+    /* Consistent width for cards */
+    padding: 10px;
+    /* Inner spacing within the card */
+    border-radius: 10px;
+    /* Rounded corners for a modern look */
+    background: white;
+    /* Clean white background for the card */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* Subtle shadow for depth */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* Smooth transitions for hover effects */
+    text-align: center;
+    /* Centers text and content within the card */
+    cursor: pointer;
+    /* Adds pointer cursor on hover */
+}
+
+/* Hover Effect for Team Member Card */
+.team-section__member:hover {
+    transform: scale(1.05);
+    /* Slight zoom effect for interactivity */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+    /* Enhanced shadow for emphasis */
+}
+
+/* Team Member Image - Styling for Profile Photos */
+.team-section__member img {
+    width: 100%;
+    /* Makes the image fully responsive within the card */
+    border-radius: 10px;
+    /* Matches the card's rounded corners */
+    transition: opacity 0.3s ease;
+    /* Smooth fade effect on hover */
+}
+
+.team-section__member img:hover {
+    opacity: 0.9;
+    /* Slight fade effect for interactivity */
+}
+
+/* Team Member Name */
+.team-section__member-name {
+    font-size: 18px;
+    /* Standard font size for readability */
+    color: #4caf50;
+    /* Green color symbolizing sustainability */
+    transition: color 0.3s ease;
+    /* Smooth transition for hover effects */
+}
+
+.team-section__member-name:hover {
+    color: #0077b5;
+    /* Changes to blue on hover */
+}
+
+/* Social Icons Section */
+.team-section__social-icons {
+    display: flex;
+    /* Enables horizontal alignment */
+    justify-content: center;
+    /* Centers the icons */
+    gap: 15px;
+    /* Spacing between each icon */
+    margin: 10px 0;
+    /* Spacing above and below the icons */
+    opacity: 0;
+    /* Hidden by default */
+    transition: opacity 0.3s ease;
+    /* Smooth transition for hover effects */
+}
+
+/* Individual Social Media Icons */
+.team-section__social-icons a {
+    font-size: 24px;
+    /* Icon size for visibility */
+    transition: transform 0.3s ease;
+    /* Smooth animation on hover */
+    text-align: center;
+    /* Centers icons vertically */
+}
+
+/* LinkedIn Icon - Default Blue */
+.fa-linkedin {
+    color: #0077b5;
+    /* LinkedIn's official blue color */
+}
+
+/* GitHub Icon - Default Purple */
+.fa-github {
+    color: #6e5494;
+    /* GitHub's official purple color */
+}
+
+/* Hover Effect for Social Icons */
+.team-section__social-icons a:hover {
+    transform: translateY(-5px);
+    /* Gentle bounce effect on hover */
+}
+
+/* Expandable Details Section - Initially Collapsed */
+.team-section__details {
+    max-height: 0;
+    /* Starts collapsed */
+    overflow: hidden;
+    /* Hides overflowing content */
+    background: #e8f0fe;
+    /* Light blue background for clarity */
+    padding: 0;
+    /* No padding when collapsed */
+    margin-top: 10px;
+    /* Spacing between details and other content */
+    border-radius: 5px;
+    /* Slight rounding for smooth edges */
+    transition: max-height 0.5s ease, padding 0.3s ease, opacity 0.3s ease;
+    /* Smooth animation when expanding */
+    opacity: 0;
+    /* Hidden by default */
+}
+
+/* Expanded Details Section - Visible on Hover */
+.team-section__member:hover .team-section__details {
+    max-height: 300px;
+    /* Adjusted based on content height */
+    padding: 10px;
+    /* Adds inner spacing */
+    opacity: 1;
+    /* Fully visible when expanded */
+}
+
+.team-section__member:hover .team-section__social-icons {
+    opacity: 1;
+    /* Fully visible when expanded */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /* feedback form */
 /* Feedback section */
-.feedback-container {
-    width: 60%;
-    margin: 20px auto;
-    background-color: white;
+feedback-container {
+    max-width: 600px;
+    width: 90%;
+    background: #fff;
     padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
 }
 
-.feedback-container__label {
-    display: block;
-    margin: 10px 0 5px;
+h2 {
+    text-align: center;
 }
 
-.feedback-container__input,
-.feedback-container__select,
-.feedback-container__textarea,
-.feedback-container__button {
-    width: 100%;
-    padding: 10px;
-    margin: 5px 0 20px;
-    border-radius: 4px;
-    border: 1px solid #ccc;
-}
-
-.feedback-container__button {
-    background-color: #28a745;
-    color: white;
-    cursor: pointer;
-}
-
-.feedback-container__button--reset {
-    background-color: #f44336;
-}
-
-.feedback-container__rating {
-    cursor: pointer;
-    font-size: 20px;
-    color: #ddd;
-}
-
-.feedback-container__rating--selected {
-    color: #f39c12;
-}
-
-.feedback-container__error {
-    color: red;
-    display: none;
+form {
+    display: flex;
+    flex-direction: column;
 }
 
 .feedback-container__fieldset {
     border: 1px solid #ccc;
-    padding: 10px;
-    margin-bottom: 20px;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 5px;
 }
 
 .feedback-container__legend {
     font-weight: bold;
-    color: #28a745;
 }
 
+.feedback-container__label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}
 
+.feedback-container__input,
+.feedback-container__select,
+.feedback-container__textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+input[type="checkbox"] {
+    width: auto;
+    margin-right: 5px;
+}
+
+.feedback-container__rating {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+}
+
+.feedback-container__rating span {
+    font-size: 1.5em;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.feedback-container__rating span.selected {
+    color: gold;
+}
+
+.feedback-container__button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 5px;
+    background: #28a745;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.feedback-container__button:hover {
+    background: #218838;
+    transition: background-color 0.3s ease;
+}
+
+.feedback-container__button--reset {
+    background: #dc3545;
+}
+
+.feedback-container__button--reset:hover {
+    background: #c82333;
+}
+
+.feedback-container__error {
+    color: red;
+    font-size: 0.875em;
+    display: none;
+}
