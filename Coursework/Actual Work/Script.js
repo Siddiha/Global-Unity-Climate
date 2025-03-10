@@ -799,17 +799,6 @@ function sendViaWhatsApp() {
   window.open(whatsappLink, "_blank");
 }
  
- 
-
- 
-
-
-
-
-
-
-
-
 
 
 
@@ -847,11 +836,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 // feedbacks ection
-let ratingValue = 0;
+let ratingValue = 0; // Default rating value
 
+// Function to handle star selection
 function selectRating(stars) {
-    ratingValue = stars;
+    ratingValue = stars; // Update the selected rating value
     const ratings = document.querySelectorAll('.feedback-container__rating span');
+
+    // Add or remove the "selected" class for highlighting stars
     ratings.forEach((rating, index) => {
         if (index < stars) {
             rating.classList.add('selected');
@@ -859,54 +851,74 @@ function selectRating(stars) {
             rating.classList.remove('selected');
         }
     });
+
+    // Update the displayed rating
     document.getElementById('feedback-rating-value').innerText = `You rated: ${ratingValue} stars`;
 }
 
+// Function to validate and store data
 function storeData() {
-    // Get the name and email values from the form
+    // Collect input values
     const name = document.getElementById('feedback-name').value;
     const email = document.getElementById('feedback-email').value;
+    const comment = document.getElementById('feedback-comment').value;
 
-    // Store name and email in localStorage
-    localStorage.setItem('userName', name);
-    localStorage.setItem('userEmail', email);
+    // Validate star rating
+    if (ratingValue === 0) {
+        alert('Please select a star rating before submitting.');
+        return false;
+    }
 
-    // Redirect to the Thank You page
-    window.location.href = "thankyou.html"; // Ensure this is the correct path to your Thank You page
-    return false; // Prevent form submission to ensure redirection
+    // Validate comment
+    if (!comment) {
+        document.getElementById('feedback-comment-error').style.display = 'inline';
+        alert('Please provide your feedback in the comment section.');
+        return false;
+    } else {
+        document.getElementById('feedback-comment-error').style.display = 'none'; // Hide error if resolved
+    }
+
+    // Collect other inputs
+    const telephone = document.getElementById('feedback-telephone').value;
+    const address = document.getElementById('feedback-address').value;
+    const concernLevel = document.getElementById('feedback-concern-level').value;
+    const actions = Array.from(document.querySelectorAll('input[name="feedback-actions"]:checked')).map(el => el.value);
+    const country = document.getElementById('feedback-country').value;
+    const date = document.getElementById('feedback-date').value;
+
+  // Store in localStorage
+    const feedbackData = {
+        name,
+        email,
+        telephone,
+        address,
+        comment,
+        concernLevel,
+        actions,
+        country,
+        date,
+        rating: ratingValue,
+    };
+    localStorage.setItem('feedback', JSON.stringify(feedbackData));
+
+    // Redirect to Thank You page
+    window.location.href = "thankyou.html";
+    return false; // Prevent default form submission
 }
 
 
+document.getElementById("userName").textContent = localStorage.getItem("userName") || "User";
+document.getElementById("userEmail").textContent = localStorage.getItem("userEmail") || "your email";
 
+function goHome() {
+    window.location.href = "home.html";
+}
 
-// thank you section
-      // Display stored information from localStorage
-        document.addEventListener('DOMContentLoaded', function() {
-            // Get the name and email from localStorage using the CORRECT keys
-            const userName = localStorage.getItem("feedbackName") || "User";
-            const userEmail = localStorage.getItem("feedbackEmail") || "your email";
-            
-            // Update the page with the retrieved values
-            document.getElementById("userName").textContent = userName;
-            document.getElementById("userEmail").textContent = userEmail;
-            
-            // Setup countdown for redirection
-            let countdown = 5;
-            const countdownInterval = setInterval(() => {
-                countdown--;
-                const countdownElement = document.getElementById("countdown");
-                if (countdownElement) {
-                    countdownElement.textContent = countdown;
-                }
-                
-                if (countdown <= 0) {
-                    clearInterval(countdownInterval);
-                    goHome();
-                }
-            }, 1000);
-        });
-
-        function goHome() {
-            // Change this to your actual home page URL
-            window.location.href = "home.html"; // or whatever your home page is called
-        }
+let countdown = 60;
+setInterval(() => {
+    countdown--;
+    document.getElementById("countdown").textContent = countdown;
+    if (countdown === 0) {
+        goHome();
+    }
+}, 1000);

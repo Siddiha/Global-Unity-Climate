@@ -1907,7 +1907,11 @@ img {
 
 
 /* site map */
-/* * Hover effects for Level 1 rectangles (light gray) */ 
+/* * Hover effects for Level 1 rectangles (light gray) */
+
+ /* Banner section */
+  /* Banner section with fixed positioning */
+
   .rect1:hover,
   .rect3:hover {
       fill: #EE82EE;
@@ -1948,6 +1952,9 @@ text {
     fill: white;
     /* Ensure all text is white for better contrast */
 }
+
+
+
 
 
 
@@ -2136,6 +2143,11 @@ text {
     /* Fully visible when expanded */
 }
 
+.team-section__member-role{
+    text-align: center;
+    font-weight: bold;
+
+}
 
 
 
@@ -2164,7 +2176,20 @@ text {
 
 /* feedback form */
 /* Feedback section */
-feedback-container {
+
+#feedback-body{
+    display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        /* Ensure the body takes the full viewport height */
+        margin: 0;
+        /* Remove default margin */
+        background-color: #f4f4f4;/
+}
+
+.feedback-container {
+
     max-width: 600px;
     width: 90%;
     background: #fff;
@@ -2172,6 +2197,7 @@ feedback-container {
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     text-align: left;
+    
 }
 
 h2 {
@@ -2249,15 +2275,15 @@ input[type="checkbox"] {
 }
 
 .feedback-container__button--reset {
-    background: #dc3545;
+    background: green;
 }
 
 .feedback-container__button--reset:hover {
-    background: #c82333;
+    background: green;
 }
 
 .feedback-container__error {
-    color: red;
+    color: green;
     font-size: 0.875em;
     display: none;
 }
