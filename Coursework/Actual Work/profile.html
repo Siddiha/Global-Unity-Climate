@@ -182,6 +182,7 @@
         </div>
     </div>
 </div>
+<section id="color">
 <div class="main-container">
     <!-- Rectangle Image with Circular Profile Picture -->
     <div class="rectangle-container">
@@ -253,7 +254,7 @@
         </div>
 
         <!-- Availability Section -->
-        <h2>Availability</h2>
+        <h2 >Availability</h2>
         <div class="availability-container">
             <!-- Calendar Section -->
             <div class="calendar-section">
@@ -268,9 +269,9 @@
 
             <!-- Time Section -->
             <div class="time-section">
-                <h3>Available Times</h3>
+                <h3 >Available Times</h3>
                 <input type="text" id="timeInput" placeholder="Enter available time (e.g., 10:00 AM - 2:00 PM)">
-                <button onclick="addTime()">Add Time</button>
+                <button onclick="addTime()" class="goals">Add Time</button>
             </div>
         </div>
 
@@ -286,7 +287,7 @@
             <!-- Images will be dynamically added here -->
         </div>
 
-        <button onclick="saveGoals()" id="saveButton">Save Goals</button>
+        <button class="goals" onclick="saveGoals()" id="saveButton">Save Goals</button>
 
         <div class="selected-goals" id="selectedGoals" style="display: none;">
             <h2>Selected Goals</h2>
@@ -297,6 +298,7 @@
         </div>
 
         <!--FORM-->
+        
         <h1>Contact Us</h1>
         <form id="contactForm">
             <label for="name">Name:</label><br>
@@ -308,7 +310,7 @@
             <label for="message">Message:</label><br>
             <textarea id="message" name="message" required></textarea><br><br>
 
-            <button type="button" onclick="sendViaWhatsApp()">Send via WhatsApp</button>
+            <button type="button" class="WhatsApp" onclick="sendViaWhatsApp()">Send via WhatsApp</button>
             <!-- Edit Section (Hidden by Default) -->
             <div class="edit-mode" id="editSection" style="display: none; padding: 20px;">
                 <h2>Edit Profile</h2>
@@ -412,6 +414,7 @@
 
 
     </main>
+</section>
 
     <!-- footer secion -->
 <!-- footer secion -->
