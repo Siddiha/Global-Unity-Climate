@@ -188,115 +188,69 @@
 
 
 <p class="top"><a href="#top">↑</a></p>
+<body id="sitemap-body">
+    <h1 class="sitemap-title">Site Map</h1>
 
+    <div class="sitemap">
+        <!-- Background to help visualize the entire canvas -->
+        <rect x="0" y="0" width="1000" height="1000" fill="White"></rect>
 
+        <!-- Connection lines -->
+        <!-- Vertical line from Home to horizontal line -->
+        <div class="sitemap-line sitemap-line-vertical" style="top: 140px; left: 500px; height: 40px;"></div>
 
+        <!-- Horizontal line connecting Level 1 nodes -->
+        <div class="sitemap-line sitemap-line-horizontal" style="top: 180px; left: 125px; width: 600px;"></div>
 
-    <main class="content">
-        <body>
-            <title>Site Map</title>
-            <h1 style="text-align: center">Site Map</h1>
-            <svg viewBox="0 0 1000 1000" width="100%">
-                <!-- Background to help visualize the entire canvas -->
-                <rect x="0" y="0" width="1000" height="1000" fill="White" />
-            
-                <!-- New color palette:
-                     - Main: #5D5C61 (charcoal gray) for the home page
-                     - Level 1: #B1A296 (light taupe/gray) with consistent hover
-                     - Level 2: #ADA8B6 (light lavender/purple) with consistent hover
-                     - Level 3: #93B7BE (light sage green/blue) with consistent hover
-                -->
-            
-                <!-- Home Page (Level 0) -->
-        <rect x="425" y="80" width="150" height="60" rx="10" fill="#6a989e" />
-            
-                <!-- Level 1 Pages -->
-        <rect class="rect1" x="50" y="220" width="150" height="60" rx="10" fill="#FF6EC7" />
-        <rect class="rect2" x="250" y="220" width="150" height="60" rx="10" fill="#C154C1" />
-        <rect class="rect3" x="450" y="220" width="150" height="60" rx="10" fill="#a6bdC6" />
-        <rect class="rect4" x="650" y="220" width="170" height="60" rx="10" fill="#FF6EC7" />
-            
-                <!-- Connecting lines -->
-                <line x1="500" y1="140" x2="500" y2="180" stroke="#707070" stroke-width="3" />
-                <line x1="125" y1="180" x2="725" y2="180" stroke="#707070" stroke-width="3" />
-                <line x1="125" y1="180" x2="125" y2="220" stroke="#707070" stroke-width="3" />
-                <line x1="725" y1="180" x2="725" y2="220" stroke="#707070" stroke-width="3" />
-                <line x1="325" y1="180" x2="325" y2="220" stroke="#707070" stroke-width="3" />
-                <line x1="525" y1="180" x2="525" y2="220" stroke="#707070" stroke-width="3" />
-            
-                <!-- Volunteer page connections -->
-                <line x1="225" y1="180" x2="225" y2="350" stroke="#707070" stroke-width="3" />
-                <line x1="125" y1="350" x2="815" y2="350" stroke="#707070" stroke-width="3" />
-                <line x1="125" y1="350" x2="125" y2="390" stroke="#707070" stroke-width="3" />
-                <line x1="325" y1="350" x2="325" y2="390" stroke="#707070" stroke-width="3" />
-                <line x1="525" y1="350" x2="525" y2="390" stroke="#707070" stroke-width="3" />
-                <line x1="725" y1="350" x2="725" y2="390" stroke="#707070" stroke-width="3" />
-            
-                <!-- Level 2 Pages -->
-                <g class="Rectangles3">
-            <rect class="rect5" x="50" y="390" width="150" height="60" rx="10" fill="#da8ee7" />
-            <rect class="rect6" x="250" y="390" width="150" height="60" rx="10" fill="#a6bdC6" />
-            <rect class="rect7" x="450" y="390" width="150" height="60" rx="10" fill="#da8ee7" />
-            <rect class="rect8" x="650" y="390" width="150" height="60" rx="10" fill="#FF6EC7" />
-                </g>
-            
-                <!-- Level 2 labels -->
-                <text x="120" y="425" text-anchor="middle" fill="white" font-family="Arial" font-size="18" font-weight="bold"
-                    cursor="pointer">
-                    <a href="profile.html"> Profile Page</text>
-                <text x="320" y="425" text-anchor="middle" fill="white" font-family="Arial" font-size="18" font-weight="bold"
-                    cursor="pointer">
-                    <a href="feedback.html"> Feedback</text>
-                <text x="520" y="425" text-anchor="middle" fill="white" font-family="Arial" font-size="18" font-weight="bold"
-                    cursor="pointer">
-                    <a href="table.html">Table</text>
-                <text x="720" y="425" text-anchor="middle" fill="white" font-family="Arial" font-size="18" font-weight="bold"
-                    cursor="pointer">
-                    <a href="home.html"> Sign In</text>
-            
-                <!-- Level 3 connections -->
-                <line x1="815" y1="350" x2="815" y2="520" stroke="#707070" stroke-width="3" />
-                <line x1="725" y1="520" x2="925" y2="520" stroke="#707070" stroke-width="3" />
-                <line x1="725" y1="520" x2="725" y2="560" stroke="#707070" stroke-width="3" />
-                <line x1="925" y1="520" x2="925" y2="560" stroke="#707070" stroke-width="3" />
-            
-                <!-- Level 3 Pages -->
-                <g class="Rectangles4">
-            <rect class="rect9" x="650" y="560" width="150" height="60" rx="10" fill="#a6bdC6" />
-            <rect class="rect10" x="850" y="560" width="150" height="60" rx="10" fill="#C154C1" />
-                </g>
-            
-                <!-- Level 3 labels -->
-                <text x="725" y="595" text-anchor="middle" fill="white" font-family="Arial" font-size="18" font-weight="bold"
-                    cursor="pointer">
-                    <a href="Thankyou.html">Confirmation</text>
-                <text x="925" y="595" text-anchor="middle" fill="white" font-family="Arial" font-size="18" font-weight="bold"
-                    cursor="pointer">
-                    <a href="profile.html#contactForm">Contact-Us</text>
-            
-                <!-- Level 0 label -->
-                <text x="500" y="115" text-anchor="middle" fill="white" font-family="Arial" font-size="18" font-weight="bold"
-                    cursor="pointer">
-                    <a href="home.html">Home Page</text>
-            
-                <!-- Level 1 labels -->
-                <text x="125" y="255" text-anchor="middle" fill="white" font-family="Arial" font-size="16" font-weight="bold"
-                    cursor="pointer">
-                    <a href="splash.html">Splash Screen</text>
-                <text x="325" y="255" text-anchor="middle" fill="white" font-family="Arial" font-size="16" font-weight="bold"
-                    cursor="pointer">
-                    <a href="Volunteer.html">Volunteer</a></text>
-                <text x="525" y="255" text-anchor="middle" fill="white" font-family="Arial" font-size="16" font-weight="bold"
-                    cursor="pointer">
-                    <a href="team.html">Team</text>
-                <text x="735" y="255" text-anchor="middle" fill="white" font-family="Arial" font-size="16" font-weight="bold"
-                    cursor="pointer">
-                    <a href="t-shirt.html">Shop</text>
-            </svg>
-        </body>
-    
+        <!-- Vertical lines to Level 1 nodes -->
+        <div class="sitemap-line sitemap-line-vertical" style="top: 180px; left: 125px; height: 40px;"></div>
+        <div class="sitemap-line sitemap-line-vertical" style="top: 180px; left: 325px; height: 40px;"></div>
+        <div class="sitemap-line sitemap-line-vertical" style="top: 180px; left: 525px; height: 40px;"></div>
+        <div class="sitemap-line sitemap-line-vertical" style="top: 180px; left: 725px; height: 40px;"></div>
 
-    </main>
+        <!-- Vertical line from Level 1 to horizontal line for Level 2 -->
+        <div class="sitemap-line sitemap-line-vertical" style="top: 280px; left: 225px; height: 70px;"></div>
+
+        <!-- Horizontal line connecting Level 2 -->
+        <div class="sitemap-line sitemap-line-horizontal" style="top: 350px; left: 125px; width: 690px;"></div>
+
+        <!-- Vertical lines to Level 2 nodes -->
+        <div class="sitemap-line sitemap-line-vertical" style="top: 350px; left: 125px; height: 40px;"></div>
+        <div class="sitemap-line sitemap-line-vertical" style="top: 350px; left: 325px; height: 40px;"></div>
+        <div class="sitemap-line sitemap-line-vertical" style="top: 350px; left: 525px; height: 40px;"></div>
+        <div class="sitemap-line sitemap-line-vertical" style="top: 350px; left: 725px; height: 40px;"></div>
+
+        <!-- Vertical line from Level 2 to horizontal line for Level 3 -->
+        <div class="sitemap-line sitemap-line-vertical" style="top: 350px; left: 815px; height: 170px;"></div>
+
+        <!-- Horizontal line connecting Level 3 -->
+        <div class="sitemap-line sitemap-line-horizontal" style="top: 520px; left: 725px; width: 200px;"></div>
+
+        <!-- Vertical lines to Level 3 nodes -->
+        <div class="sitemap-line sitemap-line-vertical" style="top: 520px; left: 725px; height: 40px;"></div>
+        <div class="sitemap-line sitemap-line-vertical" style="top: 520px; left: 925px; height: 40px;"></div>
+
+        <!-- Nodes with links -->
+        <!-- Home Page (Level 0) -->
+        <div class="sitemap-node sitemap-node-home"><a href="home.html">Home Page</a></div>
+
+        <!-- Level 1 nodes -->
+        <div class="sitemap-node sitemap-node-splash"><a href="splash.html">Splash Screen</a></div>
+        <div class="sitemap-node sitemap-node-volunteer"><a href="Volunteer.html">Volunteer</a></div>
+        <div class="sitemap-node sitemap-node-team"><a href="team.html">Team</a></div>
+        <div class="sitemap-node sitemap-node-shop"><a href="t-shirt.html">Shop</a></div>
+
+        <!-- Level 2 nodes -->
+        <div class="sitemap-node sitemap-node-profile"><a href="profile.html">Profile Page</a></div>
+        <div class="sitemap-node sitemap-node-feedback"><a href="feedback.html">Feedback</a></div>
+        <div class="sitemap-node sitemap-node-table"><a href="table.html">Table</a></div>
+        <div class="sitemap-node sitemap-node-signin"><a href="home.html">Sign In</a></div>
+
+        <!-- Level 3 nodes -->
+        <div class="sitemap-node sitemap-node-confirmation"><a href="Thankyou.html">Confirmation</a></div>
+        <div class="sitemap-node sitemap-node-contactus"><a href="profile.html#contactForm">Contact-Us</a></div>
+    </div>
+</body>
 
     <!-- footer secion -->
     <!-- footer secion -->

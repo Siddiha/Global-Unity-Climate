@@ -7,7 +7,7 @@
     <title>Global Unity</title>
     <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@400;600&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="Styles.css">
     <style>
         /* Navigation */
         .nav-wrapper-fixed {
@@ -209,16 +209,16 @@
         </div>
     </div>
     <p class="top"><a href="#top">↑</a></p>
-    <main class="content">
-            <div class="feedback">
-                <h2>🎉 Thank You, <span id="userName">User</span>! 🎉</h2>
-                <p>Your feedback has been received. We appreciate your time in helping us take climate action. 🌍</p>
-                <p>✅ A confirmation email will be sent to <span id="userEmail">your email</span> shortly.</p>
-                <p>Redirecting to the home page in <span id="countdown">60</span> seconds...</p>
-                <br>
-                <button onclick="goHome()">Return to Home</button>
-            </div>
 
+    <main class="thankyou-main">
+        <div class="thankyou-wrapper">
+            <h2>🎉 Thank You, <span id="displayUserName">User</span>! 🎉</h2>
+            <p>Your feedback has been received. We appreciate your time in helping us take climate action. 🌍</p>
+            <p>✅ A confirmation email will be sent to <span id="displayUserEmail">your email</span> shortly.</p>
+            <p>Redirecting to the home page in <span id="countdownTimer">60</span> seconds...</p>
+            <br>
+            <button onclick="goToHome()" class="home-button">Return to Home</button>
+        </div>
     </main>
 
     <!-- footer secion -->
@@ -282,7 +282,7 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="Script.js"></script>
 </body>
 
 </html>

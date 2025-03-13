@@ -19,7 +19,6 @@ body {
 }
 
 
-
 .image-container-transport {
     display: flex;
     justify-content: center;
@@ -41,6 +40,8 @@ body {
     margin-right:100px ;
     margin-bottom: 50px;
     font-size: 1.1rem;
+    color: #666;
+    margin-top: 5px;
 
 }
 
@@ -58,11 +59,7 @@ body {
         margin-bottom: 10px;
 
 }
-  /* h1,
-  h2,
-  h3 {
-      color: #2c3e50;
-  } */
+
 
 .container-content {
 max-width: 1200px;
@@ -486,6 +483,7 @@ padding: 20px;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    ;
     /* Fixes potential gap */
 }
 
@@ -1515,6 +1513,17 @@ aside {
     border: 1px solid #ddd;
     background-color: #fafafa;
 }
+.name{
+text-align: center;
+background-color: #cbccc2ef;
+    color: white;
+    padding: 10px 0;
+    
+}
+.top-level-ul{
+    text-align: left;
+
+}
 
 
 .ref li {
@@ -1911,52 +1920,175 @@ img {
 
  /* Banner section */
   /* Banner section with fixed positioning */
+/* Site Map Styling */
+#sitemap-body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #e8f5e9 0%, #e0f7fa 100%);
+    margin: 0;
+    padding: 20px;
+}
 
-  .rect1:hover,
-  .rect3:hover {
-      fill: #EE82EE;
-  }
+.sitemap-title {
+    margin-top: 70px;
+    text-align: center;
+    color: #333;
+}
 
-  .rect2:hover,
-  .rect4:hover {
-      fill: #9370DB;
-  }
+.sitemap {
+    position: relative;
+    width: 1000px;
+    height: 700px;
+    margin: 0 auto;
+}
 
-  .rect5:hover,
-  .rect7:hover {
-      fill: #a6bdC6;
-  }
+/* Node styling */
+.sitemap-node {
+    position: absolute;
+    border-radius: 10px;
+    padding: 15px 10px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    color: white;
+    font-weight: bold;
+    width: 150px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    transition: all 0.3s ease;
+}
 
-  .rect10:hover,
-  .rect8:hover {
-      fill: #ca5cdd;
-  }
-
-  .rect9:hover,
-  .rect6:hover {
-      fill: #87ceeb;
-  }
-
-/* Optional: Add text glow on hover for better visibility */
-text:hover {
+/* Node hover effect */
+.sitemap-node:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     text-shadow: 0 0 3px #eeeeee;
 }
 
-/* Optional: Add smooth transitions for all elements */
-rect {
-    transition: fill 0.3s ease;
+/* Home node */
+.sitemap-node-home {
+    top: 80px;
+    left: 425px;
+    background-color: #6a989e;
 }
 
-/* Optional: Darken text for better readability on lighter backgrounds */
-text {
-    fill: white;
-    /* Ensure all text is white for better contrast */
+/* Level 1 nodes */
+.sitemap-node-splash {
+    top: 220px;
+    left: 50px;
+    background-color: #FF6EC7;
 }
 
+.sitemap-node-volunteer {
+    top: 220px;
+    left: 250px;
+    background-color: #C154C1;
+}
 
+.sitemap-node-team {
+    top: 220px;
+    left: 450px;
+    background-color: #a6bdC6;
+}
 
+.sitemap-node-shop {
+    top: 220px;
+    left: 650px;
+    width: 170px;
+    background-color: #FF6EC7;
+}
 
+/* Level 2 nodes */
+.sitemap-node-profile {
+    top: 390px;
+    left: 50px;
+    background-color: #da8ee7;
+}
 
+.sitemap-node-feedback {
+    top: 390px;
+    left: 250px;
+    background-color: #a6bdC6;
+}
+
+.sitemap-node-table {
+    top: 390px;
+    left: 450px;
+    background-color: #da8ee7;
+}
+
+.sitemap-node-signin {
+    top: 390px;
+    left: 650px;
+    background-color: #FF6EC7;
+}
+
+/* Level 3 nodes */
+.sitemap-node-confirmation {
+    top: 560px;
+    left: 650px;
+    background-color: #a6bdC6;
+}
+
+.sitemap-node-contactus {
+    top: 560px;
+    left: 850px;
+    background-color: #C154C1;
+}
+
+/* Hover effects */
+.sitemap-node-splash:hover,
+.sitemap-node-team:hover {
+    background-color: #EE82EE;
+}
+
+.sitemap-node-volunteer:hover,
+.sitemap-node-shop:hover {
+    background-color: #9370DB;
+}
+
+.sitemap-node-profile:hover,
+.sitemap-node-table:hover {
+    background-color: #a6bdC6;
+}
+
+.sitemap-node-contactus:hover,
+.sitemap-node-signin:hover {
+    background-color: #ca5cdd;
+}
+
+.sitemap-node-confirmation:hover,
+.sitemap-node-feedback:hover {
+    background-color: #87ceeb;
+}
+
+/* Connection lines */
+.sitemap-line {
+    position: absolute;
+    background-color: #707070;
+    z-index: 1;
+}
+
+.sitemap-line-vertical {
+    width: 3px;
+}
+
+.sitemap-line-horizontal {
+    height: 3px;
+}
+
+/* Link styling */
+.sitemap-node a {
+    text-decoration: none;
+    color: white;
+    display: block;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
 
 
@@ -1988,6 +2120,9 @@ text {
     /* Removes default margins for better alignment */
     padding: 0;
     /* Ensures no extra spacing */
+    margin-top: 150px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+
 }
 
 /* Team Container - Layout of Team Member Cards */
@@ -2176,20 +2311,16 @@ text {
 
 /* feedback form */
 /* Feedback section */
-
-#feedback-body{
+/* Feedback Form Styles */
+#feedback-main {
+    width: 100%;
     display: flex;
-        justify-content: center;
-        align-items: center;
-        min-height: 100vh;
-        /* Ensure the body takes the full viewport height */
-        margin: 0;
-        /* Remove default margin */
-        background-color: #f4f4f4;/
+    justify-content: center;
+    align-items: center;
+    margin-top: 70px;
 }
 
-.feedback-container {
-
+.feedback-wrapper {
     max-width: 600px;
     width: 90%;
     background: #fff;
@@ -2197,38 +2328,32 @@ text {
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     text-align: left;
-    
 }
 
-h2 {
-    text-align: center;
-}
 
-form {
-    display: flex;
-    flex-direction: column;
-}
 
-.feedback-container__fieldset {
+.feedback-fieldset {
     border: 1px solid #ccc;
     padding: 15px;
     margin-bottom: 15px;
     border-radius: 5px;
 }
 
-.feedback-container__legend {
+.feedback-legend {
     font-weight: bold;
+    color: #333;
 }
 
-.feedback-container__label {
+.feedback-label {
     display: block;
     margin-top: 10px;
     font-weight: bold;
+    color: #555;
 }
 
-.feedback-container__input,
-.feedback-container__select,
-.feedback-container__textarea {
+.feedback-input,
+.feedback-select,
+.feedback-textarea {
     width: 100%;
     padding: 8px;
     margin-top: 5px;
@@ -2236,28 +2361,28 @@ form {
     border-radius: 5px;
 }
 
-input[type="checkbox"] {
-    width: auto;
-    margin-right: 5px;
+.feedback-textarea {
+    resize: vertical;
 }
 
-.feedback-container__rating {
+.feedback-rating {
     display: flex;
     justify-content: center;
     gap: 5px;
+    margin: 10px 0;
 }
 
-.feedback-container__rating span {
+.feedback-rating span {
     font-size: 1.5em;
     cursor: pointer;
     transition: color 0.3s;
 }
 
-.feedback-container__rating span.selected {
+.feedback-rating span.selected {
     color: gold;
 }
 
-.feedback-container__button {
+.feedback-button {
     width: 100%;
     padding: 10px;
     margin-top: 10px;
@@ -2267,23 +2392,61 @@ input[type="checkbox"] {
     color: white;
     font-size: 16px;
     cursor: pointer;
-}
-
-.feedback-container__button:hover {
-    background: #218838;
     transition: background-color 0.3s ease;
 }
 
-.feedback-container__button--reset {
-    background: green;
+.feedback-button:hover {
+    background: #218838;
 }
 
-.feedback-container__button--reset:hover {
-    background: green;
+.feedback-reset {
+    background: #6c757d;
 }
 
-.feedback-container__error {
-    color: green;
+.feedback-reset:hover {
+    background: #5a6268;
+}
+
+.feedback-error {
+    color: #dc3545;
     font-size: 0.875em;
     display: none;
+}
+
+/* Thank You Page Styles */
+.thankyou-main {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+}
+
+.thankyou-wrapper {
+    max-width: 600px;
+    width: 90%;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.thankyou-wrapper h2 {
+    color: #28a745;
+}
+
+.home-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background: #28a745;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.home-button:hover {
+    background: #218838;
 }

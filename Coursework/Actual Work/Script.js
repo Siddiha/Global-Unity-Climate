@@ -833,17 +833,12 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-
-
-// feedbacks ection
-let ratingValue = 0; // Default rating value
+let ratingValue = 0;
 
 // Function to handle star selection
 function selectRating(stars) {
-    ratingValue = stars; // Update the selected rating value
-    const ratings = document.querySelectorAll('.feedback-container__rating span');
-
-    // Add or remove the "selected" class for highlighting stars
+    ratingValue = stars;
+    const ratings = document.querySelectorAll('.feedback-rating span');
     ratings.forEach((rating, index) => {
         if (index < stars) {
             rating.classList.add('selected');
@@ -851,74 +846,69 @@ function selectRating(stars) {
             rating.classList.remove('selected');
         }
     });
-
-    // Update the displayed rating
-    document.getElementById('feedback-rating-value').innerText = `You rated: ${ratingValue} stars`;
+    document.getElementById('ratingValueDisplay').innerText = `You rated: ${ratingValue} stars`;
 }
 
-// Function to validate and store data
-function storeData() {
-    // Collect input values
-    const name = document.getElementById('feedback-name').value;
-    const email = document.getElementById('feedback-email').value;
-    const comment = document.getElementById('feedback-comment').value;
+// Function to store feedback data and redirect
+function storeFeedbackData() {
+    const name = document.getElementById('userFullName').value;
+    const email = document.getElementById('userEmail').value;
+    const comment = document.getElementById('userFeedback').value;
 
-    // Validate star rating
     if (ratingValue === 0) {
         alert('Please select a star rating before submitting.');
         return false;
     }
 
-    // Validate comment
     if (!comment) {
-        document.getElementById('feedback-comment-error').style.display = 'inline';
+        document.getElementById('feedbackError').style.display = 'inline';
         alert('Please provide your feedback in the comment section.');
         return false;
     } else {
-        document.getElementById('feedback-comment-error').style.display = 'none'; // Hide error if resolved
+        document.getElementById('feedbackError').style.display = 'none';
     }
 
-    // Collect other inputs
-    const telephone = document.getElementById('feedback-telephone').value;
-    const address = document.getElementById('feedback-address').value;
-    const concernLevel = document.getElementById('feedback-concern-level').value;
-    const actions = Array.from(document.querySelectorAll('input[name="feedback-actions"]:checked')).map(el => el.value);
-    const country = document.getElementById('feedback-country').value;
-    const date = document.getElementById('feedback-date').value;
-
-  // Store in localStorage
     const feedbackData = {
         name,
         email,
-        telephone,
-        address,
+        telephone: document.getElementById('userPhone').value,
+        address: document.getElementById('userAddress').value,
         comment,
-        concernLevel,
-        actions,
-        country,
-        date,
+        concernLevel: document.getElementById('concernLevel').value,
+        actions: Array.from(document.querySelectorAll('input[name="climateActions"]:checked')).map(el => el.value),
+        country: document.getElementById('userCountry').value,
+        date: document.getElementById('feedbackDate').value,
         rating: ratingValue,
     };
-    localStorage.setItem('feedback', JSON.stringify(feedbackData));
+    localStorage.setItem('feedbackData', JSON.stringify(feedbackData));
 
-    // Redirect to Thank You page
+    // Redirect to thank you page
     window.location.href = "thankyou.html";
-    return false; // Prevent default form submission
+    return false;
 }
 
+// Thank You Page Functionality
+document.addEventListener('DOMContentLoaded', () => {
+    if (window.location.pathname.includes('thankyou.html')) {
+        const feedbackData = JSON.parse(localStorage.getItem('feedbackData'));
+        if (feedbackData) {
+            document.getElementById('displayUserName').textContent = feedbackData.name;
+            document.getElementById('displayUserEmail').textContent = feedbackData.email;
+        }
 
-document.getElementById("userName").textContent = localStorage.getItem("userName") || "User";
-document.getElementById("userEmail").textContent = localStorage.getItem("userEmail") || "your email";
+        let countdown = 60;
+        const countdownTimer = document.getElementById('countdownTimer');
+        const timerInterval = setInterval(() => {
+            countdown--;
+            countdownTimer.textContent = countdown;
+            if (countdown === 0) {
+                clearInterval(timerInterval);
+                goToHome();
+            }
+        }, 1000);
+    }
+});
 
-function goHome() {
+function goToHome() {
     window.location.href = "home.html";
 }
-
-let countdown = 60;
-setInterval(() => {
-    countdown--;
-    document.getElementById("countdown").textContent = countdown;
-    if (countdown === 0) {
-        goHome();
-    }
-}, 1000);
