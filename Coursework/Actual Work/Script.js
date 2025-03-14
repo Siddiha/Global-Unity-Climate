@@ -832,13 +832,19 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+// Global Scripts for Feedback and Thank You Pages
 
+// ===== Feedback Page Functionality =====
+
+// Initialize rating variable
 let ratingValue = 0;
 
 // Function to handle star selection
 function selectRating(stars) {
     ratingValue = stars;
     const ratings = document.querySelectorAll('.feedback-rating span');
+    
+    // Update the visual state of stars
     ratings.forEach((rating, index) => {
         if (index < stars) {
             rating.classList.add('selected');
@@ -846,6 +852,8 @@ function selectRating(stars) {
             rating.classList.remove('selected');
         }
     });
+    
+    // Update rating display text
     document.getElementById('ratingValueDisplay').innerText = `You rated: ${ratingValue} stars`;
 }
 
@@ -855,11 +863,13 @@ function storeFeedbackData() {
     const email = document.getElementById('userEmail').value;
     const comment = document.getElementById('userFeedback').value;
 
+    // Validate star rating
     if (ratingValue === 0) {
         alert('Please select a star rating before submitting.');
         return false;
     }
 
+    // Validate feedback comment
     if (!comment) {
         document.getElementById('feedbackError').style.display = 'inline';
         alert('Please provide your feedback in the comment section.');
@@ -868,6 +878,7 @@ function storeFeedbackData() {
         document.getElementById('feedbackError').style.display = 'none';
     }
 
+    // Create feedback data object
     const feedbackData = {
         name,
         email,
@@ -880,6 +891,8 @@ function storeFeedbackData() {
         date: document.getElementById('feedbackDate').value,
         rating: ratingValue,
     };
+    
+    // Store data in localStorage
     localStorage.setItem('feedbackData', JSON.stringify(feedbackData));
 
     // Redirect to thank you page
@@ -887,21 +900,66 @@ function storeFeedbackData() {
     return false;
 }
 
-// Thank You Page Functionality
-document.addEventListener('DOMContentLoaded', () => {
-    if (window.location.pathname.includes('thankyou.html')) {
+// Function to redirect to home page
+function goToHome() {
+    window.location.href = "home.html";
+}
+
+// ===== Event Listeners =====
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize functionality based on current page
+    const currentPage = window.location.pathname;
+    
+    // Feedback Page Initialization
+    if (currentPage.includes('feedback.html')) {
+        // Add click event listeners to rating stars
+        const stars = document.querySelectorAll('.feedback-rating span');
+        stars.forEach((star, index) => {
+            star.addEventListener('click', function() {
+                selectRating(index + 1);
+            });
+            
+            // Add hover effects
+            star.addEventListener('mouseover', function() {
+                for (let i = 0; i <= index; i++) {
+                    stars[i].style.color = '#FFD700';
+                }
+            });
+            
+            star.addEventListener('mouseout', function() {
+                stars.forEach((s, i) => {
+                    if (i < ratingValue) {
+                        s.style.color = '#FFD700';
+                    } else {
+                        s.style.color = '#ddd';
+                    }
+                });
+            });
+        });
+    }
+    
+    // Thank You Page Initialization
+    if (currentPage.includes('thankyou.html')) {
+        // Get stored feedback data
         const feedbackData = JSON.parse(localStorage.getItem('feedbackData'));
+        
+        // Display user information if available
         if (feedbackData) {
             document.getElementById('displayUserName').textContent = feedbackData.name;
             document.getElementById('displayUserEmail').textContent = feedbackData.email;
         }
-
+        
+        // Start countdown timer
         let countdown = 60;
         const countdownTimer = document.getElementById('countdownTimer');
-        const timerInterval = setInterval(() => {
+        
+        // Update countdown every second
+        const timerInterval = setInterval(function() {
             countdown--;
             countdownTimer.textContent = countdown;
-            if (countdown === 0) {
+            
+            // Redirect when countdown reaches zero
+            if (countdown <= 0) {
                 clearInterval(timerInterval);
                 goToHome();
             }
@@ -909,6 +967,27 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-function goToHome() {
-    window.location.href = "home.html";
-}
+// ===== Menu Functionality =====
+document.addEventListener('DOMContentLoaded', function() {
+    const menuButton = document.querySelector('.menu-button-fixed');
+    const menuOverlay = document.querySelector('.menu-overlay');
+    const closeMenu = document.querySelector('.close-menu');
+    
+    if (menuButton && menuOverlay && closeMenu) {
+        // Open menu
+        menuButton.addEventListener('click', function() {
+            menuOverlay.style.display = 'flex';
+            setTimeout(() => {
+                menuOverlay.style.opacity = '1';
+            }, 10);
+        });
+        
+        // Close menu
+        closeMenu.addEventListener('click', function() {
+            menuOverlay.style.opacity = '0';
+            setTimeout(() => {
+                menuOverlay.style.display = 'none';
+            }, 300);
+        });
+    }
+});
