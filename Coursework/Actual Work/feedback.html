@@ -103,6 +103,93 @@
             /* Enables scrolling */
         }
 
+        /*  */
+        .container-feedback {
+    max-width: 600px;
+    width: 90%;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin-left: 500px;
+    margin-top: 50px;
+    
+}
+
+
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+fieldset {
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+}
+
+legend {
+    font-weight: bold;
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+input[type="checkbox"] {
+    width: auto;
+    margin-right: 5px;
+}
+
+.rating {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+}
+
+.rating span {
+    font-size: 1.5em;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.rating span.selected {
+    color: gold;
+}
+
+.submit {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 5px;
+    background: #28a745;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.submit:hover {
+    background: #218838;
+    transition: background-color 0.3s ease;
+}
+#background{
+    background: linear-gradient(135deg, #e8f5e9 0%, #e0f7fa 100%);
+}
+
     </style>
     
 </head>
@@ -183,61 +270,43 @@
             </div>
         </div>
     </div>
-<main id="feedback-main">
-    <div class="feedback-wrapper">
+    <section id="background">
+    <div class="container-feedback">
         <h2>🌍 Climate Action Feedback Form</h2>
         <p>Help us take action against climate change by sharing your thoughts and concerns!</p>
-
-        <form id="climateFeedbackForm" onsubmit="return storeFeedbackData()">
-            <!-- Personal Details Section -->
-            <fieldset class="feedback-fieldset">
-                <legend class="feedback-legend">Personal Details</legend>
-
-                <label for="userFullName" class="feedback-label">Full Name:</label>
-                <input type="text" id="userFullName" class="feedback-input" placeholder="Enter your name" required>
-
-                <label for="userEmail" class="feedback-label">Email Address:</label>
-                <input type="email" id="userEmail" class="feedback-input" placeholder="Enter your email" required
+    
+        <form id="feedbackForm" onsubmit="return storeData()">
+            <fieldset>
+                <legend>Personal Details</legend>
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" placeholder="Enter your name" required>
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" placeholder="Enter your email" required
                     title="Please enter a valid email address">
-
-                <label for="userPhone" class="feedback-label">Telephone Number:</label>
-                <input type="tel" id="userPhone" class="feedback-input" placeholder="Enter your phone number"
-                    pattern="[0-9]{10}" title="Please enter a valid 10-digit phone number" required>
-
-                <label for="userAddress" class="feedback-label">Address:</label>
-                <textarea id="userAddress" class="feedback-textarea" rows="4" placeholder="Enter your address"
-                    maxlength="250" required></textarea>
+                <label for="telephone">Telephone Number:</label>
+                <input type="tel" id="telephone" placeholder="Enter your phone number" pattern="[0-9]{10}"
+                    title="Please enter a valid 10-digit phone number" required>
+                <label for="address">Address:</label>
+                <textarea id="address" rows="4" placeholder="Enter your address" maxlength="250" required></textarea>
             </fieldset>
-
-            <!-- Feedback Section -->
-            <fieldset class="feedback-fieldset">
-                <legend class="feedback-legend">Feedback Details</legend>
-
-                <label for="userFeedback" class="feedback-label">Your Feedback:</label>
-                <textarea id="userFeedback" class="feedback-textarea" rows="4" placeholder="Share your thoughts..."
-                    maxlength="500" required></textarea>
-                <span class="feedback-error" id="feedbackError" style="display:none;">This field is required.</span>
-
-                <label for="concernLevel" class="feedback-label">How concerned are you about climate change?</label>
-                <input type="range" min="1" max="5" step="1" id="concernLevel" class="feedback-input">
-
-                <label class="feedback-label">What actions do you take to reduce your carbon footprint?</label>
+    
+            <fieldset>
+                <legend>Feedback Details</legend>
+                <label for="comment">Your Feedback:</label>
+                <textarea id="comment" rows="4" placeholder="Share your thoughts..." maxlength="500" required></textarea>
+                <span class="error" id="commentError">This field is required.</span>
+                <label for="concernLevel">How concerned are you about climate change?</label>
+                <input type="range" min="1" max="5" step="1" id="concernLevel" required>
+                <label for="actions">What actions do you take to reduce your carbon footprint?</label>
                 <div>
-                    <label><input type="checkbox" name="climateActions" value="Recycling"> Recycling</label>
-                    <br/>
-                    
-                    <label><input type="checkbox" name="climateActions" value="Reducing plastic use"> Reducing plastic
-                        use</label>
-                        <br/>
-                    <label><input type="checkbox" name="climateActions" value="Using public transport"> Using public
+                    <label><input type="checkbox" name="actions" value="Recycling"> Recycling</label>
+                    <label><input type="checkbox" name="actions" value="Reducing plastic use"> Reducing plastic use</label>
+                    <label><input type="checkbox" name="actions" value="Using public transport"> Using public
                         transport</label>
-                        <br/>
-                    <label><input type="checkbox" name="climateActions" value="Conserving energy"> Conserving
-                        energy</label>
+                    <label><input type="checkbox" name="actions" value="Conserving energy"> Conserving energy</label>
                 </div>
-
-                <label for="userCountry" class="feedback-label">Country/Region:</label>
-                <select id="userCountry" class="feedback-select" required>
+                <label for="country">Country/Region:</label>
+                <select id="country" required>
                     <option value="">Select your country</option>
                     <option value="USA">USA</option>
                     <option value="UK">UK</option>
@@ -245,31 +314,29 @@
                     <option value="SriLanka">Sri Lanka</option>
                     <option value="Other">Other</option>
                 </select>
-
-                <label for="feedbackDate" class="feedback-label">Preferred date for feedback submission:</label>
-                <input type="date" id="feedbackDate" class="feedback-input" required>
-
-                <label for="feedbackFile" class="feedback-label">Upload Attachment (e.g., screenshot or
-                    document):</label>
-                <input type="file" id="feedbackFile" class="feedback-input" accept=".jpg,.png,.pdf,.docx">
-
-                <label class="feedback-label">Rate your experience:</label>
-                <div class="feedback-rating">
-                    <span>⭐</span>
-                    <span>⭐</span>
-                    <span>⭐</span>
-                    <span>⭐</span>
-                    <span>⭐</span>
+                <label for="date">Preferred date for feedback submission:</label>
+                <input type="date" id="date" required>
+                <label for="file">Upload Attachment (e.g., screenshot or document):</label>
+                <input type="file" id="file" accept=".jpg,.png,.pdf,.docx">
+                <label>Rate your experience:</label>
+                <div class="rating">
+                    <span onclick="selectRating(1)">⭐</span>
+                    <span onclick="selectRating(2)">⭐</span>
+                    <span onclick="selectRating(3)">⭐</span>
+                    <span onclick="selectRating(4)">⭐</span>
+                    <span onclick="selectRating(5)">⭐</span>
                 </div>
-                <p id="ratingValueDisplay">You rated: 0 stars</p>
-                <p id="countdown"></p> <!-- Countdown display -->
+                <p id="ratingValue">You rated: 0 stars</p>
             </fieldset>
-
-            <button type="submit" class="feedback-button">Submit Feedback</button>
-            <button type="reset" class="feedback-button feedback-reset">Reset Form</button>
+    
+            <br><br>
+            <button type="submit" class="submit">Submit Feedback</button>
+            <button type="reset" class="submit">Reset Form</button>
         </form>
     </div>
-</main>
+    </section>
+
+
     <!-- footer secion -->
     <footer class="gucci-footer">
         <!-- Newsletter Subscription Section -->
@@ -329,6 +396,38 @@
             <h1 class="climate">GLOBAL UNITY</h1>
         </div>
     </footer>
+
+    <script>
+        let ratingValue = 0;
+
+            function selectRating(stars) {
+                ratingValue = stars;
+                const ratings = document.querySelectorAll('.rating span');
+                ratings.forEach((rating, index) => {
+                    if (index < stars) {
+                        rating.classList.add('selected');
+                    } else {
+                        rating.classList.remove('selected');
+                    }
+                });
+                document.getElementById('ratingValue').innerText = `You rated: ${ratingValue} stars`;
+            }
+
+            function storeData() {
+                // Get the name and email values from the form
+                const name = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+
+                // Store name and email in localStorage
+                localStorage.setItem('userName', name);
+                localStorage.setItem('userEmail', email);
+
+                // Redirect to the Thank You page
+                window.location.href = "thankyou.html"; // Ensure this is the correct path to your Thank You page
+                return false; // Prevent form submission to ensure redirection
+            }
+
+    </script>
     
     <script src="Script.js"></script>
     </body>

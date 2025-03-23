@@ -103,6 +103,79 @@
             /* Enables scrolling */
         }
         
+        /* styles for feedback */
+         .container-thankyou {
+            margin-top: 100px;
+            margin-left: 500px;
+            max-width: 600px;
+            width: 90%;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: left;
+            background: linear-gradient(135deg, #e8f5e9 0%, #e0f7fa 100%);
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        fieldset {
+            border: 1px solid #ccc;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+        }
+
+        legend {
+            font-weight: bold;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        input[type="checkbox"] {
+            width: auto;
+            margin-right: 5px;
+        }
+
+        .rating span {
+            font-size: 1.5em;
+            cursor: pointer;
+        }
+
+        #click {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            border: none;
+            border-radius: 5px;
+            background: #28a745;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        #click:hover {
+            background: #218838;
+        }
 
 
 
@@ -210,16 +283,14 @@
     </div>
     <p class="top"><a href="#top">↑</a></p>
 
-    <main class="thankyou-main">
-        <div class="thankyou-wrapper">
-            <h2>🎉 Thank You, <span id="displayUserName">User</span>! 🎉</h2>
-            <p>Your feedback has been received. We appreciate your time in helping us take climate action. 🌍</p>
-            <p>✅ A confirmation email will be sent to <span id="displayUserEmail">your email</span> shortly.</p>
-            <p>Redirecting to the home page in <span id="countdownTimer">60</span> seconds...</p>
-            <br>
-            <button onclick="goToHome()" class="home-button">Return to Home</button>
-        </div>
-    </main>
+    <div class="container-thankyou">
+        <h2>🎉 Thank You, <span id="userName">User</span>! 🎉</h2>
+        <p>Your feedback has been received. We appreciate your time in helping us take climate action. 🌍</p>
+        <p>✅ A confirmation email will be sent to <span id="userEmail">your email</span> shortly.</p>
+        <p>Redirecting to the home page in <span id="countdown">60</span> seconds...</p>
+        <br>
+        <button id="click" onclick="goHome()">Return to Home</button>
+    </div>
 
     
 
@@ -283,6 +354,55 @@
             <h1 class="climate">GLOBAL UNITY</h1>
         </div>
     </footer>
+    <script>
+        // Display stored name & email from localStorage
+        document.getElementById("userName").textContent = localStorage.getItem("userName") || "User";
+        document.getElementById("userEmail").textContent = localStorage.getItem("userEmail") || "your email";
+
+        function goHome() {
+            window.location.href = "home.html"; // Change to your home page
+        }
+
+        // Auto-redirect after 60 seconds
+        let countdown = 60;
+        setInterval(() => {
+            countdown--;
+            document.getElementById("countdown").textContent = countdown;
+            if (countdown === 0) {
+                goHome();
+            }
+        }, 1000);
+
+        // Rating System Script
+        let ratingValue = 0; // Store the selected rating value
+
+        function selectRating(stars) {
+            ratingValue = stars; // Update rating value
+            const ratings = document.querySelectorAll('.rating span');
+            ratings.forEach((rating, index) => {
+                if (index < stars) {
+                    rating.classList.add('selected'); // Highlight selected stars
+                } else {
+                    rating.classList.remove('selected'); // Remove highlight from unselected stars
+                }
+            });
+            document.getElementById('ratingValue').innerText = `You rated: ${ratingValue} stars`;
+        }
+
+        function storeData() {
+            // Get the name and email values from the form
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+
+            // Store name and email in localStorage
+            localStorage.setItem('userName', name);
+            localStorage.setItem('userEmail', email);
+
+            // Redirect to the Thank You page
+            window.location.href = "thankyou.html"; // Ensure this is the correct path to your Thank You page
+            return false; // Prevent form submission to ensure redirection
+        }
+    </script>
 
     <script src="Script.js"></script>
 </body>

@@ -2117,7 +2117,8 @@ img {
 }
 
 .team-color{
-    background-color: #000;
+    background: linear-gradient(135deg, #e8f5e9 0%, #e0f7fa 100%);
+    
 
 
 }
@@ -2128,8 +2129,9 @@ img {
     text-align: left;
     margin-top: 7px;
     margin-left: 1px;
-    background-color: #000;
-    color: white;
+
+   
+    color: black;
     margin-top: 100px;
 }
 
@@ -2222,7 +2224,7 @@ img {
 .team-section__member-name {
     font-size: 18px;
     /* Standard font size for readability */
-    color:  linear-gradient(135deg, #e8f5e9 0%, #e0f7fa 100%);;
+    color:  linear-gradient(135deg, #e8f5e9 0%, #e0f7fa 100%);
     /* Green color symbolizing sustainability */
     transition: color 0.3s ease;
     /* Smooth transition for hover effects */
@@ -2340,150 +2342,3 @@ img {
 
 
 
-
-
-
-/* feedback form */
-/* Feedback section */
-/* Feedback Form Styles */
-#feedback-main {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 60px;
-    background: linear-gradient(135deg, #e8f5e9 0%, #e0f7fa 100%);
-}
-
-.feedback-wrapper {
-    max-width: 600px;
-    width: 90%;
-    background: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    text-align: left;
-}
-
-
-
-.feedback-fieldset {
-    border: 1px solid #ccc;
-    padding: 15px;
-    margin-bottom: 15px;
-    border-radius: 5px;
-}
-
-.feedback-legend {
-    font-weight: bold;
-    color: #333;
-}
-
-.feedback-label {
-    display: block;
-    margin-top: 10px;
-    font-weight: bold;
-    color: #555;
-}
-
-.feedback-input,
-.feedback-select,
-.feedback-textarea {
-    width: 100%;
-    padding: 8px;
-    margin-top: 5px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-.feedback-textarea {
-    resize: vertical;
-}
-
-.feedback-rating {
-    display: flex;
-    justify-content: center;
-    gap: 5px;
-    margin: 10px 0;
-}
-
-.feedback-rating span {
-    font-size: 1.5em;
-    cursor: pointer;
-    transition: color 0.3s;
-}
-
-.feedback-rating span.selected {
-    color: gold;
-}
-
-.feedback-button {
-    width: 100%;
-    padding: 10px;
-    margin-top: 10px;
-    border: none;
-    border-radius: 5px;
-    background: #28a745;
-    color: white;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.feedback-button:hover {
-    background: #218838;
-}
-
-.feedback-reset {
-    background: #6c757d;
-}
-
-.feedback-reset:hover {
-    background: #5a6268;
-}
-
-.feedback-error {
-    color: #dc3545;
-    font-size: 0.875em;
-    display: none;
-}
-
-/* Thank You Page Styles */
-.thankyou-main {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 60px;
-    background: linear-gradient(135deg, #e8f5e9 0%, #e0f7fa 100%);
-    
-}
-
-.thankyou-wrapper {
-    max-width: 600px;
-    width: 90%;
-    background: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-}
-
-.thankyou-wrapper h2 {
-    color: #28a745;
-}
-
-.home-button {
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    background: #28a745;
-    color: white;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.home-button:hover {
-    background: #218838;
-}
