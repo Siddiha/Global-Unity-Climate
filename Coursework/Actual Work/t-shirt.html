@@ -242,6 +242,44 @@
         </div>
     </div>
 </div>
+<!-- Checkout Modal -->
+<div class="checkout-modal" id="checkoutModal">
+    <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <h2>Checkout</h2>
+
+        <div class="cart-summary" id="cartSummary">
+            <!-- Cart items will be inserted here -->
+        </div>
+
+        <form class="checkout-form" id="checkoutForm">
+            <h3>Payment Information</h3>
+
+            <div class="form-group">
+                <label for="cardNumber">Card Number</label>
+                <input type="text" id="cardNumber" placeholder="1234 5678 9012 3456" required>
+            </div>
+
+            <div class="form-group">
+                <label for="cardName">Name on Card</label>
+                <input type="text" id="cardName" placeholder="John Doe" required>
+            </div>
+
+            <div class="form-group" style="display: flex; gap: 10px;">
+                <div style="flex: 1;">
+                    <label for="expiryDate">Expiry Date</label>
+                    <input type="text" id="expiryDate" placeholder="MM/YY" required>
+                </div>
+                <div style="flex: 1;">
+                    <label for="cvv">CVV</label>
+                    <input type="text" id="cvv" placeholder="123" required>
+                </div>
+            </div>
+
+            <button type="submit" class="checkout-btn">Complete Purchase</button>
+        </form>
+    </div>
+</div>
 
     <!-- Banner Section -->
     <section class="main-banner">
@@ -252,114 +290,125 @@
     </section>
 
     <!-- Collection Section -->
-    <section class="collection-wrapper">
-        <h2>Our Collection</h2>
-        <div class="items-layout">
-            <!-- Item 1 -->
-            <div class="item-box">
-                <div class="item-visual">
-                    <img src="Images/eco1.jpeg" alt="T-shirt">
-                    <div class="favorite-icon"></div>
-                </div>
-                <div class="item-details">
-                    <h3 class="item-title">GreenThreads</h3>
-                    <p class="item-cost">$1,500</p>
-                    <a href="t-shirt.html" class="purchase-btn">Shop this</a>
-                </div>
+<section class="collection-wrapper">
+    <h2>Our Collection</h2>
+    <div class="items-layout">
+        <!-- Item 1 -->
+        <div class="item-box">
+            <div class="item-visual">
+                <img src="Images/eco1.jpeg" alt="T-shirt">
+                <div class="favorite-icon"></div>
             </div>
-
-            <!-- Item 2 -->
-            <div class="item-box">
-                <div class="item-visual">
-                    <img src="Images/eco2.jpg" alt="T-shirt">
-                    <div class="favorite-icon"></div>
-                </div>
-                <div class="item-details">
-                    <h3 class="item-title">EcoWear</h3>
-                    <p class="item-cost">$2,500</p>
-                    <a href="t-shirt.html" class="purchase-btn">Shop this</a>
-                </div>
-            </div>
-
-            <!-- Item 3 -->
-            <div class="item-box">
-                <div class="item-visual">
-                    <img src="Images/eco3.jpeg" alt="T-shirt">
-                    <div class="favorite-icon"></div>
-                </div>
-                <div class="item-details">
-                    <h3 class="item-title">ClimateGuard Tees</h3>
-                    <p class="item-cost">$1,300</p>
-                    <a href="t-shirt.html" class="purchase-btn">Shop this</a>
-                </div>
-            </div>
-
-            <!-- Item 4 -->
-            <div class="item-box">
-                <div class="item-visual">
-                    <img src="Images/eco4.jpg" alt="T-shirt">
-                    <div class="favorite-icon"></div>
-                </div>
-                <div class="item-details">
-                    <h3 class="item-title">Climate Crusader</h3>
-                    <p class="item-cost">$2,500</p>
-                    <a href="t-shirt.html" class="purchase-btn">Shop this</a>
-                </div>
-            </div>
-
-            <!-- Item 5 -->
-            <div class="item-box">
-                <div class="item-visual">
-                    <img src="Images/eco5.jpg" alt="T-shirt">
-                    <div class="favorite-icon"></div>
-                </div>
-                <div class="item-details">
-                    <h3 class="item-title">Defender</h3>
-                    <p class="item-cost">$2,500</p>
-                    <a href="t-shirt.html" class="purchase-btn">Shop this</a>
-                </div>
-            </div>
-
-            <!-- Item 6 -->
-            <div class="item-box">
-                <div class="item-visual">
-                    <img src="Images/eco6.jpeg" alt="T-shirt">
-                    <div class="favorite-icon"></div>
-                </div>
-                <div class="item-details">
-                    <h3 class="item-title">Footprint Eraser</h3>
-                    <p class="item-cost">$2,500</p>
-                    <a href="t-shirt.html" class="purchase-btn">Shop this</a>
-                </div>
-            </div>
-
-            <!-- Item 7 -->
-            <div class="item-box">
-                <div class="item-visual">
-                    <img src="Images/eco8.jpeg" alt="T-shirt">
-                    <div class="favorite-icon"></div>
-                </div>
-                <div class="item-details">
-                    <h3 class="item-title">Green Grid</h3>
-                    <p class="item-cost">$2,500</p>
-                    <a href="t-shirt.html" class="purchase-btn">Shop this</a>
-                </div>
-            </div>
-
-            <!-- Item 8 -->
-            <div class="item-box">
-                <div class="item-visual">
-                    <img src="Images/ec7.jpeg" alt="T-shirt">
-                    <div class="favorite-icon"></div>
-                </div>
-                <div class="item-details">
-                    <h3 class="item-title">Duffler</h3>
-                    <p class="item-cost">$1,200</p>
-                    <a href="t-shirt.html" class="purchase-btn">Shop this</a>
-                </div>
+            <div class="item-details">
+                <h3 class="item-title">GreenThreads</h3>
+                <p class="item-cost">$1,500</p>
+                <button class="purchase-btn"
+                    data-product='{"name":"GreenThreads","price":1500,"image":"Images/eco1.jpeg"}'>Shop this</button>
             </div>
         </div>
-    </section>
+
+        <!-- Item 2 -->
+        <div class="item-box">
+            <div class="item-visual">
+                <img src="Images/eco2.jpg" alt="T-shirt">
+                <div class="favorite-icon"></div>
+            </div>
+            <div class="item-details">
+                <h3 class="item-title">EcoWear</h3>
+                <p class="item-cost">$2,500</p>
+                <button class="purchase-btn"
+                    data-product='{"name":"EcoWear","price":2500,"image":"Images/eco2.jpg"}'>Shop this</button>
+            </div>
+        </div>
+
+        <!-- Item 3 -->
+        <div class="item-box">
+            <div class="item-visual">
+                <img src="Images/eco3.jpeg" alt="T-shirt">
+                <div class="favorite-icon"></div>
+            </div>
+            <div class="item-details">
+                <h3 class="item-title">ClimateGuard Tees</h3>
+                <p class="item-cost">$1,300</p>
+                <button class="purchase-btn"
+                    data-product='{"name":"ClimateGuard Tees","price":1300,"image":"Images/eco3.jpeg"}'>Shop
+                    this</button>
+            </div>
+        </div>
+
+        <!-- Item 4 -->
+        <div class="item-box">
+            <div class="item-visual">
+                <img src="Images/eco4.jpg" alt="T-shirt">
+                <div class="favorite-icon"></div>
+            </div>
+            <div class="item-details">
+                <h3 class="item-title">Climate Crusader</h3>
+                <p class="item-cost">$2,500</p>
+                <button class="purchase-btn"
+                    data-product='{"name":"Climate Crusader","price":2500,"image":"Images/eco4.jpg"}'>Shop this</button>
+            </div>
+        </div>
+
+        <!-- Item 5 -->
+        <div class="item-box">
+            <div class="item-visual">
+                <img src="Images/eco5.jpg" alt="T-shirt">
+                <div class="favorite-icon"></div>
+            </div>
+            <div class="item-details">
+                <h3 class="item-title">Defender</h3>
+                <p class="item-cost">$2,500</p>
+                <button class="purchase-btn"
+                    data-product='{"name":"Defender","price":2500,"image":"Images/eco5.jpg"}'>Shop this</button>
+            </div>
+        </div>
+
+        <!-- Item 6 -->
+        <div class="item-box">
+            <div class="item-visual">
+                <img src="Images/eco6.jpeg" alt="T-shirt">
+                <div class="favorite-icon"></div>
+            </div>
+            <div class="item-details">
+                <h3 class="item-title">Footprint Eraser</h3>
+                <p class="item-cost">$2,500</p>
+                <button class="purchase-btn"
+                    data-product='{"name":"Footprint Eraser","price":2500,"image":"Images/eco6.jpeg"}'>Shop
+                    this</button>
+            </div>
+        </div>
+
+        <!-- Item 7 -->
+        <div class="item-box">
+            <div class="item-visual">
+                <img src="Images/eco8.jpeg" alt="T-shirt">
+                <div class="favorite-icon"></div>
+            </div>
+            <div class="item-details">
+                <h3 class="item-title">Green Grid</h3>
+                <p class="item-cost">$2,500</p>
+                <button class="purchase-btn"
+                    data-product='{"name":"Green Grid","price":2500,"image":"Images/eco8.jpeg"}'>Shop this</button>
+            </div>
+        </div>
+
+        <!-- Item 8 -->
+        <div class="item-box">
+            <div class="item-visual">
+                <img src="Images/ec7.jpeg" alt="T-shirt">
+                <div class="favorite-icon"></div>
+            </div>
+            <div class="item-details">
+                <h3 class="item-title">Duffler</h3>
+                <p class="item-cost">$1,200</p>
+                <button class="purchase-btn"
+                    data-product='{"name":"Duffler","price":1200,"image":"Images/ec7.jpeg"}'>Shop this</button>
+            </div>
+        </div>
+    </div>
+</section>
+
 
     <!-- Footer Section -->
     <!-- footer secion -->

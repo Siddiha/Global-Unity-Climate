@@ -831,3 +831,63 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
+// t-shirt 
+// Initialize cart from localStorage or as empty array
+// Initialize cart data from localStorage or as empty array
+let cart = JSON.parse(localStorage.getItem('globalUnityCart')) || [];
+
+// Update cart counter display
+function updateCartCounter() {
+    const counter = document.getElementById('cart-counter');
+    const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+    counter.textContent = totalItems;
+    counter.style.display = totalItems > 0 ? 'block' : 'none';
+}
+
+// Add to cart function
+function addToCart(product) {
+    const existingItem = cart.find(item => item.name === product.name);
+    if (existingItem) {
+        existingItem.quantity++;
+    } else {
+        cart.push({...product, quantity: 1});
+    }
+    localStorage.setItem('globalUnityCart', JSON.stringify(cart));
+    updateCartCounter();
+}
+
+// Show success message
+function showSuccessMessage() {
+    const message = document.createElement('div');
+    message.textContent = 'Added to cart!';
+    message.style.position = 'fixed';
+    message.style.top = '20px';
+    message.style.left = '50%';
+    message.style.transform = 'translateX(-50%)';
+    message.style.backgroundColor = '#4CAF50';
+    message.style.color = 'white';
+    message.style.padding = '10px 20px';
+    message.style.borderRadius = '4px';
+    message.style.zIndex = '1000';
+    document.body.appendChild(message);
+    setTimeout(() => message.remove(), 2000);
+}
+
+// Initialize on page load
+document.addEventListener('DOMContentLoaded', function() {
+    updateCartCounter();
+    
+    // Add event listeners to all "Shop this" buttons
+    document.querySelectorAll('.purchase-btn').forEach(button => {
+        button.addEventListener('click', function() {
+            const product = JSON.parse(this.dataset.product);
+            addToCart(product);
+            showSuccessMessage();
+            
+            // Show checkout modal (make sure you have this function defined)
+            if (typeof showCheckoutModal === 'function') {
+                showCheckoutModal();
+            }
+        });
+    });
+});
