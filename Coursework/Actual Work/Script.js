@@ -833,61 +833,106 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // t-shirt 
 // Initialize cart from localStorage or as empty array
-// Initialize cart data from localStorage or as empty array
-let cart = JSON.parse(localStorage.getItem('globalUnityCart')) || [];
-
-// Update cart counter display
-function updateCartCounter() {
-    const counter = document.getElementById('cart-counter');
-    const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
-    counter.textContent = totalItems;
-    counter.style.display = totalItems > 0 ? 'block' : 'none';
-}
-
-// Add to cart function
-function addToCart(product) {
-    const existingItem = cart.find(item => item.name === product.name);
-    if (existingItem) {
-        existingItem.quantity++;
-    } else {
-        cart.push({...product, quantity: 1});
-    }
-    localStorage.setItem('globalUnityCart', JSON.stringify(cart));
-    updateCartCounter();
-}
-
-// Show success message
-function showSuccessMessage() {
-    const message = document.createElement('div');
-    message.textContent = 'Added to cart!';
-    message.style.position = 'fixed';
-    message.style.top = '20px';
-    message.style.left = '50%';
-    message.style.transform = 'translateX(-50%)';
-    message.style.backgroundColor = '#4CAF50';
-    message.style.color = 'white';
-    message.style.padding = '10px 20px';
-    message.style.borderRadius = '4px';
-    message.style.zIndex = '1000';
-    document.body.appendChild(message);
-    setTimeout(() => message.remove(), 2000);
-}
-
-// Initialize on page load
-document.addEventListener('DOMContentLoaded', function() {
-    updateCartCounter();
-    
-    // Add event listeners to all "Shop this" buttons
-    document.querySelectorAll('.purchase-btn').forEach(button => {
-        button.addEventListener('click', function() {
-            const product = JSON.parse(this.dataset.product);
-            addToCart(product);
-            showSuccessMessage();
+  document.addEventListener('DOMContentLoaded', function () {
+            const cartItems = [];
+            const cartCounter = document.getElementById('cart-counter');
+            const checkoutModal = document.getElementById('checkoutModal');
+            const cartItemsContainer = document.getElementById('cartItems');
+            const paymentSection = document.getElementById('paymentSection');
+            const checkoutBtn = document.getElementById('checkoutBtn');
             
-            // Show checkout modal (make sure you have this function defined)
-            if (typeof showCheckoutModal === 'function') {
-                showCheckoutModal();
+            function updateCartCounter() {
+                cartCounter.textContent = cartItems.length;
             }
+
+            function removeItem(index) {
+                cartItems.splice(index, 1);
+                updateCartCounter();
+                showCartItems();
+                if (cartItems.length === 0) {
+                    checkoutModal.style.display = 'none';
+                }
+            }
+
+            function showCartItems() {
+                let totalAmount = cartItems.reduce((sum, item) => sum + item.price, 0);
+                
+                cartItemsContainer.innerHTML = cartItems.map((item, index) => `
+                    <div class="cart-item">
+                        <div class="cart-item-details">
+                            <img src="${item.image}" alt="${item.name}" style="width: 60px; height: 60px; object-fit: cover;">
+                            <div>
+                                <h4>${item.name}</h4>
+                                <p>$${item.price.toLocaleString()}</p>
+                            </div>
+                        </div>
+                        <span class="remove-item" onclick="removeItem(${index})">✕</span>
+                    </div>
+                `).join('') + `
+                    <div class="total-amount">Total: $${totalAmount.toLocaleString()}</div>
+                `;
+            }
+
+            // Cart icon click handler
+            document.getElementById('cart-icon').addEventListener('click', function(e) {
+                e.preventDefault();
+                if (cartItems.length > 0) {
+                    showCartItems();
+                    checkoutModal.style.display = 'block';
+                    paymentSection.style.display = 'none';
+                }
+            });
+
+            // Checkout button handler
+            checkoutBtn.addEventListener('click', function() {
+                paymentSection.style.display = 'block';
+                this.style.display = 'none';
+            });
+
+            // Make removeItem function globally available
+            window.removeItem = removeItem;
+
+            // Purchase button handlers
+            document.querySelectorAll('.purchase-btn').forEach(button => {
+                button.addEventListener('click', function() {
+                    const productData = JSON.parse(this.dataset.product);
+                    cartItems.push(productData);
+                    updateCartCounter();
+                    showCartItems();
+                    checkoutModal.style.display = 'block';
+                });
+            });
+
+            // Complete checkout handler
+            document.getElementById('completeCheckout').addEventListener('click', function() {
+                const email = document.getElementById('email').value;
+                if (!email) {
+                    alert('Please enter your email address');
+                    return;
+                }
+                document.getElementById('paymentSection').style.display = 'none';
+                document.getElementById('thankYouMessage').style.display = 'block';
+                cartItems.length = 0;
+                updateCartCounter();
+                setTimeout(() => {
+                    checkoutModal.style.display = 'none';
+                    document.getElementById('thankYouMessage').style.display = 'none';
+                    checkoutBtn.style.display = 'block';
+                }, 3000);
+            });
+
+            // Close modal handlers
+            document.querySelector('.close-modal').addEventListener('click', () => {
+                checkoutModal.style.display = 'none';
+                paymentSection.style.display = 'none';
+                checkoutBtn.style.display = 'block';
+            });
+
+            window.addEventListener('click', (event) => {
+                if (event.target === checkoutModal) {
+                    checkoutModal.style.display = 'none';
+                    paymentSection.style.display = 'none';
+                    checkoutBtn.style.display = 'block';
+                }
+            });
         });
-    });
-});
