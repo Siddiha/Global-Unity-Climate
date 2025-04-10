@@ -390,7 +390,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-// fixed navbar for all the pages 
+// fixed navbar for all the pages except the home page 
 
   document.addEventListener('DOMContentLoaded', function () {
             // Menu toggle functionality
