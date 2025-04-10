@@ -158,7 +158,8 @@ document.addEventListener('DOMContentLoaded', () => {
             let leftIndex = (currentIndex - 1 + images.length) % images.length;
             let centerIndex = currentIndex;
             let rightIndex = (currentIndex + 1) % images.length;
-            
+
+
             // Update images
             document.querySelector('.left-slide img').src = images[leftIndex];
             document.querySelector('.main-slide-container img').src = images[centerIndex];
@@ -170,7 +171,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 dot.classList.toggle('active', index === currentIndex);
             });
         }
-        
+
+
         // Previous slide function
         function prevSlide() {
             currentIndex = (currentIndex - 1 + images.length) % images.length;

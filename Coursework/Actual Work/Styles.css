@@ -5,11 +5,16 @@
 }
 
 body {
-    font-family: 'Bodoni Moda', serif;
-    line-height: 1.5;
-    overflow-x: hidden;
-    margin: 20px;
+    background-color: white;
+    font-family: Arial, sans-serif;
+    color: black;
+    text-align: center;
+    margin: 0;
+    padding: 0;
 }
+
+
+
 .climate{
     color: white;
 }
