@@ -1234,6 +1234,8 @@ tr:nth-child(even) {
     background-color: #f9f9f9;
 }
 
+
+
 /* Icons and Thumbnails */
 .icon-table {
     font-size: 1.2rem;
@@ -1275,6 +1277,9 @@ tr:nth-child(even) {
     opacity: 1;
 }
 
+
+
+
 /* References */
 .references {
     margin-top: 40px;
@@ -1301,9 +1306,31 @@ tr:nth-child(even) {
     text-decoration: none;
 }
 
+
 .references ul li a:hover {
     text-decoration: underline;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /* t-shirt collections */
