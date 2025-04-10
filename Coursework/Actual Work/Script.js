@@ -141,37 +141,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-
-// for the content details of all four students 
-
-function navigateToProduct(category) {
-    // Add your navigation logic here
-    console.log(`Navigating to ${category}`);
-    // Example navigation:
-    window.location.href = "ST2.html";
-}
-
-// Optional: Add smooth fade-in animation on page load
-document.addEventListener('DOMContentLoaded', () => {
-    const items = document.querySelectorAll('.product-item');
-    items.forEach((item, index) => {
-        item.style.opacity = '0';
-        setTimeout(() => {
-            item.style.transition = 'opacity 0.5s ease';
-            item.style.opacity = '1';
-        }, index * 100);
-    });
-});
-
-
-
-
-
-
-
-
-
-
 // IMAGE
   // Images array for the slides
         const images = [
