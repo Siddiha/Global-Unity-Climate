@@ -197,7 +197,8 @@ padding: 20px;
 
 /* Navigation Icons */
 .nav-right {
-    display: flex;
+    display: flex; 
+    /* to keep the item nicer and cleener by keeping all the space  */
     align-items: center;
     gap: 1.5rem;
 }
