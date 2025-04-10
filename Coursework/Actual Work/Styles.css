@@ -5,14 +5,18 @@
 }
 
 body {
+    line-height: 1.5;
+    overflow-x: hidden;
+    margin: 20px;
     background-color: white;
     font-family: Arial, sans-serif;
     color: black;
     text-align: center;
     margin: 0;
     padding: 0;
-}
 
+
+}
 
 
 .climate{
@@ -691,7 +695,7 @@ padding: 20px;
  }
 
  /* Main slide container */
-/* Main slide container */
+
 .main-slide-container {
     width: 500px;
     height: 500px;
@@ -785,33 +789,33 @@ padding: 20px;
     right: 150px;
 }
 
- /* Product name */
- .product-name {
-     margin-top: 30px;
-     font-size: 14px;
-     color: #666;
-     text-transform: uppercase;
-     letter-spacing: 1px;
- }
+/* Product name */
+.product-name {
+    margin-top: 30px;
+    font-size: 14px;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
 
- /* Pagination dots */
- .pagination {
-     display: flex;
-     justify-content: center;
-     margin-top: 30px;
- }
+/* Pagination dots */
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
 
- .dot {
-     width: 30px;
-     height: 2px;
-     background-color: #cccccc;
-     margin: 0 3px;
-     cursor: pointer;
- }
+.dot {
+    width: 30px;
+    height: 2px;
+    background-color: #cccccc;
+    margin: 0 3px;
+    cursor: pointer;
+}
 
- .dot.active {
-     background-color: black;
- }
+.dot.active {
+    background-color: black;
+}
 
 
 
