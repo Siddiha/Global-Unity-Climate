@@ -538,8 +538,7 @@ padding: 20px;
 .product-item {
     position: relative;
     cursor: pointer;
-    overflow: hidden;
-    overflow: hidden;
+    overflow: hidden; 
     transition: transform 0.8s cubic-bezier(0.25, 1, 0.3, 1);
 }
 
