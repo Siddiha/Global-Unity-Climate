@@ -2231,7 +2231,7 @@ text {
     /* Starts collapsed */
     overflow: hidden;
     /* Hides overflowing content */
-    background: linear-gradient(135deg, #e8f5e9 0%, #e0f7fa 100%);
+    background:#e8f0fe);
     /* Light blue background for clarity */
     padding: 0;
     /* No padding when collapsed */
