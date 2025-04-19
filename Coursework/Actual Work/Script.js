@@ -266,6 +266,18 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 // footer section part
 // JavaScript for bglobal unity  footer interactions
 document.addEventListener('DOMContentLoaded', function() {
