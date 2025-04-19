@@ -2231,7 +2231,7 @@ text {
     /* Starts collapsed */
     overflow: hidden;
     /* Hides overflowing content */
-    background:#e8f0fe);
+    background:#e8f0fe;
     /* Light blue background for clarity */
     padding: 0;
     /* No padding when collapsed */
