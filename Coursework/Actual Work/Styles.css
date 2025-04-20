@@ -1642,13 +1642,13 @@ img {
 
 
 
+
 /* user profile sections */
 
 .main-container {
     display: flex;
     min-height: calc(100vh - 120px);
     /* Subtract navbar and footer height */
-      background: linear-gradient(135deg, #e8f5e9 0%, #e0f7fa 100%);
 }
 
 .rectangle-container {
@@ -1733,21 +1733,6 @@ img {
     background-color: #808080;
 }
 
-.edit-button {
-    margin-top: 20px;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-}
-
-.skill-edit-section {
-    margin-top: 20px;
-}
-
-.skill-edit-section input {
-    width: 100px;
-    margin-right: 10px;
-}
 
 .GoalsAndExp {
     display: grid;
@@ -1765,6 +1750,36 @@ img {
     flex-direction: column;
     align-items: flex-start;
 }
+
+/* Fix for bullet point alignment */
+#goalsList li, #experienceList li {
+    text-indent: 0;
+    /* Remove any text indentation */
+    padding-left: 0;
+    /* Remove any left padding */
+}
+
+/* Ensure consistent bullet positioning */
+#goalsList, #experienceList {
+    padding-left: 20px;
+    /* Keep bullets visible but consistent */
+    margin-left: 0;
+}
+
+/* Fix space between the bullet and points */
+#goalsList li:nth-child(1),
+#goalsList li:nth-child(2),
+#goalsList li:nth-child(4),
+#experienceList li:nth-child(2),
+#experienceList li:nth-child(3) {
+    margin-left: 0;
+    /* Reset any custom margins */
+    text-align: left;
+    /* Ensure left alignment */
+    white-space: normal;
+    /* Prevent any whitespace preservation */
+}
+
 
 .GoalsHeader,
 .ExperienceHeader {
@@ -1786,7 +1801,7 @@ img {
 }
 
 .calendar-section {
-    border: 3px solid #ccc;
+    border: 1px solid #ccc;
     padding: 10px;
     border-radius: 5px;
     width: 280px;
@@ -1794,7 +1809,7 @@ img {
 }
 
 .time-section {
-    border: 3px solid #ccc;
+    border: 1px solid #ccc;
     padding: 10px;
     border-radius: 5px;
 }
@@ -1911,18 +1926,6 @@ img {
     gap: 10px;
 }
 
-.WhatsApp{
-    background-color: #25D366;
-    padding: 5px;
-    border-radius: 10px;
-}
-
-.goals{
-    background-color: lightblue;
-    padding: 5px;
-    
-}
-
 .selected-goals .selected-images img {
     width: 50px;
     /* Smaller size for selected images */
@@ -1960,13 +1963,6 @@ img {
     margin-bottom: 5px;
     font-weight: bold;
 }
-
-
-
-
-
-
-
 
 
 
