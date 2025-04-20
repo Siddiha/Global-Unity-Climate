@@ -7,7 +7,8 @@
     <title>Global Unity</title>
     <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@400;600&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="Styles.css">
+
     <style>
         /* fixed  Navigation */
         .nav-wrapper-fixed {
@@ -92,10 +93,7 @@
             width: 100%;
             height: 2px;
             background-color: black;
-            /* Always black for visibility */
-        }
-
-        /* Content  Welcome to global community*/
+            /* Always lcome to global community*/
         .content {
             margin-top: 70px;
             /* Add space for the fixed navbar */
@@ -109,21 +107,23 @@
     <nav class="nav-wrapper-fixed">
         <div class="nav-container-fixed">
             <div class="brand-fixed">
+
                 <a href="/" class="logo">
+
                     <span class="logo-text-fixed">GLOBAL UNITY</span>
                 </a>
             </div>
-            <div class="nav-left">
-                <img src="Images/logo.png" alt="logo image" class="nav-logo">
-            </div>
-    
+                        <div class="nav-left">
+                            <img src="Images/logo.png" alt="logo image" class="nav-logo">
+                        </div>
+
             <div class="nav-right-fixed">
                 <a href="home.html" class="icon-link-fixed">
                     <svg class="icon" viewBox="0 0 24 24">
                         <path d="M4 7h16v14H4V7zm4-5h8v3H8V2z" fill="none" stroke="currentColor" stroke-width="2" />
                     </svg>
                 </a>
-                <a href="team.html" class="icon-link-fixed">
+                <a href="home.html" class="icon-link-fixed">
                     <svg class="icon" viewBox="0 0 24 24">
                         <circle cx="12" cy="8" r="4" fill="none" stroke="currentColor" stroke-width="2" />
                         <path d="M4 20c0-4.4 3.6-8 8-8s8 3.6 8 8" fill="none" stroke="currentColor" stroke-width="2" />
@@ -136,52 +136,50 @@
                     </svg>
                 </a>
                 <button class="menu-button-fixed">
-                    <span class="hamburger-icon">
+                    <div class="hamburger-icon">
                         <span></span>
                         <span></span>
                         <span></span>
-                    </span>
+                    </div>
                 </button>
             </div>
         </div>
     </nav>
-    <!-- Menu Overlay -->
-    <div class="menu-overlay">
-        <div class="menu-content">
-            <div class="menu-container">
-                <div class="menu-header">
-                    <div></div>
-                    <button class="close-menu">✕</button>
-    
+
+<!-- Menu Overlay -->
+<div class="menu-overlay">
+    <div class="menu-content">
+        <div class="menu-container">
+            <div class="menu-header">
+                <div></div>
+                <button class="close-menu">✕</button>
+
+            </div>
+            <div class="menu-grid">
+                <div class="menu-section">
+                    <ul class="menu-list">
+                        <li><a href="home.html">Home</a></li>
+                        <li><a href="splash.html">Splash Screen</a></li>
+                        <li><a href="Volunteer.html">Volunteer</a></li>
+                        <li><a href="t-shirt.html">Shop </a></li>
+
+                    </ul>
                 </div>
-                <div class="menu-grid">
-                    <div class="menu-section">
-                        <ul class="menu-list">
-                            <li><a href="home.html">Home</a></li>
-                            <li><a href="splash.html">Splash Screen</a></li>
-                            <li><a href="Volunteer.html">Volunteer</a></li>
-                            <li><a href="t-shirt.html">Shop </a></li>
-    
-                        </ul>
-                    </div>
-                    <div class="menu-section secondary">
-                        <ul class="menu-list">
-                            <li><a href="team.html">Team Page</a></li>
-                            <li><a href="profile.html">Profile</a></li>
-                            <li><a href="sitemap.html">Sitemap</a></li>
-                            <li><a href="feedback.html">feedback</a></li>
-    
-                            <li class="spacer"></li>
-                            <li><a href="profile.html#contactForm" class="underline">Contact Us</a></li>
-                        </ul>
-                    </div>
+                <div class="menu-section secondary">
+                    <ul class="menu-list">
+                        <li><a href="team.html">Team Page</a></li>
+                        <li><a href="profile.html">Profile</a></li>
+                        <li><a href="sitemap.html">Sitemap</a></li>
+                        <li><a href="feedback.html">feedback</a></li>
+
+                        <li class="spacer"></li>
+                        <li><a href="profile.html#contactForm" class="underline">Contact Us</a></li>
+                    </ul>
                 </div>
             </div>
         </div>
     </div>
-
-
-<section id="color">
+</div>
 <div class="main-container">
     <!-- Rectangle Image with Circular Profile Picture -->
     <div class="rectangle-container">
@@ -193,11 +191,14 @@
     <div class="profile-content">
         <h1 id="profileName"
             style="text-align:center; padding-top: 25px; padding-bottom:25px; background-color:#6A989E">John Doe</h1>
-        <h2 style="background-color:#93B7BE">About</h2>
-        <p id="aboutMe">Some text about me. Some text about me. I am lorem ipsum consectetur adipiscing elit,
-            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-
+        <h2 style="background-color:#93B7BE">Bio</h2>
+        <p id="aboutMe">Hi!<br>
+	I am Joanna Stark. I am 21 years old. I study at University of Westminster UK.
+	I am single and I currently live in London. As for my hobbies, I love reading
+	books and I love to snorkell and spend time in the sea. I love snorkelling
+	because I get to see coral reefs and fishes and all the wonders of nature.
+	And that's a bit about me!</p>
+	
         <h2>My Skills</h2>
 
         <p>Communication</p>
@@ -229,11 +230,11 @@
                     <h2>Goals</h2>
                 </div>
                 <ul id="goalsList">
-                    <li>Become a better person</li>
-                    <li>Contribute to a clean environment</li>
-                    <li>Become successful</li>
-                    <li>Hi there</li>
-                </ul>
+					<li>Become a marine biologist</li>
+					<li>Become a better person</li>
+					<li>Contribute to a clean environment</li>
+					<li>Become successful</li>
+				</ul>
             </div>
 
             <!-- Experience Section -->
@@ -242,18 +243,18 @@
                     <img src="Images/Experience.jpg" alt="Experience icon">
                     <h2>Experience</h2>
                 </div>
-                <p id="experienceText">I have been a photographer for a while now and I'm loving it. These are my
-                    experiences in terms of profession.</p>
+                <p id="experienceText">I am photographer. I do it as a side hustle while I study.
+				These are my experiences.</p>
                 <ul id="experienceList">
-                    <li>Photographer</li>
-                    <li>Coder</li>
-                    <li>Swimmer</li>
-                </ul>
+					<li>Worked as assistant Photographer for 2 years.</li>
+					<li>Completed my A levels</li>
+					<li>Won an award for best wildlife photography.</li>
+				</ul>
             </div>
         </div>
 
         <!-- Availability Section -->
-        <h2 >Availability</h2>
+        <h2>Availability</h2>
         <div class="availability-container">
             <!-- Calendar Section -->
             <div class="calendar-section">
@@ -268,9 +269,9 @@
 
             <!-- Time Section -->
             <div class="time-section">
-                <h3 >Available Times</h3>
+                <h3>Available Times</h3>
                 <input type="text" id="timeInput" placeholder="Enter available time (e.g., 10:00 AM - 2:00 PM)">
-                <button onclick="addTime()" class="goals">Add Time</button>
+                <button onclick="addTime()">Add Time</button>
             </div>
         </div>
 
@@ -286,7 +287,7 @@
             <!-- Images will be dynamically added here -->
         </div>
 
-        <button class="goals" onclick="saveGoals()" id="saveButton">Save Goals</button>
+        <button onclick="saveGoals()" id="saveButton">Save Goals</button>
 
         <div class="selected-goals" id="selectedGoals" style="display: none;">
             <h2>Selected Goals</h2>
@@ -297,7 +298,6 @@
         </div>
 
         <!--FORM-->
-        
         <h1>Contact Us</h1>
         <form id="contactForm">
             <label for="name">Name:</label><br>
@@ -309,7 +309,7 @@
             <label for="message">Message:</label><br>
             <textarea id="message" name="message" required></textarea><br><br>
 
-            <button type="button" class="WhatsApp" onclick="sendViaWhatsApp()">Send via WhatsApp</button>
+            <button type="button" onclick="sendViaWhatsApp()">Send via WhatsApp</button>
             <!-- Edit Section (Hidden by Default) -->
             <div class="edit-mode" id="editSection" style="display: none; padding: 20px;">
                 <h2>Edit Profile</h2>
@@ -387,10 +387,32 @@
        
         </form>
 
+
+
     </div>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     </main>
-</section>
 
     <!-- footer secion -->
 <!-- footer secion -->
@@ -411,10 +433,10 @@
             <ul class="footer-links">
                 <li><a href="home.html">Home</a></li>
                 <li><a href="profile.html#contactForm">Contact Us</a></li>
-                <li><a href="profile.html">User profile</a></li>
+                <li><a href="profilePage.html">User profile</a></li>
                 <li><a href="feedback.html">feedback </a></li>
                 <li><a href="team.html">Team </a></li>
-                <li><a href="sitemap.html">Sitemap</a></li>
+                <li><a href="siteMap.html">Sitemap</a></li>
             </ul>
         </div>
 
@@ -425,7 +447,7 @@
                 <li><a href="pageEditor_ST1.html">Student's 1-page editor</a></li>
                 <li><a href="pageEditor_ST2.html">Student's 2-page editor</a></li>
                 <li><a href="pageEditor_ST3.html">Student's 3-page editor</a></li>
-                <li><a href="pageEditor_ST4.html">Student's 4-page editor</a></li>
+                <li><a href="pageEditor.html">Student's 4-page editor</a></li>
             </ul>
         </div>
 
