@@ -140,6 +140,8 @@ padding: 20px;
     pointer-events: none;
 }
 
+
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
     .brand-overlay {
@@ -156,6 +158,8 @@ padding: 20px;
         font-size: 10vw;
     }
 }
+
+
 
 .nav-left {
     position: absolute;
