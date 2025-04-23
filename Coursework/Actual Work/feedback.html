@@ -104,44 +104,62 @@
         }
 
         /*  */
-        .container-feedback {
+       /* Feedback section */
+
+#feedback-body{
+    display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        /* Ensure the body takes the full viewport height */
+        margin: 0;
+        /* Remove default margin */
+        background: linear-gradient(135deg, #e8f5e9 0%, #e0f7fa 100%);
+
+}
+
+.feedback-container {
+
     max-width: 600px;
     width: 90%;
     background: #fff;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    margin-left: 500px;
-    margin-top: 50px;
+    text-align: left;
     
 }
 
-
+h2 {
+    text-align: center;
+    margin-top: 50px;
+}
 
 form {
     display: flex;
     flex-direction: column;
 }
 
-fieldset {
+.feedback-container__fieldset {
     border: 1px solid #ccc;
     padding: 15px;
     margin-bottom: 15px;
     border-radius: 5px;
 }
 
-legend {
+.feedback-container__legend {
     font-weight: bold;
 }
 
-label {
+.feedback-container__label {
     display: block;
     margin-top: 10px;
     font-weight: bold;
 }
 
-input, select, textarea {
+.feedback-container__input,
+.feedback-container__select,
+.feedback-container__textarea {
     width: 100%;
     padding: 8px;
     margin-top: 5px;
@@ -154,23 +172,23 @@ input[type="checkbox"] {
     margin-right: 5px;
 }
 
-.rating {
+.feedback-container__rating {
     display: flex;
     justify-content: center;
     gap: 5px;
 }
 
-.rating span {
+.feedback-container__rating span {
     font-size: 1.5em;
     cursor: pointer;
     transition: color 0.3s;
 }
 
-.rating span.selected {
+.feedback-container__rating span.selected {
     color: gold;
 }
 
-.submit {
+.feedback-container__button {
     width: 100%;
     padding: 10px;
     margin-top: 10px;
@@ -182,14 +200,24 @@ input[type="checkbox"] {
     cursor: pointer;
 }
 
-.submit:hover {
+.feedback-container__button:hover {
     background: #218838;
     transition: background-color 0.3s ease;
 }
-#background{
-    background: linear-gradient(135deg, #e8f5e9 0%, #e0f7fa 100%);
+
+.feedback-container__button--reset {
+    background: green;
 }
 
+.feedback-container__button--reset:hover {
+    background: green;
+}
+
+.feedback-container__error {
+    color: green;
+    font-size: 0.875em;
+    display: none;
+}
     </style>
     
 </head>
@@ -270,70 +298,91 @@ input[type="checkbox"] {
             </div>
         </div>
     </div>
-    <section id="background">
-    <div class="container-feedback">
-        <h2>🌍 Climate Action Feedback Form</h2>
-        <p>Help us take action against climate change by sharing your thoughts and concerns!</p>
-    
-        <form id="feedbackForm" onsubmit="return storeData()">
-            <fieldset>
-                <legend>Personal Details</legend>
-                <label for="name">Full Name:</label>
-                <input type="text" id="name" placeholder="Enter your name" required>
-                <label for="email">Email Address:</label>
-                <input type="email" id="email" placeholder="Enter your email" required
-                    title="Please enter a valid email address">
-                <label for="telephone">Telephone Number:</label>
-                <input type="tel" id="telephone" placeholder="Enter your phone number" pattern="[0-9]{10}"
-                    title="Please enter a valid 10-digit phone number" required>
-                <label for="address">Address:</label>
-                <textarea id="address" rows="4" placeholder="Enter your address" maxlength="250" required></textarea>
-            </fieldset>
-    
-            <fieldset>
-                <legend>Feedback Details</legend>
-                <label for="comment">Your Feedback:</label>
-                <textarea id="comment" rows="4" placeholder="Share your thoughts..." maxlength="500" required></textarea>
-                <span class="error" id="commentError">This field is required.</span>
-                <label for="concernLevel">How concerned are you about climate change?</label>
-                <input type="range" min="1" max="5" step="1" id="concernLevel" required>
-                <label for="actions">What actions do you take to reduce your carbon footprint?</label>
-                <div>
-                    <label><input type="checkbox" name="actions" value="Recycling"> Recycling</label>
-                    <label><input type="checkbox" name="actions" value="Reducing plastic use"> Reducing plastic use</label>
-                    <label><input type="checkbox" name="actions" value="Using public transport"> Using public
-                        transport</label>
-                    <label><input type="checkbox" name="actions" value="Conserving energy"> Conserving energy</label>
-                </div>
-                <label for="country">Country/Region:</label>
-                <select id="country" required>
-                    <option value="">Select your country</option>
-                    <option value="USA">USA</option>
-                    <option value="UK">UK</option>
-                    <option value="India">India</option>
-                    <option value="SriLanka">Sri Lanka</option>
-                    <option value="Other">Other</option>
-                </select>
-                <label for="date">Preferred date for feedback submission:</label>
-                <input type="date" id="date" required>
-                <label for="file">Upload Attachment (e.g., screenshot or document):</label>
-                <input type="file" id="file" accept=".jpg,.png,.pdf,.docx">
-                <label>Rate your experience:</label>
-                <div class="rating">
-                    <span onclick="selectRating(1)">⭐</span>
-                    <span onclick="selectRating(2)">⭐</span>
-                    <span onclick="selectRating(3)">⭐</span>
-                    <span onclick="selectRating(4)">⭐</span>
-                    <span onclick="selectRating(5)">⭐</span>
-                </div>
-                <p id="ratingValue">You rated: 0 stars</p>
-            </fieldset>
-    
-            <br><br>
-            <button type="submit" class="submit">Submit Feedback</button>
-            <button type="reset" class="submit">Reset Form</button>
-        </form>
-    </div>
+   <section id="feedback-body">
+<div class="feedback-container">
+      <h2>🌍 Climate Action Feedback Form</h2>
+      <p>Help us take action against climate change by sharing your thoughts and concerns!</p>
+
+    <form id="feedbackForm" onsubmit="return storeData()">
+        <!-- Personal Details Section -->
+        <fieldset class="feedback-container__fieldset">
+            <legend class="feedback-container__legend">Personal Details</legend>
+
+            <label for="feedback-name" class="feedback-container__label">Full Name:</label>
+            <input type="text" id="feedback-name" class="feedback-container__input" placeholder="Enter your name"
+                required>
+
+            <label for="feedback-email" class="feedback-container__label">Email Address:</label>
+            <input type="email" id="feedback-email" class="feedback-container__input" placeholder="Enter your email"
+                required title="Please enter a valid email address">
+
+            <label for="feedback-telephone" class="feedback-container__label">Telephone Number:</label>
+            <input type="tel" id="feedback-telephone" class="feedback-container__input"
+                placeholder="Enter your phone number" pattern="[0-9]{10}"
+                title="Please enter a valid 10-digit phone number" required>
+
+            <label for="feedback-address" class="feedback-container__label">Address:</label>
+            <textarea id="feedback-address" class="feedback-container__textarea" rows="4"
+                placeholder="Enter your address" maxlength="250" required></textarea>
+        </fieldset>
+
+        <!-- Feedback Section -->
+        <fieldset class="feedback-container__fieldset">
+            <legend class="feedback-container__legend">Feedback Details</legend>
+
+            <label for="feedback-comment" class="feedback-container__label">Your Feedback:</label>
+            <textarea id="feedback-comment" class="feedback-container__textarea" rows="4"
+                placeholder="Share your thoughts..." maxlength="500" required></textarea>
+            <span class="feedback-container__error" id="feedback-comment-error" style="display:none;">This field is
+                required.</span>
+
+            <label for="feedback-concern-level" class="feedback-container__label">How concerned are you about climate
+                change?</label>
+            <input type="range" min="1" max="5" step="1" id="feedback-concern-level" class="feedback-container__input">
+
+            <label class="feedback-container__label">What actions do you take to reduce your carbon footprint?</label>
+            <div>
+                <label><input type="checkbox" name="feedback-actions" value="Recycling"> Recycling</label>
+                <label><input type="checkbox" name="feedback-actions" value="Reducing plastic use"> Reducing plastic
+                    use</label>
+                <label><input type="checkbox" name="feedback-actions" value="Using public transport"> Using public
+                    transport</label>
+                <label><input type="checkbox" name="feedback-actions" value="Conserving energy"> Conserving
+                    energy</label>
+            </div>
+
+            <label for="feedback-country" class="feedback-container__label">Country/Region:</label>
+            <select id="feedback-country" class="feedback-container__select" required>
+                <option value="">Select your country</option>
+                <option value="USA">USA</option>
+                <option value="UK">UK</option>
+                <option value="India">India</option>
+                <option value="SriLanka">Sri Lanka</option>
+                <option value="Other">Other</option>
+            </select>
+
+            <label for="feedback-date" class="feedback-container__label">Preferred date for feedback submission:</label>
+            <input type="date" id="feedback-date" class="feedback-container__input" required>
+
+            <label for="feedback-file" class="feedback-container__label">Upload Attachment (e.g., screenshot or
+                document):</label>
+            <input type="file" id="feedback-file" class="feedback-container__input" accept=".jpg,.png,.pdf,.docx">
+
+            <label class="feedback-container__label">Rate your experience:</label>
+            <div class="feedback-container__rating">
+                <span onclick="selectRating(1)">⭐</span>
+                <span onclick="selectRating(2)">⭐</span>
+                <span onclick="selectRating(3)">⭐</span>
+                <span onclick="selectRating(4)">⭐</span>
+                <span onclick="selectRating(5)">⭐</span>
+            </div>
+            <p id="feedback-rating-value">You rated: 0 stars</p>
+        </fieldset>
+
+        <button type="submit" class="feedback-container__button">Submit Feedback</button>
+        <button type="reset" class="feedback-container__button feedback-container__button--reset">Reset Form</button>
+    </form>
+</div>
     </section>
 
 
@@ -398,35 +447,93 @@ input[type="checkbox"] {
     </footer>
 
     <script>
-        let ratingValue = 0;
+let ratingValue = 0; // Default rating value
 
-            function selectRating(stars) {
-                ratingValue = stars;
-                const ratings = document.querySelectorAll('.rating span');
-                ratings.forEach((rating, index) => {
-                    if (index < stars) {
-                        rating.classList.add('selected');
-                    } else {
-                        rating.classList.remove('selected');
-                    }
-                });
-                document.getElementById('ratingValue').innerText = `You rated: ${ratingValue} stars`;
-            }
+// Function to handle star selection
+function selectRating(stars) {
+    ratingValue = stars; // Update the selected rating value
+    const ratings = document.querySelectorAll('.feedback-container__rating span');
 
-            function storeData() {
-                // Get the name and email values from the form
-                const name = document.getElementById('name').value;
-                const email = document.getElementById('email').value;
+    // Add or remove the "selected" class for highlighting stars
+    ratings.forEach((rating, index) => {
+        if (index < stars) {
+            rating.classList.add('selected');
+        } else {
+            rating.classList.remove('selected');
+        }
+    });
 
-                // Store name and email in localStorage
-                localStorage.setItem('userName', name);
-                localStorage.setItem('userEmail', email);
+    // Update the displayed rating
+    document.getElementById('feedback-rating-value').innerText = `You rated: ${ratingValue} stars`;
+}
+
+// Function to validate and store data
+function storeData() {
+    // Collect input values
+    const name = document.getElementById('feedback-name').value;
+    const email = document.getElementById('feedback-email').value;
+    const comment = document.getElementById('feedback-comment').value;
+
+    // Validate star rating
+    if (ratingValue === 0) {
+        alert('Please select a star rating before submitting.');
+        return false;
+    }
+
+    // Validate comment
+    if (!comment) {
+        document.getElementById('feedback-comment-error').style.display = 'inline';
+        alert('Please provide your feedback in the comment section.');
+        return false;
+    } else {
+        document.getElementById('feedback-comment-error').style.display = 'none'; // Hide error if resolved
+    }
+
+    // Collect other inputs
+    const telephone = document.getElementById('feedback-telephone').value;
+    const address = document.getElementById('feedback-address').value;
+    const concernLevel = document.getElementById('feedback-concern-level').value;
+    const actions = Array.from(document.querySelectorAll('input[name="feedback-actions"]:checked')).map(el => el.value);
+    const country = document.getElementById('feedback-country').value;
+    const date = document.getElementById('feedback-date').value;
+
+  // Store in localStorage
+    const feedbackData = {
+        name,
+        email,
+        telephone,
+        address,
+        comment,
+        concernLevel,
+        actions,
+        country,
+        date,
+        rating: ratingValue,
+    };
+    localStorage.setItem('feedback', JSON.stringify(feedbackData));
+
+    // Redirect to Thank You page
+    window.location.href = "thankyou.html";
+    return false; // Prevent default form submission
+}
 
 
-                // Redirect to the Thank You page
-                window.location.href = "thankyou.html"; // Ensure this is the correct path to your Thank You page
-                return false; // Prevent form submission to ensure redirection
-            }
+document.getElementById("userName").textContent = localStorage.getItem("userName") || "User";
+document.getElementById("userEmail").textContent = localStorage.getItem("userEmail") || "your email";
+
+function goHome() {
+    window.location.href = "home.html";
+}
+
+let countdown = 60;
+setInterval(() => {
+    countdown--;
+    document.getElementById("countdown").textContent = countdown;
+    if (countdown === 0) {
+        goHome();
+    }
+}, 1000);
+
 
     </script>
     
