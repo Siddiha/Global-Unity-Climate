@@ -12,20 +12,8 @@ This project provides interactive content, educational resources, and real-time 
 ✅ Interactive Quizzes – Engages users with climate-related questions.
 ✅ Carbon Footprint Calculator – Helps users measure their environmental impact.
 ✅ Local Events & Initiatives – Displays upcoming sustainability events.
-✅ Responsive Design – Works seamlessly on all devices.
-✅ Dark Mode Toggle – For better accessibility and user experience.
-✅ Animations & Visuals – Uses CSS animations for engaging storytelling.
 
-🛠️ Technologies Used
-Technology	Purpose
-HTML5	Structure of the web pages
-CSS3	Styling and responsive design
-JavaScript (Vanilla JS)	Interactive features
-Chart.js	Visualizing climate data
-OpenWeather API	Fetching real-time weather & pollution data
-Google Maps API	Displaying environmental events near users
-🚀 Live Demo
-🔗 Visit the Website (Add link after deployment)
+
 
 Clone the repository:
 sh
@@ -68,7 +56,3 @@ This project is open-source under the MIT License.
 
 💡 Support & Contact
 🌎 Let's make a difference together! If you have any suggestions or questions, feel free to contact:
-
-📧 Email: Fathimasiddika62@gmail.com
-🐦 Twitter: @Siddiha
-
