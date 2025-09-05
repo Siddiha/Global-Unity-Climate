@@ -9,8 +9,11 @@ This project provides interactive content, educational resources, and real-time 
 
 ✨ Features
 ✅ Informational Sections – Explains climate change, causes, effects, and solutions.
+
 ✅ Interactive Quizzes – Engages users with climate-related questions.
+
 ✅ Carbon Footprint Calculator – Helps users measure their environmental impact.
+
 ✅ Local Events & Initiatives – Displays upcoming sustainability events.
 
 
@@ -28,19 +31,28 @@ cd global-unity-climate-action
 Open index.html in a browser or use Live Server if using VS Code.
 
 
+
 🌱 How It Works
 
 Home Page – Introduction to climate change.
+
 Education Section – Learn about greenhouse gases, deforestation, etc.
+
 Impact Visualizations – Real-time climate impact charts.
+
 Take Action – Users get step-by-step guidance on how to reduce their carbon footprint.
+
 Community Engagement – Users can see local sustainability events.
+
+
 
 
 📊 Upcoming Enhancements
  User Dashboard – Personalized recommendations.
  Pledge System – Users commit to eco-friendly actions.
  More APIs – Real-time air quality index & ocean temperature.
+
+
 
  
 🤝 Contributing
