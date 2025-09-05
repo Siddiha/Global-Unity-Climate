@@ -26,16 +26,22 @@ Copy
 Edit
 cd global-unity-climate-action
 Open index.html in a browser or use Live Server if using VS Code.
+
+
 🌱 How It Works
 Home Page – Introduction to climate change.
 Education Section – Learn about greenhouse gases, deforestation, etc.
 Impact Visualizations – Real-time climate impact charts.
 Take Action – Users get step-by-step guidance on how to reduce their carbon footprint.
 Community Engagement – Users can see local sustainability events.
+
+
 📊 Upcoming Enhancements
  User Dashboard – Personalized recommendations.
  Pledge System – Users commit to eco-friendly actions.
  More APIs – Real-time air quality index & ocean temperature.
+
+ 
 🤝 Contributing
 Want to help improve this project? Follow these steps:
 
@@ -51,8 +57,8 @@ Copy
 Edit
 git commit -m "Added a new feature"
 Push to GitHub & create a Pull Request
-📜 License
-This project is open-source under the MIT License.
+
 
 💡 Support & Contact
+
 🌎 Let's make a difference together! If you have any suggestions or questions, feel free to contact:
